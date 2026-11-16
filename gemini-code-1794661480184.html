@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Services — SHAW Interiors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="lenis-global.css">
+
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* =========================================================
+       GSAP SCROLL IMAGE REVEAL STYLES (STATIC IMAGES + WHITE MASK)
+       ========================================================= */
+    .gsap-reveal-box {
+      position: relative;
+      overflow: hidden;
+      background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
+    }
+
+    .gsap-reveal-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      will-change: clip-path, transform;
+      clip-path: inset(15% 12% 15% 12%);
+      transform: scale(1.12);
+    }
+
+    /* =========================================================
+       STICKY SERVICE NARRATIVE STYLES (MATCHING FEATURED PROJECTS)
+       ========================================================= */
+    .project-sticky-inner {
+      position: relative; /* Safe default for mobile */
+    }
+
+    .project-tall-img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .opacity-fade-block .gsap-reveal-box {
+        height: 400px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .project-tall-img {
+        min-height: 110vh;
+        height: auto;
+      }
+    }
+
+   
+  </style>
+  
+  
+  <style>
+  
+  /* Luxury Fade-to-Black Page Transition Overlay */
+    .gsap-page-curtain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #0f0f0f;
+      z-index: 99999;
+      opacity: 1;
+      pointer-events: none;
+    }
+  </style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</head>
+
+<body style="scroll-behavior: smooth;">
+
+  <!-- GSAP Fade Transition Overlay -->
+  <div class="gsap-page-curtain"></div>
+
+  <!-- =========================================================
+       SECTION 1: GLOBAL NAVIGATION HEADER
+       ========================================================= -->
+  <div class="bg">
+    <div class="container-md">
+      <div class="nv-containe">
+
+        <a href="index.html"><img src="logo-1.png" class="nav-logo" alt="Shaw Interiors Logo"></a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile2.html">About</a></li>
+
+          <!-- SERVICES DROPDOWN / ACCORDION -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
+            
+            <a href="services3.html" class="dropdown-link">
+              <label for="services-toggle" class="accordion-trigger">
+                Services <span class="angle-bracket"></span>
+              </label>
+            </a>
+
+            <!-- Dropdown Box with Scrollable Items -->
+            <div class="dropdown-menu-box">
+              <a href="services3.html#service-01" class="dropdown-item-row">
+                <img src="build58.jpg" class="dropdown-thumb" alt="Residential Interior">
+                <div class="dropdown-text py-2">
+                  <span class="item-title">01. Residential Interior</span>
+                  <span class="item-sub">Bespoke Homes & Private Estates</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-02" class="dropdown-item-row">
+                <img src="build28.jpg" class="dropdown-thumb" alt="Commercial Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">02. Commercial Interior</span>
+                  <span class="item-sub">Retail, Hospitality & Public Spaces</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-03" class="dropdown-item-row">
+                <img src="build21.png" class="dropdown-thumb" alt="Corporate Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">03. Corporate Interior</span>
+                  <span class="item-sub">Corporate & Modern Workspaces</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-04" class="dropdown-item-row">
+                <img src="build26.png" class="dropdown-thumb" alt="Custom Kitchen Design">
+                <div class="dropdown-text">
+                  <span class="item-title">04. Custom Kitchen Design</span>
+                  <span class="item-sub">High-End Culinary Environments</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-05" class="dropdown-item-row">
+                <img src="build27.jpg" class="dropdown-thumb" alt="Master Suite Design">
+                <div class="dropdown-text">
+                  <span class="item-title">05. Master Suite Design</span>
+                  <span class="item-sub">Private Bedroom Retreats</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-06" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Architectural Millwork">
+                <div class="dropdown-text">
+                  <span class="item-title">06. Architectural Millwork</span>
+                  <span class="item-sub">Custom Cabinetry & Joinery</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-07" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Atmospheric Lighting">
+                <div class="dropdown-text">
+                  <span class="item-title">07. Atmospheric Lighting</span>
+                  <span class="item-sub">Architectural Illumination Plans</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-08" class="dropdown-item-row">
+                <img src="build35.jpg" class="dropdown-thumb" alt="Spa & Bath Design">
+                <div class="dropdown-text">
+                  <span class="item-title">08. Spa & Bath Design</span>
+                  <span class="item-sub">Sanctuary Bathrooms & Wellness</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-09" class="dropdown-item-row">
+                <img src="build24.png" class="dropdown-thumb" alt="Material & Texture Design">
+                <div class="dropdown-text">
+                  <span class="item-title">09. Material & Texture Design</span>
+                  <span class="item-sub">Fine Finishes & Textiles</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- PROJECTS DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="projects-toggle" class="dropdown-checkbox">
+            <a href="projects5.html" class="dropdown-link">
+              <label for="projects-toggle" class="accordion-trigger">
+                Projects <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="projects5.html#project-01" class="dropdown-item-row">
+                <img src="build62.jpg" class="dropdown-thumb" alt="Residential Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Residential Works</span>
+                  <span class="item-sub">Residential Estates</span>
+                </div>
+              </a>
+              <a href="projects5.html#project-02" class="dropdown-item-row">
+                <img src="build58.jpg" class="dropdown-thumb" alt="Commercial Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Commercial Works</span>
+                  <span class="item-sub">Commercial Metros</span>
+                </div>
+              </a>
+              <a href="projects5.html#project-03" class="dropdown-item-row">
+                <img src="build74.jpg" class="dropdown-thumb" alt="Completed Projects">
+                <div class="dropdown-text">
+                  <span class="item-title">Coporate Works</span>
+                  <span class="item-sub">Coporate Offices</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="gallerry3.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+    </div> 
+  </div>
+
+  <!-- =========================================================
+       SECTION 2: HERO BANNER CAROUSEL
+       ========================================================= -->
+  <div class="position-relative overflow-hidden text-white" style="margin-top: 0px;">
+    <!-- HERO CAROUSEL FRAME -->
+    <div class="hero-frame-height position-relative w-100">
+      <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
+        <div class="carousel-inner w-100 h-100">
+          <div class="carousel-item active w-100 h-100">
+            <img src="build30.jpg" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 1">
+          </div>
+          <div class="carousel-item w-100 h-100">
+            <img src="build57.jpg" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 2">
+          </div>
+          <div class="carousel-item w-100 h-100">
+            <img src="build49.jpg" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERLAY COVERING FRAME -->
+    <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45); z-index: 1;"></div>
+
+    <!-- CENTERED TEXT CONTENT -->
+    <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3 trigger1" style="z-index: 2;">
+      <div class="row pt-4 justify-content-center">
+        <div class="col-11 col-md-10 pt-5 col-lg-8">
+           <span class="badge bg-dark rounded-0 px-3 py-2 fs-6 fw-light mb-3">Our Disciplines</span>
+          <h3 class="text-white mb-4 tracking-wider display-6">Articulating Vision</h3>
+          <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-3 text-center opacity-90">
+            "A home should be an autobiography."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       TEXT INTRODUCTION & QUICK LINKS
+       ========================================================= -->
+  <div class="container pb-1 pt-4 my-3"> 
+    <div class="pt-2 my-3">
+      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block text-center trigger1">Interior Design Specialist</span>
+      <h1 class="fw-bold text-dark text-uppercase mb-3 text-center trigger1">Full Spectrum Design Services</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-2 trigger1"></div>
+    </div>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="gone pb-1 pt-3 mt-1 trigger1">
+    <div class="d-flex justify-content-center gap-3 flex-wrap py-2">
+      <a href="#service-01" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">01 Residential</a>
+      <a href="#service-02" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">02 Commercial</a>
+      <a href="#service-03" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">03 Corporate</a>
+      <a href="#service-04" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">04 Culinary</a>
+      <a href="#service-05" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">05 Suites</a>
+      <a href="#service-06" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">06 Joinery</a>
+      <a href="#service-07" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">07 Lighting</a>
+      <a href="#service-08" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">08 Wellness</a>
+      <a href="#service-09" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">09 Materials</a>
+    </div>
+  </div>  
+
+  <hr class="border-1 opacity-25 my-4">
+
+  <!-- =========================================================
+       SECTION 3: STICKY SCROLL NARRATIVE SERVICES SHOWCASE (01 TO 09)
+       ========================================================= -->
+
+  <!-- SERVICE 01 (Image Left, Sticky Text Right) -->
+  <div id="service-01" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build35.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Residential Interior Architecture">
+        </div>
+      </div>
+
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">01 Residential</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Residential Interior Architecture</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "Our residential design service is built on the belief that uncovering your personal narrative is part of the process."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            We begin by listening deeply—to your must-haves, your always-wanteds, and the quiet details of how you actually live. This comprehensive, white-glove experience covers every layer from foundation to finish: strategic spatial zoning, custom furniture and nuanced magazine-ready styling.
+          </p>
+          <div class="d-flex flex-column gap-4 mt-4 trigger1">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Strategic Spatial Zoning</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Custom Furniture Fabrication</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Architectural Lighting Plans</h6>
+              </div>
+            </div>
+          </div>
+          <!--<div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="gone border-1 opacity-25 my-2">
+
+  <!-- SERVICE 02 (Sticky Text Left, Image Right) -->
+  <div id="service-02" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5 order-2 order-md-1">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">02 Commercial</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Commercial Interior Spaces</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "Commercial environments must balance high-traffic operational demands with striking brand storytelling."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            We treat commercial architecture as a physical manifestation of brand identity. Every circulation path, touchpoint, and focal material is engineered to foster engagement, customer loyalty, and long-lasting commercial memorability.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Retail &amp; Hospitality Experience</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 order-1 order-md-2 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build46.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Commercial Interior Spaces">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="gone border-1 opacity-25 my-2">
+
+  <!-- SERVICE 03 (Image Left, Sticky Text Right) -->
+  <div id="service-03" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build67.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Corporate Interior Workspaces">
+        </div>
+      </div>
+
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">03 Corporate</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Corporate Interior Workspaces</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "Modern corporate environments must inspire focus, collaboration, and executive prestige."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            We design dynamic headquarters that seamlessly integrate executive boardrooms, agile open-plan collaboration zones, and advanced acoustic treatments to elevate employee wellness and corporate culture.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Collaborative Open-Plan Design</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> Executive Boardroom Suites</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Acoustic &amp; Privacy Integration</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARALLAX DIVIDER 1 -->
+  <div class="container-fluid px-0 my-5">
+    <div class="parallax-section-3 d-flex align-items-center justify-content-center text-center text-white position-relative">
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.25);"></div>
+      <div class="container-fluid position-relative px-1 py-4" style="z-index:2;">
+        <span class="editorial-label text-white d-block mb-3 badge trigger1">Architectural Flow</span>
+        <h2 class="text-white fw-light display-6 font-serif trigger1">Form following light and shadow</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 04 (Sticky Text Left, Image Right) -->
+  <div id="service-04" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5 order-2 order-md-1">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">04 Kitchen</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Custom Kitchen Architecture</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "The kitchen is the absolute heart of the home—where professional functionality meets gathering."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            We specialize in designing culinary environments energized by rigorous operational planning. From monolithic stone islands and concealed prep pantries to bespoke cabinetry profiles, we create spaces that invite connection.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Ergonomic Culinary Workflow</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> Monolithic Stone Islands</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Concealed Storage &amp; Pantries</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 order-1 order-md-2 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build70.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Custom Kitchen Architecture">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="gone border-1 opacity-25 my-2">
+
+  <!-- SERVICE 05 (Image Left, Sticky Text Right) -->
+  <div id="service-05" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build41.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Master Suite Sanctuaries">
+        </div>
+      </div>
+
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">05 Suites</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Master Suite Sanctuaries</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "Private bedroom quarters designed as true restorative retreats for absolute personal peace."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            We focus on the delicate interplay of acoustic soft furnishings, custom upholstered wall paneling, and indirect illumination to curate an environment engineered around your evening relaxation rituals.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Restorative Acoustic Calm</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> Bespoke Walk-In Dressing Joinery</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Indirect Mood Illumination</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="gone border-1 opacity-25 my-2">
+
+  <!-- SERVICE 06 (Sticky Text Left, Image Right) -->
+  <div id="service-06" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5 order-2 order-md-1">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">06 Joinery</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Architectural Millwork &amp; Joinery</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "Handcrafted architectural woodwork bridging structural engineering and bespoke furniture design."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            Partnering with master cabinetmakers, we produce fluted wall paneling, library shelving systems, and hidden storage portals that inject tactile warmth and organic character.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Custom Fluted Wall Paneling</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> Integrated Library Shelving</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Concealed Portal Joinery</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 order-1 order-md-2 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build58.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Architectural Millwork & Joinery">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARALLAX DIVIDER 2 -->
+  <div class="container-fluid px-0 my-5">
+    <div class="parallax-section-4 d-flex align-items-center justify-content-center text-center text-white position-relative">
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.25);"></div>
+      <div class="container-fluid position-relative px-1 py-4" style="z-index:2;">
+        <span class="editorial-label text-white d-block mb-3 badge trigger1">Sanctuary of Calm</span>
+        <h2 class="text-white fw-light display-6 font-serif trigger1">Refined proportions for modern living</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE 07 (Image Left, Sticky Text Right) -->
+  <div id="service-07" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build62.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Atmospheric Lighting Design">
+        </div>
+      </div>
+
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">07 Lighting</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Atmospheric Lighting Design</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "Lighting is the invisible brushstroke that defines how architecture and materials are experienced."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            We curate layered illumination strategies that accentuate raw stone textures, manipulate room volume, and establish seamless emotional transitions from bright day to intimate night.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Concealed Linear Cove Architecture</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> Smart Scene Automation</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Textural Accent Spotlighting</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="gone border-1 opacity-25 my-2">
+
+  <!-- SERVICE 08 (Sticky Text Left, Image Right) -->
+  <div id="service-08" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5 order-2 order-md-1">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">08 Spa &amp; Bath</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Spa &amp; Bath Architecture</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "Transforming everyday hygiene into an immersive, restorative wellness ritual."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            We design home sanctuaries utilizing tactile natural travertine, micro-cement finishes, and monolithic stone soaking tubs paired with therapeutic steam enclosures.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Natural Travertine &amp; Micro-Cement</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> Monolithic Stone Soaking Tubs</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Therapeutic Steam Enclosures</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 order-1 order-md-2 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build54.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Spa & Bath Architecture">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="gone border-1 opacity-25 my-2">
+
+  <!-- SERVICE 09 (Image Left, Sticky Text Right) -->
+  <div id="service-09" class="container my-3 pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+      
+      <!-- Image Column -->
+      <div class="col-lg-7 col-md-7 mb-3 mb-md-0">
+        <div class="gsap-reveal-box">
+          <img src="build53.jpg" class="img-fluid w-100 gsap-reveal-img project-tall-img" alt="Material & Texture Curation">
+        </div>
+      </div>
+
+      <!-- Sticky Text Column -->
+      <div class="col-lg-5 col-md-5">
+        <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">09 Materials</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3 trigger1">Material &amp; Texture Curation</h3>
+          <p class="text-muted leading-relaxed fst-italic fs-5 mb-3 trigger1">
+            "The magic of a truly elevated interior lies in layering tactile, harmonious physical elements."
+          </p>
+          <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
+            Through meticulous material sourcing—from Venetian lime-wash plasters and raw linens to patinated bronze and hand-knotted wool rugs—we curate enduring tactile palettes.
+          </p>
+          <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark">01.</strong> Venetian Lime-Wash Plasters</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> Patinated Bronze &amp; Metalwork</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> Hand-Knotted Textiles &amp; Rugs</li>
+          </ul>
+          <div>
+            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="gone pb-3 pt-0 trigger1">
+    <div class="d-flex justify-content-center gap-3 flex-wrap py-2">
+      <a href="#service-01" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">01 Residential</a>
+      <a href="#service-02" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">02 Commercial</a>
+      <a href="#service-03" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">03 Corporate</a>
+      <a href="#service-04" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">04 Culinary</a>
+      <a href="#service-05" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">05 Suites</a>
+      <a href="#service-06" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">06 Joinery</a>
+      <a href="#service-07" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">07 Lighting</a>
+      <a href="#service-08" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">08 Wellness</a>
+      <a href="#service-09" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">09 Materials</a>
+    </div>
+  </div>  
+
+  <hr class="gone border-1 opacity-25 my-4 trigger1">
+
+  <div class="text-center py-5">
+    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block trigger1">Our Best Approach</span>
+    <h1 class="fw-bold text-dark text-uppercase mb-3 trigger1">How We Execute Excellence</h1>
+    <div class="divider-line-dk mx-auto mt-3 trigger1"></div>
+  </div>
+
+  <hr class="gone border-1 opacity-25 my-4 trigger1">
+
+  <!-- SECTION 5: THE SHAW INTERIORS PROCESS -->
+  <div class="container my-3 pt-3 pb-5 mb-4 trigger1">
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="p-4 h-100">
+          <span class="fs-2 fw-light text-muted d-block mb-2 trigger1">01</span>
+          <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3 trigger1">Discovery &amp; Zoning</h5>
+          <p class="text-muted text-justify fs-6 small mb-0 trigger1">Uncovering unique lifestyle narratives, spatial flow requirements, and structural architectural parameters. We analyze natural light shifts across the floor plan managing.</p>
+        </div>
+        <div class="divider-line-dk mx-auto mt-0 trigger1"></div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 h-100">
+          <span class="fs-2 fw-light text-muted d-block mb-2 trigger1">02</span>
+          <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3 trigger1">Materialization</h5>
+          <p class="text-muted text-justify fs-6 small mb-0 trigger1">Crafting custom joinery specifications, tactile material palettes, and architectural illumination plans. Every stone slab, timber grain, and bespoke fixture is hand-selected</p>
+        </div>
+        <div class="divider-line-dk mx-auto mt-0 trigger1"></div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 h-100">
+          <span class="fs-2 fw-light text-muted d-block mb-2 trigger1">03</span>
+          <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3 trigger1">Turnkey Installation</h5>
+          <p class="text-muted text-justify fs-6 small mb-0 trigger1">Managing full-scale site delivery, white-glove furniture installation, and magazine-ready interior styling. From coordinating artisan tradespeople and managing custom</p>
+        </div>
+        <div class="divider-line-dk mx-auto mt-0 trigger1"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: EXTENDED FOOTER & INQUIRY FORM -->
+  <div id="contact" class="overflow-hidden">
+    <footer class="arrcc-footer text-white py-5">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          
+          <div class="col-lg-6 pe-lg-5 text-center text-lg-start gone">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <img src="logo-1.png" class="foot-logo" alt="Shaw Interiors Logo">
+            </div>
+
+            <div class="row g-4 my-2 pt-3">
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Cape Town Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  12 Waterkant Street, Studio 401<br>
+                  Cape Town, 8001, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.ct@shawint.co.za</div>
+              </div>
+
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Johannesburg Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  45 Rosebank Road, Suite 12<br>
+                  Rosebank, 2196, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.jb@shawint.co.za</div>
+              </div>
+            </div>
+
+            <div class="my-4 pt-2">
+              <h6 class="text-white text-uppercase fw-bold mb-3 mt-2 fs-8 tracking-wider">Quick Navigational Links</h6>
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-1 gap-md-4 small">
+                <a href="index.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Home</a>
+                <a href="profile2.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">About</a>
+                <a href="services3.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Services</a>
+                <a href="projects5.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Projects</a>
+                <a href="gallerry3.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Gallery</a>
+                <a href="contact.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Contact</a>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <h6 class="text-white fs-8 text-uppercase fw-bold mb-3 tracking-wider mt-4">Connect with us</h6>
+              <div class="social-icons-wrapper d-flex justify-content-center justify-content-lg-start gap-2">
+                <a href="#" class="square-social-icon" aria-label="Instagram">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a3.81 3.81 0 1 0 0 7.619 3.81 3.81 0 0 0 0-7.619zm0 1.441a2.368 2.368 0 1 1 0 4.736 2.368 2.368 0 0 1 0-4.736z"/></svg>
+                </a>
+                <a href="#" class="square-social-icon" aria-label="LinkedIn">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+                </a>
+                <a href="#" class="square-social-icon" aria-label="Facebook">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <div class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</div>
+            </div>
+            
+            <div class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+              Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back to discuss your spatial parameters.
+            </div>
+
+            <div class="w-100">
+              <form>
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerName" class="form-label text-uppercase text-white fs-8 fw-bold mb-1 tracking-wider d-block">Your Name *</label>
+                    <input type="text" class="form-control arrcc-input text-center text-lg-start" id="footerName" placeholder="e.g. John Doe" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerEmail" class="form-label text-uppercase text-white fs-8 mb-1 fw-bold tracking-wider d-block">Phone Number *</label>
+                    <input type="email" class="form-control arrcc-input text-center text-lg-start" id="footerEmail" placeholder="+27 00 000 0000" required>
+                  </div>
+                </div>
+
+                <div class="mb-4 text-center mt-2 text-lg-start">
+                  <label for="footerMessage" class="form-label text-uppercase text-white fs-8 mb-1 tracking-wider fw-bold d-block">Project Details / Message *</label>
+                  <textarea class="form-control arrcc-input text-center text-lg-start" id="footerMessage" rows="4" placeholder="Tell us about location, project type, and timeline..." required></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                  <button type="submit" class="btn btn-arrcc-submit text-uppercase rounded-0">
+                    Submit Inquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bottom Legal Bar -->
+    <div class="ft-bg py-3">
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center text-white-50 fs-8 text-center text-sm-start">
+          <div class="mb-2 fs-8 mb-sm-0">&copy; 2026 Shaw Interiors. All Rights Reserved.</div>
+          <div class="d-flex gap-4">
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Privacy Policy</a>
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="backToTopBtn" aria-label="Back to Top" class="btn btn-dark square-btn position-fixed shadow">
+    &uarr;
+  </button>
+
+  <!-- JAVASCRIPT CONTROLLERS -->
+  <script src="fade in scroll.js"></script>
+  <script src="back to top.js"></script>
+  <script src="desktop header peek.js"></script>
+  
+  <!-- UNIFIED GSAP ANIMATIONS CONTROLLER (IMAGE REVEALS, STICKY NARRATIVES, TEXT STAGGERS, PAGE FADE) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. GSAP FADE-TO-BLACK PAGE TRANSITION
+      const curtain = document.querySelector('.gsap-page-curtain');
+      if (curtain) {
+        gsap.set(curtain, { opacity: 1 });
+        gsap.to(curtain, {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.inOut",
+          onComplete: () => {
+            gsap.set(curtain, { pointerEvents: "none" });
+          }
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function(e) {
+            let href = this.getAttribute('href');
+            if (
+              href &&
+              !href.startsWith('#') &&
+              !href.startsWith('http') &&
+              !href.startsWith('mailto:') &&
+              !href.startsWith('tel:') &&
+              this.target !== '_blank'
+            ) {
+              e.preventDefault();
+              gsap.set(curtain, { pointerEvents: "auto" });
+              gsap.to(curtain, {
+                opacity: 1,
+                duration: 0.6,
+                ease: "power2.inOut",
+                onComplete: () => {
+                  window.location.href = href;
+                }
+              });
+            }
+          });
+        });
+      }
+
+      // 2. IMAGE REVEAL ANIMATIONS (.gsap-reveal-box / .gsap-reveal-img)
+      document.querySelectorAll('.gsap-reveal-box').forEach((box) => {
+        const img = box.querySelector('.gsap-reveal-img');
+        if (!img) return;
+
+        gsap.to(img, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: box,
+            start: "top 85%",
+            end: "top 25%",
+            scrub: 1
+          }
+        });
+      });
+
+      // 3. SAFE TEXT STAGGER ANIMATIONS (.trigger1)
+      document.querySelectorAll('.trigger1').forEach((el) => {
+        gsap.fromTo(el,
+          { opacity: 0, y: 35 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      // 4. STICKY SCROLL NARRATIVE FOR ALL 9 SERVICES (Desktop >= 992px Only)
+      let serviceScrollMm = gsap.matchMedia();
+
+      serviceScrollMm.add("(min-width: 992px)", () => {
+        const serviceRows = document.querySelectorAll('.opacity-fade-block');
+        const triggers = [];
+
+        serviceRows.forEach((row) => {
+          const stickyInner = row.querySelector('.project-sticky-inner');
+          if (!stickyInner) return;
+
+          let tween = ScrollTrigger.create({
+            trigger: row,
+            start: "top top+=80px",
+            end: "bottom bottom-=5px",
+            pin: stickyInner,
+            pinSpacing: false
+          });
+
+          triggers.push(tween);
+        });
+
+        return () => {
+          triggers.forEach(t => t.kill());
+        };
+      });
+
+      // 5. ANCHOR JUMP SUPPORT (#service-01 to #service-09)
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }, 150);
+        }
+      }
+
+      ScrollTrigger.refresh();
+    });
+
+    window.addEventListener("load", () => {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    });
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Lenis Library CDN -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Global Lenis Initialization -->
+  <script src="lenis-global.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
