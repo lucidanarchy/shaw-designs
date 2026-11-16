@@ -1185,7 +1185,7 @@ max-width: 576px;
 
 .bquote-border {
   position: relative;
-  border-left: 5px solid #ecc542;
+  border-left: 5px solid #cccccc;
   padding-left: 20px;
 }
 
@@ -1659,7 +1659,7 @@ background-color:#202020;
    Used in: Global Floating Button (Bottom Right)
    ========================================================= */
 #backToTopBtn {
-  bottom: 25px;
+  bottom: 44px;
   right: 25px;
   width: 40px;
   height: 40px;

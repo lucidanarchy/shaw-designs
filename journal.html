@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Journal | SHAW Interiors</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --border-color: #e5e5e5;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    /* Editorial Typography & Spacing */
+    .tracking-widest { letter-spacing: 0.2em; }
+    .tracking-wider { letter-spacing: 0.1em; }
+    .fs-9 { font-size: 0.7rem; }
+    .fs-8 { font-size: 0.78rem; }
+    
+    .journal-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Article Cards & Hover States */
+    .journal-item {
+      position: relative;
+    }
+
+    .image-wrapper {
+      overflow: hidden;
+      background-color: #f4f4f4;
+    }
+
+    .journal-img {
+      height: 440px;
+      object-fit: cover;
+      filter: grayscale(20%);
+      transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .journal-item:hover .journal-img {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .journal-img-compact {
+      height: 280px;
+    }
+
+    /* Minimalist Editorial Links */
+    .editorial-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .editorial-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--text-main);
+      transition: transform 0.3s ease;
+      transform-origin: right;
+      transform: scaleX(0);
+    }
+
+    .editorial-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Hairline Dividers */
+    .editorial-divider {
+      border-top: 1px solid var(--border-color);
+      margin: 4rem 0;
+    }
+
+    /* Expandable Article Text */
+    .article-expansion {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+      opacity: 0;
+    }
+
+    .article-expansion.expanded {
+      max-height: 600px;
+      opacity: 1;
+    }
+
+    /* Category Tag pill */
+    .category-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / HERO -->
+  <div class="container journal-header pt-5 mt-5">
+    <div class="row align-items-end">
+      <div class="col-lg-8">
+        <span class="text-uppercase small tracking-widest text-muted fw-bold mb-3 d-block">Studio Archives & Monographs</span>
+        <h1 class="display-3 fw-light text-uppercase tracking-wider mb-0">The Journal</h1>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+        <p class="text-secondary small tracking-wider mb-2">CURATED PERSPECTIVES</p>
+        <a href="index.html" class="editorial-link text-uppercase fs-8">&larr; Return to Portfolio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOURNAL FLOW CONTAINER -->
+  <div class="container pb-5 mb-5">
+
+    <!-- FEATURED HERO ENTRY (Article 1) -->
+    <div class="row journal-item mb-5 pb-5 border-bottom">
+      <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="image-wrapper">
+          <img src="art1.jpg" alt="The Rubik Architectural Award" class="w-100 journal-img">
+        </div>
+      </div>
+      <div class="col-lg-5 d-flex flex-column justify-content-center ps-lg-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span class="category-tag">vol. 01 / projects</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">oct 2026</span>
+        </div>
+        <h2 class="fw-normal text-uppercase fs-2 mb-3" style="line-height: 1.25;">MONOLITHIC TRAVERTINE RESIDENCE SET TO ANCHOR CAPE TOWN COASTLINE</h2>
+        <p class="text-secondary mb-4" style="line-height: 1.7; font-size: 1.025rem;">
+          At the prestigious Cape Institute of Architecture Awards, our landmark mixed-use commercial and residential tower was recognized for exceptional structural form and urban integration.
+        </p>
+        <div class="article-expansion text-secondary mb-4" style="font-size: 0.95rem; line-height: 1.8;">
+          <p class="mb-3">Delivered for Abland Property Developers, The Rubik introduces a dynamic, sculptural language to Cape Town’s urban fabric. The design breaks away from conventional monolithic extrusion by stacking shifted geometric volumes, creating cascading private terraces and optimizing natural light penetration deep into interior living zones.</p>
+          <p>This commendation underscores our commitment to pushing the envelope of high-rise commercial and residential integration, ensuring urban densification never compromises architectural integrity or human-scale experience.</p>
+        </div>
+        <div>
+          <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TWO COLUMN STREAM: ARTICLES 2 & 3 -->
+    <div class="row g-5">
+      <!-- Article 2 -->
+      <div class="col-lg-6 journal-item">
+        <div class="image-wrapper mb-4">
+          <img src="art2.jpg" alt="Longkloof Precinct" class="w-100 journal-img journal-img-compact">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="category-tag">vol. 02 / heritage</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">sep 2026</span>
+        </div>
+        <h3 class="fw-normal text-uppercase fs-4 mb-3" style="line-height: 1.3;">SHAPING TIMELESS SPACES ACROSS SOUTHERN AFRICA AND BEYOND</h3>
+        <p class="text-secondary mb-3" style="font-size: 0.975rem; line-height: 1.7;">
+          Breathing new life into historic industrial fabric, the Longkloof Precinct project for Growthpoint Properties sets a new benchmark for heritage adaptive reuse.
+        </p>
+        <div class="article-expansion text-secondary mb-3" style="font-size: 0.925rem; line-height: 1.75;">
+          <p class="mb-2">Located in the heart of Cape Town, Longkloof marries historic 20th-century brickwork with ultra-modern structural steel and glass insertions. Our masterplan prioritizes pedestrian permeability, open-air courtyards, and tactile material honesty.</p>
+          <p>By preserving the structural bones of the original industrial buildings while upgrading them to elite digital and environmental standards, we've established a thriving corporate and social ecosystem.</p>
+        </div>
+        <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="col-lg-6 journal-item">
+        <div class="image-wrapper mb-4">
+          <img src="art3.png" alt="Designing for Context" class="w-100 journal-img journal-img-compact">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="category-tag">vol. 03 / insights</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">aug 2026</span>
+        </div>
+        <h3 class="fw-normal text-uppercase fs-4 mb-3" style="line-height: 1.3;">TACTILE HONESTY AND HAND-TROWWELLED FINISHES IN MODERN INTERIORS</h3>
+        <p class="text-secondary mb-3" style="font-size: 0.975rem; line-height: 1.7;">
+          Examining how trend-led design has become a default benchmark of superficial success and why deep contextual grounding yields greater longevity.
+        </p>
+        <div class="article-expansion text-secondary mb-3" style="font-size: 0.925rem; line-height: 1.75;">
+          <p class="mb-2">In an algorithm-driven design landscape, algorithmic repetition often overrides genuine site response. True architectural value emerges when a building is inseparable from its geography, climate, and cultural history.</p>
+          <p>When we design for context rather than transient social media aesthetics, spaces naturally acquire enduring character and anchor their occupants deeply into place.</p>
+        </div>
+        <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+      </div>
+    </div>
+
+    <div class="editorial-divider"></div>
+
+    <!-- THREE COLUMN / ASYMMETRIC STREAM: ARTICLES 4, 5, 6 -->
+    <div class="row g-4">
+      <!-- Article 4 -->
+      <div class="col-lg-4 journal-item">
+        <div class="image-wrapper mb-3">
+          <img src="art4.png" alt="Digital Delivery" class="w-100 journal-img" style="height: 240px;">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="category-tag">vol. 04 / technology</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">jul 2026</span>
+        </div>
+        <h4 class="fw-normal text-uppercase fs-5 mb-2" style="line-height: 1.3;">BEYOND BORDERS: CURATING TURNKEY PRIVATE COMMISSIONS GLOBALLY</h4>
+        <p class="text-secondary mb-3 small" style="line-height: 1.6;">
+          How our advanced Building Information Modelling (BIM) teams keep our practice at the forefront of digital delivery.
+        </p>
+        <div class="article-expansion text-secondary mb-3 small" style="line-height: 1.7;">
+          <p>Complexity in modern architecture requires absolute coordination between design vision and structural reality. Our specialized BIM infrastructure eliminates friction points long before construction begins on site.</p>
+        </div>
+        <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+      </div>
+
+      <!-- Article 5 -->
+      <div class="col-lg-4 journal-item">
+        <div class="image-wrapper mb-3">
+          <img src="build105.jpg" alt="Nobu Restaurant" class="w-100 journal-img" style="height: 240px;">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="category-tag">vol. 05 / hospitality</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">jun 2026</span>
+        </div>
+        <h4 class="fw-normal text-uppercase fs-5 mb-2" style="line-height: 1.3;">COLLABORATION & CRAFT: REIMAGINING NOBU CAPE TOWN</h4>
+        <p class="text-secondary mb-3 small" style="line-height: 1.6;">
+          Our collaboration with Rockwell Group on the world-renowned Nobu at the One&Only Waterfront.
+        </p>
+        <div class="article-expansion text-secondary mb-3 small" style="line-height: 1.7;">
+          <p>Hospitality design thrives when international vision aligns seamlessly with local execution. Serving as architect of record alongside international design partners, our team ensured indigenous craft was woven into the space.</p>
+        </div>
+        <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+      </div>
+
+      <!-- Article 6 -->
+      <div class="col-lg-4 journal-item">
+        <div class="image-wrapper mb-3">
+          <img src="build131.png" alt="Global Expansion" class="w-100 journal-img" style="height: 240px;">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="category-tag">vol. 06 / strategy</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">may 2026</span>
+        </div>
+        <h4 class="fw-normal text-uppercase fs-5 mb-2" style="line-height: 1.3;">BEYOND BORDERS: THE GLOBAL EXPANSION OF SA DESIGN</h4>
+        <p class="text-secondary mb-3 small" style="line-height: 1.6;">
+          Unpacking how a studio rooted in African soil has grown into an internationally recognized brand.
+        </p>
+        <div class="article-expansion text-secondary mb-3 small" style="line-height: 1.7;">
+          <p>South African architecture possesses a unique resourcefulness and climatic intelligence. Taking this perspective to international markets has allowed our practice to influence urban developments across continents.</p>
+        </div>
+        <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+      </div>
+    </div>
+
+    <div class="editorial-divider"></div>
+
+    <!-- TWO SPLIT FINAL STREAM: ARTICLES 7 & 8 -->
+    <div class="row g-5">
+      <!-- Article 7 -->
+      <div class="col-lg-6 journal-item">
+        <div class="image-wrapper mb-4">
+          <img src="build132.png" alt="Evolving CBD" class="w-100 journal-img journal-img-compact">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="category-tag">vol. 07 / urbanism</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">apr 2026</span>
+        </div>
+        <h3 class="fw-normal text-uppercase fs-4 mb-3" style="line-height: 1.3;">DESIGNING FOR AN EVOLVING CAPE TOWN CENTRAL BUSINESS DISTRICT</h3>
+        <p class="text-secondary mb-3" style="font-size: 0.975rem; line-height: 1.7;">
+          Reflections on how inner-city living, mixed-use zoning, and pedestrian dynamics have transformed the Cape Town CBD over the past decade.
+        </p>
+        <div class="article-expansion text-secondary mb-3" style="font-size: 0.925rem; line-height: 1.75;">
+          <p>The modern CBD is no longer just a 9-to-5 corporate hub; it is a vibrant, round-the-clock vertical community. Designing for this transition requires deep focus on public realm activation, ground-floor permeability, and adaptive residential conversions.</p>
+        </div>
+        <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+      </div>
+
+      <!-- Article 8 -->
+      <div class="col-lg-6 journal-item">
+        <div class="image-wrapper mb-4">
+          <img src="build134.png" alt="Long Game" class="w-100 journal-img journal-img-compact">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="category-tag">vol. 08 / philosophy</span>
+          <span class="fs-9 text-muted tracking-widest text-uppercase">mar 2026</span>
+        </div>
+        <h3 class="fw-normal text-uppercase fs-4 mb-3" style="line-height: 1.3;">BUILT FOR THE LONG GAME: FOUNDATIONAL PRINCIPLES OF OUR PRACTICE</h3>
+        <p class="text-secondary mb-3" style="font-size: 0.975rem; line-height: 1.7;">
+          A reflection on studio continuity, why design rigor matters, and how a long-term view of the future guides our creative decisions.
+        </p>
+        <div class="article-expansion text-secondary mb-3" style="font-size: 0.925rem; line-height: 1.75;">
+          <p>Architecture is an exercise in legacy. Buildings outlive their creators, their clients, and often economic cycles. By fostering leadership continuity, rigorous peer review, and mentorship, we ensure every structure stands as a timeless contribution.</p>
+        </div>
+        <button class="btn btn-link p-0 text-uppercase fs-8 tracking-wider editorial-link toggle-article border-0 bg-transparent">[ Read Full Monograph ]</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Smooth Accordion/Expansion Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.toggle-article').forEach(button => {
+        button.addEventListener('click', (e) => {
+          const item = e.target.closest('.journal-item');
+          const expansion = item.querySelector('.article-expansion');
+          
+          if (!expansion.classList.contains('expanded')) {
+            expansion.classList.add('expanded');
+            e.target.textContent = '[ Close Monograph ]';
+          } else {
+            expansion.classList.remove('expanded');
+            e.target.textContent = '[ Read Full Monograph ]';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

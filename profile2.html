@@ -98,7 +98,7 @@
 
     .project-tall-img {
       width: 100%;
-      height: 460px;
+      height: 360px;
       object-fit: cover;
       display: block;
     }
@@ -109,7 +109,7 @@
       }
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 769px) {
       .project-tall-img {
         min-height: 110vh;
         height: auto;
@@ -419,10 +419,10 @@
 
     <!-- SERVICE 02: COMMERCIAL INTERIOR SPACES -->
     <section id="service-02" class="py-5 services-section-wrap opacity-fade-block">
-      <div class="row g-4 g-lg-5 align-items-start">
+      <div class="row g-4 g-md-5 align-items-start">
         
         <!-- Text Column: Appears second on mobile, but first on desktop (left side) -->
-        <div class="col-lg-6 project-sticky-inner order-2 order-lg-1">
+        <div class="col-md-6 project-sticky-inner order-2 order-md-1">
           <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-4 trigger1">Creative Discipline</span>
           <h3 class="fw-bold text-dark text-uppercase mb-4 ">The Architecture of <br>Atmosphere</h3>
           
@@ -436,7 +436,7 @@ surfaces throughout the day and continuously transforming the character of each 
         </div>
 
         <!-- Image Column: Appears first on mobile (stacked on top), but second on desktop (right side) -->
-        <div class="col-lg-6 order-1 order-lg-2">
+        <div class="col-md-6 order-1 order-md-2">
           <div class="gsap-reveal-box">
             <img src="build93.png" class="project-tall-img shadow-sm gsap-reveal-img" alt="The Architecture of Atmosphere">
           </div>
@@ -467,13 +467,13 @@ surfaces throughout the day and continuously transforming the character of each 
 
     <!-- SERVICE 01: RESIDENTIAL INTERIOR ARCHITECTURE -->
     <section id="service-01" class="py-5 services-section-wrap opacity-fade-block">
-      <div class="row g-4 g-lg-5 align-items-start">
-        <div class="col-lg-6">
+      <div class="row g-4 g-md-5 align-items-start">
+        <div class="col-md-6">
           <div class="gsap-reveal-box ">
             <img src="build119.png" class="project-tall-img shadow-sm gsap-reveal-img" alt="A Dialogue of Form and Finish">
           </div>
         </div>
-        <div class="col-lg-6 project-sticky-inner">
+        <div class="col-md-6 project-sticky-inner">
           <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-4 trigger1">Curation Craft</span>
           <h3 class="fw-bold text-dark text-uppercase mb-4 ">A Dialogue of Form <br>& Finish</h3>
           
@@ -838,7 +838,7 @@ We collaborate closely with master artisans, stone masons, and metalworkers to d
 
     let serviceScrollMm = gsap.matchMedia();
 
-    serviceScrollMm.add("(min-width: 992px)", () => {
+    serviceScrollMm.add("(min-width: 769px)", () => {
 
         const serviceRows = document.querySelectorAll(".opacity-fade-block");
 
@@ -852,10 +852,11 @@ We collaborate closely with master artisans, stone masons, and metalworkers to d
 
             const tween = ScrollTrigger.create({
                 trigger: row,
-                start: "top top+=0x",
-                end: "bottom bottom-=150px",
+                start: "top top+=80px",
+                end: () => `+=${row.offsetHeight - stickyInner.offsetHeight - 80}`,
                 pin: stickyInner,
-                pinSpacing: false
+                pinSpacing: false,
+                invalidateOnRefresh: true
             });
 
             triggers.push(tween);

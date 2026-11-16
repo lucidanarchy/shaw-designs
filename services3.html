@@ -63,7 +63,7 @@
       }
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 769px) {
       .project-tall-img {
         min-height: 110vh;
         height: auto;
@@ -1037,9 +1037,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. STICKY SERVICE NARRATIVE
     // =========================================
 
-    let serviceScrollMm = gsap.matchMedia();
+   let serviceScrollMm = gsap.matchMedia();
 
-    serviceScrollMm.add("(min-width: 992px)", () => {
+    serviceScrollMm.add("(min-width: 769px)", () => {
 
         const serviceRows = document.querySelectorAll(".opacity-fade-block");
 
@@ -1054,9 +1054,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const tween = ScrollTrigger.create({
                 trigger: row,
                 start: "top top+=80px",
-                end: "bottom bottom-=5px",
+                end: () => `+=${row.offsetHeight - stickyInner.offsetHeight - 80}`,
                 pin: stickyInner,
-                pinSpacing: false
+                pinSpacing: false,
+                invalidateOnRefresh: true
             });
 
             triggers.push(tween);
