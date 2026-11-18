@@ -845,10 +845,7 @@ max-width: 576px;
     width: 100px !important; /* Adjust this width if you want it slightly shorter or longer */
   }
   
-  .gone-md {
-	  
-	  display: none;
-  }
+  
   
   
 }
@@ -1516,6 +1513,41 @@ margin-bottom:20px;
   
   
 }
+
+
+
+@media (max-width: 768px) {
+
+
+
+.gone-md {
+	  
+	  display: none;
+  }
+
+  
+}
+
+
+
+
+
+
+
+@media (max-width: 991px) {
+  .gone-lg {
+    display: none;  
+  }
+  
+  
+  
+}
+
+
+
+
+
+
 
 /* Default Logo Size (Desktop & Tablet) */
 .foot-logo {

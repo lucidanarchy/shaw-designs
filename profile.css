@@ -117,7 +117,7 @@
     }
 
     .parallax-section-3 {
-      background-image: url('build36.jpg');
+      background-image: url('build138.png');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -127,7 +127,7 @@
     }
 
     .parallax-section-4 {
-      background-image: url('build41.jpg');
+      background-image: url('build132.png');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -138,12 +138,15 @@
 	
 	
 	 .parallax-section-5 {
-      background-image: url('build127.png');
+      //background-image: url('build111.png');
+	   background-image: url('build130.png');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 500px;
+      height: 70vh;
+	  
+	  
       width: 100%;
     }
 	
@@ -190,6 +193,16 @@
 	
 	
 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -216,6 +229,21 @@
 	   /* Stats smaller */
 	  
 	  @media (max-width: 576px) {
+  
+  
+  
+  .parallax-section-5 {
+
+      height: 45vh;
+	  
+	
+    
+    }
+  
+  
+  
+  
+  
   
   	.editorial-label3 {
       font-family: 'Montserrat', sans-serif !important;

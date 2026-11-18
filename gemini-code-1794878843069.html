@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects Portfolio — SHAW Interiors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="lenis-global.css">
+  
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    html, body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden !important;
+      background-color: #ffffff;
+      color: #111111;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 300 !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Fluid Monograph Title Scaling */
+    .monograph-main-title {
+      font-size: clamp(1.65rem, 4.2vw, 2.85rem);
+      line-height: 1.2;
+      letter-spacing: 3px;
+    }
+
+    .tracking-widest { letter-spacing: 0.25em; }
+    .tracking-wider { letter-spacing: 0.1em; }
+    .fs-9 { font-size: 0.7rem; }
+    .fs-8 { font-size: 0.78rem; }
+
+    /* Anchor Scroll Offset for Fixed Header */
+    section[id] {
+      scroll-margin-top: 75px;
+    }
+
+    /* Asymmetrical Monograph Layout Styles */
+    .monograph-header {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 5rem 0 3rem 0;
+    }
+
+    .editorial-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      background-color: #f4f4f4;
+    }
+
+    .editorial-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(12%);
+      transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .editorial-img-wrapper:hover .editorial-img {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    /* Responsive Asymmetrical Heights */
+    .hero-monograph-img { height: 85vh; min-height: 450px; }
+    .feature-monograph-img { height: 560px; }
+    
+    /* Asymmetrical Detail Grid Heights */
+    .asym-tall-img { height: 580px; }
+    .asym-stacked-top { height: 270px; }
+
+    /* Fig 03 Side-by-Side Card Layout */
+    .asym-editorial-box {
+      height: 270px;
+      background-color: #f8f9fa;
+      border: 1px solid #e5e5e5;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .asym-editorial-img {
+      height: 270px;
+    }
+
+    .material-monograph-img { height: 480px; }
+    .closing-monograph-img { height: 600px; }
+
+    .monograph-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .editorial-link {
+      color: #111111;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .editorial-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: #111111;
+      transition: transform 0.3s ease;
+      transform-origin: right;
+      transform: scaleX(0);
+    }
+
+    .editorial-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .design-principle-item {
+      border-left: 2px solid #111111;
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .design-principle-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .gsap-page-curtain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #0f0f0f;
+      z-index: 99999;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    /* =========================================================
+       MOBILE & TABLET RESPONSIVE ADJUSTMENTS
+       ========================================================= */
+    @media (max-width: 991.98px) {
+      .hero-monograph-img { height: 60vh; min-height: 360px; }
+      .feature-monograph-img { height: 400px; }
+      .asym-tall-img { height: 380px; }
+      .asym-stacked-top, .asym-editorial-box, .asym-editorial-img { height: auto; min-height: 220px; }
+      .material-monograph-img { height: 380px; }
+      .closing-monograph-img { height: 420px; }
+      
+      .monograph-section {
+        padding: 3.5rem 0;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .hero-monograph-img { height: 50vh; min-height: 300px; }
+      .feature-monograph-img { height: 300px; }
+      .asym-tall-img { height: 300px; }
+      .asym-stacked-top { height: 200px; }
+      .asym-editorial-box { padding: 1.5rem; }
+      .asym-editorial-img { height: 200px; }
+      .material-monograph-img { height: 280px; }
+      .closing-monograph-img { height: 300px; }
+
+      .monograph-section {
+        padding: 2.75rem 0;
+      }
+
+      .monograph-main-title {
+        letter-spacing: 1.5px;
+      }
+
+      .design-principle-item {
+        padding-left: 1.15rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- GSAP Page Transition Curtain Element -->
+  <div class="gsap-page-curtain"></div>
+
+  <!-- =========================================================
+       SECTION 1: GLOBAL NAVIGATION HEADER
+       ========================================================= -->
+  <div class="bg">
+    <div class="container-md">
+      <div class="nv-containe">
+        <a href="index.html"><img src="logo-1.png" class="nav-logo" alt="Shaw Interiors Logo"></a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile2.html">About</a></li>
+
+          <!-- SERVICES DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
+            <a href="services3.html" class="dropdown-link">
+              <label for="services-toggle" class="accordion-trigger">
+                Services <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="services3.html#service-01" class="dropdown-item-row">
+                <img src="build58.jpg" class="dropdown-thumb" alt="Residential Interior">
+                <div class="dropdown-text py-2">
+                  <span class="item-title">01. Residential Interior</span>
+                  <span class="item-sub">Bespoke Homes & Private Estates</span>
+                </div>
+              </a>
+              <a href="services3.html#service-02" class="dropdown-item-row">
+                <img src="build28.jpg" class="dropdown-thumb" alt="Commercial Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">02. Commercial Interior</span>
+                  <span class="item-sub">Retail, Hospitality & Public Spaces</span>
+                </div>
+              </a>
+              <a href="services3.html#service-03" class="dropdown-item-row">
+                <img src="build21.png" class="dropdown-thumb" alt="Corporate Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">03. Corporate Interior</span>
+                  <span class="item-sub">Corporate & Modern Workspaces</span>
+                </div>
+              </a>
+              <a href="services3.html#service-04" class="dropdown-item-row">
+                <img src="build26.png" class="dropdown-thumb" alt="Custom Kitchen Design">
+                <div class="dropdown-text">
+                  <span class="item-title">04. Custom Kitchen Design</span>
+                  <span class="item-sub">High-End Culinary Environments</span>
+                </div>
+              </a>
+              <a href="services3.html#service-05" class="dropdown-item-row">
+                <img src="build27.jpg" class="dropdown-thumb" alt="Master Suite Design">
+                <div class="dropdown-text">
+                  <span class="item-title">05. Master Suite Design</span>
+                  <span class="item-sub">Private Bedroom Retreats</span>
+                </div>
+              </a>
+              <a href="services3.html#service-06" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Architectural Millwork">
+                <div class="dropdown-text">
+                  <span class="item-title">06. Architectural Millwork</span>
+                  <span class="item-sub">Custom Cabinetry & Joinery</span>
+                </div>
+              </a>
+              <a href="services3.html#service-07" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Atmospheric Lighting">
+                <div class="dropdown-text">
+                  <span class="item-title">07. Atmospheric Lighting</span>
+                  <span class="item-sub">Architectural Illumination Plans</span>
+                </div>
+              </a>
+              <a href="services3.html#service-08" class="dropdown-item-row">
+                <img src="build35.jpg" class="dropdown-thumb" alt="Spa & Bath Design">
+                <div class="dropdown-text">
+                  <span class="item-title">08. Spa & Bath Design</span>
+                  <span class="item-sub">Sanctuary Bathrooms & Wellness</span>
+                </div>
+              </a>
+              <a href="services3.html#service-09" class="dropdown-item-row">
+                <img src="build24.png" class="dropdown-thumb" alt="Material & Texture Design">
+                <div class="dropdown-text">
+                  <span class="item-title">09. Material & Texture Design</span>
+                  <span class="item-sub">Fine Finishes & Textiles</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- PROJECTS DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="projects-toggle" class="dropdown-checkbox">
+            <a href="project-new.html" class="dropdown-link">
+              <label for="projects-toggle" class="accordion-trigger">
+                Projects <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="project-new.html#commercial" class="dropdown-item-row">
+                <img src="build101.png" class="dropdown-thumb" alt="Commercial Monograph">
+                <div class="dropdown-text">
+                  <span class="item-title">Commercial Works</span>
+                  <span class="item-sub">The Concrete Monolith</span>
+                </div>
+              </a>
+              <a href="project-new.html#corporate" class="dropdown-item-row">
+                <img src="build67.jpg" class="dropdown-thumb" alt="Corporate Monograph">
+                <div class="dropdown-text">
+                  <span class="item-title">Corporate Works</span>
+                  <span class="item-sub">The Executive Pavilion</span>
+                </div>
+              </a>
+              <a href="project-new.html#residential" class="dropdown-item-row">
+                <img src="build72.jpg" class="dropdown-thumb" alt="Residential Monograph">
+                <div class="dropdown-text">
+                  <span class="item-title">Residential Works</span>
+                  <span class="item-sub">The Atlantic Sanctuary</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="gallerry3.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div> 
+  </div>
+
+
+  <!-- =========================================================================
+       CASE STUDY 1: COMMERCIAL — THE CONCRETE MONOLITH (#commercial)
+       ========================================================================= -->
+  <section id="commercial">
+    <!-- 1. OPENING: FULL-WIDTH ARCHITECTURAL HERO PHOTOGRAPH -->
+    <div class="container-fluid px-0">
+      <div class="editorial-img-wrapper hero-monograph-img">
+        <img src="build101.png" alt="The Concrete Monolith Hero" class="editorial-img w-100 h-100">
+      </div>
+    </div>
+
+    <!-- MONOGRAPH TITLE & METADATA HEADER -->
+    <div class="container px-4 px-sm-3 pt-4 mt-4 mt-md-5">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Commercial Architecture &bull; Cape Town</span>
+      <h1 class="monograph-main-title fw-bold text-dark text-uppercase mb-3 text-center trigger1">The Concrete Monolith</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-4 mb-md-5 trigger1"></div>
+    </div>
+
+    <!-- 2. INTRODUCTION: SHORT PROJECT DESCRIPTION -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-3 d-block">The Project</span>
+          <h2 class="fw-light text-uppercase fs-4 fs-md-3 mb-3 mb-md-4" style="line-height: 1.35;">Equilibrium of form and urban topography</h2>
+          <p class="text-secondary fs-6 fs-md-5 mb-0" style="line-height: 1.8;">
+            The Concrete Monolith explores the relationship between contemporary commercial architecture and its surrounding urban environment. The design language emphasises strong geometric forms, carefully considered proportions, and a restrained material palette designed to weather quietly alongside the Atlantic seaboard.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. DESIGN CONCEPT: LARGE IMAGE WITH EDITORIAL TEXT -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7">
+          <div class="editorial-img-wrapper feature-monograph-img">
+            <img src="build101.png" alt="The Design Approach" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+        <div class="col-lg-5 ps-lg-5 mt-4 mt-lg-0">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">The Design Approach</span>
+          <h3 class="fw-light text-uppercase fs-5 fs-md-4 mb-4" style="line-height: 1.35;">Built Around Three Core Principles</h3>
+          
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">01. Materiality</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Exposed board-marked concrete and structural low-iron glass establish a distinctive, tactile architectural language.</p>
+          </div>
+
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">02. Composition</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Strong horizontal slabs and vertical shading louvres create rigorous visual structure and dynamic shadow play.</p>
+          </div>
+
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">03. Context</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">The building directly responds to its surrounding urban fabric, balancing monolithic weight with open pedestrian thresholds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ARCHITECTURAL DETAILS: ASYMMETRICAL EDITORIAL COMPOSITION -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center mb-4 mb-md-5">
+        <div class="col-lg-6">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 d-block">Spatial Articulation</span>
+          <h3 class="fw-light text-uppercase fs-4 fs-md-3 mb-0">Detail &amp; Threshold Studies</h3>
+        </div>
+        <div class="col-lg-6 text-lg-end mt-2 mt-lg-0">
+          <p class="text-muted small mb-0 tracking-wider">Fig. 01 — 03 &bull; Structural Integration Series</p>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <!-- Left Column: Tall Asymmetrical Portrait Frame -->
+        <div class="col-lg-5">
+          <div class="editorial-img-wrapper asym-tall-img shadow-sm">
+            <img src="build101.png" alt="Detail Study 1" class="editorial-img w-100 h-100">
+          </div>
+          <p class="text-muted fs-9 tracking-wider text-uppercase mt-2 mt-md-3 mb-0">Fig. 01 — Structural Canopy Threshold</p>
+        </div>
+
+        <!-- Right Column: Stacked Offset Image + Side-by-Side Image (Left) & Text (Right) for Fig 03 -->
+        <div class="col-lg-7">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="editorial-img-wrapper asym-stacked-top shadow-sm">
+                <img src="build58.jpg" alt="Detail Study 2" class="editorial-img w-100 h-100">
+              </div>
+              <p class="text-muted fs-9 tracking-wider text-uppercase mt-2 mb-0">Fig. 02 — Vertical Louvre Integration</p>
+            </div>
+            <div class="col-12 mt-3 mt-md-4">
+              <div class="row g-3 align-items-center">
+                <!-- Image on Left -->
+                <div class="col-md-6 order-2 order-md-1">
+                  <div class="editorial-img-wrapper asym-editorial-img shadow-sm">
+                    <img src="build28.jpg" alt="Fig 03 Internal Atrium" class="editorial-img w-100 h-100">
+                  </div>
+                  <p class="text-muted fs-9 tracking-wider text-uppercase mt-1 mb-0">Atrium Core View</p>
+                </div>
+                <!-- Text on Right -->
+                <div class="col-md-6 order-1 order-md-2">
+                  <div class="asym-editorial-box shadow-sm h-100">
+                    <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-1 d-block">Fig. 03</span>
+                    <h5 class="text-uppercase fs-7 fw-light mb-2" style="letter-spacing: 1px;">Internal Atrium Perspective</h5>
+                    <p class="text-secondary small mb-0" style="line-height: 1.55;">
+                      The multi-level internal void draws natural daylight deep into the commercial core, creating an open dialogue between public thresholds and upper executive suites.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. MATERIALS: CLOSE-UP PHOTOGRAPHY -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-5 order-2 order-lg-1 mt-4 mt-lg-0">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">Material Integrity</span>
+          <h3 class="fw-light text-uppercase fs-5 fs-md-4 mb-3">Raw Stone &amp; Patinated Bronze</h3>
+          <p class="text-secondary small fs-md-6 mb-4" style="line-height: 1.75;">
+            Our material selection rejects superficial finishes in favor of components that age with integrity. Raw cast concrete surfaces capture changing atmospheric conditions throughout the day, while patinated bronze and untreated timber elements soften the monolithic exterior.
+          </p>
+          <ul class="list-unstyled text-secondary small text-uppercase tracking-wider mb-0" style="line-height: 2.1;">
+            <li>&mdash; Board-Marked Cast Concrete</li>
+            <li>&mdash; Burnished Bronze Window Mullions</li>
+            <li>&mdash; Unpolished Travertine Thresholds</li>
+            <li>&mdash; Structural Low-Iron Glazing</li>
+          </ul>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2">
+          <div class="editorial-img-wrapper material-monograph-img">
+            <img src="build101.png" alt="Material Close Up" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. CONCLUSION: FINAL ARCHITECTURAL PHOTOGRAPH & CREDITS -->
+    <div class="container px-4 px-sm-3 monograph-section border-0 pb-5">
+      <div class="row justify-content-center mb-4 mb-md-5">
+        <div class="col-lg-10">
+          <div class="editorial-img-wrapper closing-monograph-img">
+            <img src="build101.png" alt="Final Monograph View" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">The Result</span>
+          <h3 class="fw-light text-uppercase fs-4 fs-md-3 mb-3">Permanent Urban Presence</h3>
+          <p class="text-secondary mb-4 mb-md-5 fs-6 fs-md-5 fw-light" style="line-height: 1.7;">
+            A contemporary commercial development that successfully balances monumental architectural presence with stringent functional requirements and human-scale spatial comfort.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       CASE STUDY 2: CORPORATE — THE EXECUTIVE PAVILION (#corporate)
+       ========================================================================= -->
+  <section id="corporate">
+    <!-- 1. OPENING: FULL-WIDTH ARCHITECTURAL HERO PHOTOGRAPH -->
+    <div class="container-fluid px-0">
+      <div class="editorial-img-wrapper hero-monograph-img">
+        <img src="build67.jpg" alt="The Executive Pavilion Hero" class="editorial-img w-100 h-100">
+      </div>
+    </div>
+
+    <!-- MONOGRAPH TITLE & METADATA HEADER -->
+    <div class="container px-4 px-sm-3 pt-4 mt-4 mt-md-5">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Corporate Architecture &bull; Johannesburg</span>
+      <h1 class="monograph-main-title fw-bold text-dark text-uppercase mb-3 text-center trigger1">The Executive Pavilion</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-4 mb-md-5 trigger1"></div>
+    </div>
+
+    <!-- 2. INTRODUCTION: SHORT PROJECT DESCRIPTION -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-3 d-block">The Project</span>
+          <h2 class="fw-light text-uppercase fs-4 fs-md-3 mb-3 mb-md-4" style="line-height: 1.35;">Refined workspaces for high-level enterprise</h2>
+          <p class="text-secondary fs-6 fs-md-5 mb-0" style="line-height: 1.8;">
+            The Executive Pavilion delivers an environment of absolute visual clarity and acoustic discretion. Custom millwork and integrated lighting systems support uninterrupted focus and high-stakes corporate collaboration.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. DESIGN CONCEPT: LARGE IMAGE WITH EDITORIAL TEXT -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7">
+          <div class="editorial-img-wrapper feature-monograph-img">
+            <img src="build67.jpg" alt="Corporate Design Approach" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+        <div class="col-lg-5 ps-lg-5 mt-4 mt-lg-0">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">The Design Approach</span>
+          <h3 class="fw-light text-uppercase fs-5 fs-md-4 mb-4" style="line-height: 1.35;">Strategic Workplace Pillars</h3>
+          
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">01. Acoustics</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Advanced acoustic oak paneling and hidden dampening elements guarantee total boardroom confidentiality.</p>
+          </div>
+
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">02. Illumination</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Layered architectural illumination plans adapt effortlessly from analytical morning reviews to evening galas.</p>
+          </div>
+
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">03. Ergonomics</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Custom walnut conference tables with integrated power channels preserve sleek, uninterrupted surface planes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ARCHITECTURAL DETAILS: ASYMMETRICAL EDITORIAL COMPOSITION -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center mb-4 mb-md-5">
+        <div class="col-lg-6">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 d-block">Workspace Articulation</span>
+          <h3 class="fw-light text-uppercase fs-4 fs-md-3 mb-0">Joinery &amp; Finish Studies</h3>
+        </div>
+        <div class="col-lg-6 text-lg-end mt-2 mt-lg-0">
+          <p class="text-muted small mb-0 tracking-wider">Fig. 01 — 03 &bull; Executive Joinery Series</p>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <!-- Left Column: Tall Asymmetrical Portrait Frame -->
+        <div class="col-lg-5">
+          <div class="editorial-img-wrapper asym-tall-img shadow-sm">
+            <img src="build21.png" alt="Corporate Detail 1" class="editorial-img w-100 h-100">
+          </div>
+          <p class="text-muted fs-9 tracking-wider text-uppercase mt-2 mt-md-3 mb-0">Fig. 01 — Executive Boardroom Suite</p>
+        </div>
+
+        <!-- Right Column: Stacked Offset Image + Side-by-Side Image (Left) & Text (Right) for Fig 03 -->
+        <div class="col-lg-7">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="editorial-img-wrapper asym-stacked-top shadow-sm">
+                <img src="build74.jpg" alt="Corporate Detail 2" class="editorial-img w-100 h-100">
+              </div>
+              <p class="text-muted fs-9 tracking-wider text-uppercase mt-2 mb-0">Fig. 02 — Reception Millwork Integration</p>
+            </div>
+            <div class="col-12 mt-3 mt-md-4">
+              <div class="row g-3 align-items-center">
+                <!-- Image on Left -->
+                <div class="col-md-6 order-2 order-md-1">
+                  <div class="editorial-img-wrapper asym-editorial-img shadow-sm">
+                    <img src="build32.jpg" alt="Fig 03 Office Joinery" class="editorial-img w-100 h-100">
+                  </div>
+                  <p class="text-muted fs-9 tracking-wider text-uppercase mt-1 mb-0">Joinery Detail View</p>
+                </div>
+                <!-- Text on Right -->
+                <div class="col-md-6 order-1 order-md-2">
+                  <div class="asym-editorial-box shadow-sm h-100">
+                    <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-1 d-block">Fig. 03</span>
+                    <h5 class="text-uppercase fs-7 fw-light mb-2" style="letter-spacing: 1px;">Private Office Joinery</h5>
+                    <p class="text-secondary small mb-0" style="line-height: 1.55;">
+                      Custom-milled walnut joinery integrates seamlessly with structural acoustic walls, establishing an atmosphere of quiet concentration and distinguished executive presence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. MATERIALS: CLOSE-UP PHOTOGRAPHY -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-5 order-2 order-lg-1 mt-4 mt-lg-0">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">Material Integrity</span>
+          <h3 class="fw-light text-uppercase fs-5 fs-md-4 mb-3">Acoustic Timber &amp; Brushed Steel</h3>
+          <p class="text-secondary small fs-md-6 mb-4" style="line-height: 1.75;">
+            Our corporate material framework balances the natural warmth of acoustic timber paneling with crisp, minimal brushed steel profiles, ensuring a timeless expression of executive dignity.
+          </p>
+          <ul class="list-unstyled text-secondary small text-uppercase tracking-wider mb-0" style="line-height: 2.1;">
+            <li>&mdash; Perforated Acoustic Oak Slats</li>
+            <li>&mdash; Minimalist Brushed Steel Trims</li>
+            <li>&mdash; Honed Basalt Floor Tiles</li>
+            <li>&mdash; High-Performance Glazed Partitions</li>
+          </ul>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2">
+          <div class="editorial-img-wrapper material-monograph-img">
+            <img src="build67.jpg" alt="Corporate Material Close Up" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. CONCLUSION: FINAL ARCHITECTURAL PHOTOGRAPH & CREDITS -->
+    <div class="container px-4 px-sm-3 monograph-section border-0 pb-5">
+      <div class="row justify-content-center mb-4 mb-md-5">
+        <div class="col-lg-10">
+          <div class="editorial-img-wrapper closing-monograph-img">
+            <img src="build74.jpg" alt="Corporate Final View" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">The Result</span>
+          <h3 class="fw-light text-uppercase fs-4 fs-md-3 mb-3">Seamless Enterprise Workflow</h3>
+          <p class="text-secondary mb-4 mb-md-5 fs-6 fs-md-5 fw-light" style="line-height: 1.7;">
+            A sophisticated corporate headquarters that seamlessly aligns high-end workplace ergonomics with enduring architectural beauty and acoustic clarity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       CASE STUDY 3: RESIDENTIAL — THE ATLANTIC SANCTUARY (#residential)
+       ========================================================================= -->
+  <section id="residential">
+    <!-- 1. OPENING: FULL-WIDTH ARCHITECTURAL HERO PHOTOGRAPH -->
+    <div class="container-fluid px-0">
+      <div class="editorial-img-wrapper hero-monograph-img">
+        <img src="build72.jpg" alt="The Atlantic Sanctuary Hero" class="editorial-img w-100 h-100">
+      </div>
+    </div>
+
+    <!-- MONOGRAPH TITLE & METADATA HEADER -->
+    <div class="container px-4 px-sm-3 pt-4 mt-4 mt-md-5">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Residential Estate &bull; Clifton, Cape Town</span>
+      <h1 class="monograph-main-title fw-bold text-dark text-uppercase mb-3 text-center trigger1">The Atlantic Sanctuary</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-4 mb-md-5 trigger1"></div>
+    </div>
+
+    <!-- 2. INTRODUCTION: SHORT PROJECT DESCRIPTION -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-3 d-block">The Project</span>
+          <h2 class="fw-light text-uppercase fs-4 fs-md-3 mb-3 mb-md-4" style="line-height: 1.35;">Bespoke coastal living rooted in natural calm</h2>
+          <p class="text-secondary fs-6 fs-md-5 mb-0" style="line-height: 1.8;">
+            Perched directly above the crashing Atlantic surf, The Atlantic Sanctuary merges raw natural stone with expansive glazing. Every bedroom retreat and master suite is meticulously tailored to evoke absolute peace and seclusion.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. DESIGN CONCEPT: LARGE IMAGE WITH EDITORIAL TEXT -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7">
+          <div class="editorial-img-wrapper feature-monograph-img">
+            <img src="build72.jpg" alt="Residential Design Approach" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+        <div class="col-lg-5 ps-lg-5 mt-4 mt-lg-0">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">The Design Approach</span>
+          <h3 class="fw-light text-uppercase fs-5 fs-md-4 mb-4" style="line-height: 1.35;">Residential Living Tenets</h3>
+          
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">01. Transparency</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Frameless glass systems dissolve boundaries, inviting ocean views directly into intimate domestic spaces.</p>
+          </div>
+
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">02. Texture</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Unpolished travertine floors and hand-rubbed timber finishes create rich tactile warmth underfoot.</p>
+          </div>
+
+          <div class="design-principle-item">
+            <h5 class="text-uppercase fs-6 fw-light mb-1" style="letter-spacing: 1px;">03. Sanctuary</h5>
+            <p class="text-secondary small mb-0" style="line-height: 1.7;">Private spa bathrooms and custom walk-in dressing areas provide a restorative domestic retreat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ARCHITECTURAL DETAILS: ASYMMETRICAL EDITORIAL COMPOSITION -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center mb-4 mb-md-5">
+        <div class="col-lg-6">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 d-block">Estate Articulation</span>
+          <h3 class="fw-light text-uppercase fs-4 fs-md-3 mb-0">Sanctuary Detail Studies</h3>
+        </div>
+        <div class="col-lg-6 text-lg-end mt-2 mt-lg-0">
+          <p class="text-muted small mb-0 tracking-wider">Fig. 01 — 03 &bull; Coastal Sanctuary Series</p>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <!-- Left Column: Tall Asymmetrical Portrait Frame -->
+        <div class="col-lg-5">
+          <div class="editorial-img-wrapper asym-tall-img shadow-sm">
+            <img src="build58.jpg" alt="Residential Detail 1" class="editorial-img w-100 h-100">
+          </div>
+          <p class="text-muted fs-9 tracking-wider text-uppercase mt-2 mt-md-3 mb-0">Fig. 01 — Master Suite Ocean Frontage</p>
+        </div>
+
+        <!-- Right Column: Stacked Offset Image + Side-by-Side Image (Left) & Text (Right) for Fig 03 -->
+        <div class="col-lg-7">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="editorial-img-wrapper asym-stacked-top shadow-sm">
+                <img src="build27.jpg" alt="Residential Detail 2" class="editorial-img w-100 h-100">
+              </div>
+              <p class="text-muted fs-9 tracking-wider text-uppercase mt-2 mb-0">Fig. 02 — Spa &amp; Wellness Bathroom</p>
+            </div>
+            <div class="col-12 mt-3 mt-md-4">
+              <div class="row g-3 align-items-center">
+                <!-- Image on Left -->
+                <div class="col-md-6 order-2 order-md-1">
+                  <div class="editorial-img-wrapper asym-editorial-img shadow-sm">
+                    <img src="build26.png" alt="Fig 03 Culinary Kitchen" class="editorial-img w-100 h-100">
+                  </div>
+                  <p class="text-muted fs-9 tracking-wider text-uppercase mt-1 mb-0">Kitchen Island View</p>
+                </div>
+                <!-- Text on Right -->
+                <div class="col-md-6 order-1 order-md-2">
+                  <div class="asym-editorial-box shadow-sm h-100">
+                    <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-1 d-block">Fig. 03</span>
+                    <h5 class="text-uppercase fs-7 fw-light mb-2" style="letter-spacing: 1px;">Custom Culinary Kitchen</h5>
+                    <p class="text-secondary small mb-0" style="line-height: 1.55;">
+                      Conceived as an integrated social core, the monolithic marble island pairs with hidden prep zones to maintain pristine architectural lines against coastal horizons.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. MATERIALS: CLOSE-UP PHOTOGRAPHY -->
+    <div class="container px-4 px-sm-3 monograph-section">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-5 order-2 order-lg-1 mt-4 mt-lg-0">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">Material Integrity</span>
+          <h3 class="fw-light text-uppercase fs-5 fs-md-4 mb-3">Travertine Stone &amp; Untreated Timber</h3>
+          <p class="text-secondary small fs-md-6 mb-4" style="line-height: 1.75;">
+            Our palette prioritizes natural, organic elements that patinate gracefully with ocean air, creating deep tactile resonance throughout private family living areas.
+          </p>
+          <ul class="list-unstyled text-secondary small text-uppercase tracking-wider mb-0" style="line-height: 2.1;">
+            <li>&mdash; Unpolished French Travertine</li>
+            <li>&mdash; Hand-Rubbed American Oak Joinery</li>
+            <li>&mdash; Oxidized Copper Wall Accents</li>
+            <li>&mdash; Low-Iron Architectural Glazing</li>
+          </ul>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2">
+          <div class="editorial-img-wrapper material-monograph-img">
+            <img src="build72.jpg" alt="Residential Material Close Up" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. CONCLUSION: FINAL ARCHITECTURAL PHOTOGRAPH & CREDITS -->
+    <div class="container px-4 px-sm-3 monograph-section border-0 pb-5">
+      <div class="row justify-content-center mb-4 mb-md-5">
+        <div class="col-lg-10">
+          <div class="editorial-img-wrapper closing-monograph-img">
+            <img src="build58.jpg" alt="Residential Final View" class="editorial-img w-100 h-100">
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <span class="text-uppercase fs-9 tracking-widest text-muted fw-bold mb-2 mb-md-3 d-block">The Result</span>
+          <h3 class="fw-light text-uppercase fs-4 fs-md-3 mb-3">A Timeless Coastal Haven</h3>
+          <p class="text-secondary mb-4 mb-md-5 fs-6 fs-md-5 fw-light" style="line-height: 1.7;">
+            A premier coastal residence that effortlessly harmonizes dramatic ocean vistas with absolute privacy, comfort, and sophisticated material integrity.
+          </p>
+          <div class="mb-4 mb-md-5">
+            <a href="project-new.html#commercial" class="editorial-link text-uppercase fs-8 tracking-wider">Back to Top of Monograph &uarr;</a>
+          </div>
+          <hr class="w-25 mx-auto mb-4 border-secondary opacity-25">
+          <div class="text-muted fs-9 tracking-widest text-uppercase">
+            SHAW Interiors Monograph Archive &bull; Published 2026 &bull; South Africa
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       SECTION 4: EXTENDED FOOTER & INQUIRY FORM
+       ========================================================= -->
+  <div id="contact" class="overflow-hidden">
+    <footer class="arrcc-footer text-white py-5">
+      <div class="container px-4 px-sm-3">
+        <div class="row g-4 g-lg-5">
+          
+          <div class="col-lg-6 pe-lg-5 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <img src="logo-1.png" class="foot-logo" alt="Shaw Interiors Logo">
+            </div>
+
+            <div class="row g-4 my-2 pt-3">
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Cape Town Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  12 Waterkant Street, Studio 401<br>
+                  Cape Town, 8001, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.ct@shawint.co.za</div>
+              </div>
+
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Johannesburg Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  45 Rosebank Road, Suite 12<br>
+                  Rosebank, 2196, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.jb@shawint.co.za</div>
+              </div>
+            </div>
+
+            <div class="my-4 pt-2">
+              <h6 class="text-white text-uppercase fw-bold mb-3 mt-2 fs-8 tracking-wider">Quick Navigational Links</h6>
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 gap-md-4 small">
+                <a href="index.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Home</a>
+                <a href="profile2.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">About</a>
+                <a href="services3.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Services</a>
+                <a href="project-new.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Projects</a>
+                <a href="gallerry3.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Gallery</a>
+                <a href="contact.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <div class="text-uppercase fw-bold text-white mb-0 fs-3 fs-md-2 mt-2 mt-lg-4">Consult call back</div>
+            </div>
+            
+            <div class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+              Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back to discuss your spatial parameters.
+            </div>
+
+            <div class="w-100">
+              <form>
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6 mb-2 mb-md-3 text-center text-lg-start">
+                    <label for="footerName" class="form-label text-uppercase text-white fs-8 fw-bold mb-1 tracking-wider d-block">Your Name *</label>
+                    <input type="text" class="form-control arrcc-input text-center text-lg-start" id="footerName" placeholder="e.g. John Doe" required>
+                  </div>
+
+                  <div class="col-md-6 mb-2 mb-md-3 text-center text-lg-start">
+                    <label for="footerEmail" class="form-label text-uppercase text-white fs-8 mb-1 fw-bold tracking-wider d-block">Phone Number *</label>
+                    <input type="tel" class="form-control arrcc-input text-center text-lg-start" id="footerEmail" placeholder="+27 00 000 0000" required>
+                  </div>
+                </div>
+
+                <div class="mb-4 text-center mt-2 text-lg-start">
+                  <label for="footerMessage" class="form-label text-uppercase text-white fs-8 mb-1 tracking-wider fw-bold d-block">Project Details / Message *</label>
+                  <textarea class="form-control arrcc-input text-center text-lg-start" id="footerMessage" rows="4" placeholder="Tell us about location, project type, and timeline..." required></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                  <button type="submit" class="btn btn-arrcc-submit text-uppercase rounded-0">
+                    Submit Inquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bottom Legal Bar -->
+    <div class="ft-bg py-3">
+      <div class="container px-4 px-sm-3">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center text-white-50 fs-8 text-center text-sm-start">
+          <div class="mb-2 fs-8 mb-sm-0">&copy; 2026 Shaw Interiors. All Rights Reserved.</div>
+          <div class="d-flex gap-4">
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Privacy Policy</a>
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="backToTopBtn" aria-label="Back to Top" class="btn btn-dark square-btn position-fixed shadow">
+    &uarr;
+  </button>
+
+  <!-- JAVASCRIPT CONTROLLERS -->
+  <script src="back to top.js"></script>
+  <script src="desktop header peek.js"></script>
+
+  <!-- GSAP Page Transition Controller -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof gsap === 'undefined') return;
+
+      const curtain = document.querySelector('.gsap-page-curtain');
+      if (curtain) {
+        gsap.set(curtain, { opacity: 1 });
+        gsap.to(curtain, {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.inOut",
+          onComplete: () => {
+            gsap.set(curtain, { pointerEvents: "none" });
+          }
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function(e) {
+            let href = this.getAttribute('href');
+            if (
+              href && 
+              !href.startsWith('#') && 
+              !href.startsWith('http') && 
+              !href.startsWith('mailto:') && 
+              !href.startsWith('tel:') &&
+              this.target !== '_blank'
+            ) {
+              e.preventDefault();
+              gsap.set(curtain, { pointerEvents: "auto" });
+              gsap.to(curtain, {
+                opacity: 1,
+                duration: 0.6,
+                ease: "power2.inOut",
+                onComplete: () => {
+                  window.location.href = href;
+                }
+              });
+            }
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- Lenis Library CDN & Global Init -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="lenis-global.js"></script>  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
