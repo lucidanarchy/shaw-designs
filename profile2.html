@@ -4,17 +4,17 @@
   <title>Profile — SHAW Interiors</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- CSS Stylesheets -->
+
+  <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="service.css">
   <link rel="stylesheet" href="profile.css">
-  
+  <link rel="stylesheet" href="portfolio.css">
   <link rel="stylesheet" href="lenis-global.css">
-  
-  
-  
+
   <!-- Google Fonts Import -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -26,10 +26,148 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <style>
-    /* Mobile Side-Scroll Overflow Fix */
     html, body {
+      width: 100%;
       max-width: 100% !important;
+      margin: 0;
+      padding: 0;
       overflow-x: hidden !important;
+      background-color: #ffffff;
+      color: #111111;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 300 !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .monograph-main-title {
+      font-size: clamp(1.65rem, 4.2vw, 2.85rem);
+      line-height: 1.2;
+      letter-spacing: 3px;
+    }
+
+    .tracking-widest { letter-spacing: 0.25em; }
+    .tracking-wider { letter-spacing: 0.1em; }
+    .fs-9 { font-size: 0.7rem; }
+    .fs-8 { font-size: 0.78rem; }
+
+    section[id], div[id] {
+      scroll-margin-top: 90px;
+    }
+
+    .editorial-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      background-color: #f4f4f4;
+    }
+
+    .editorial-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: grayscale(12%);
+      transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .editorial-img-wrapper:hover .editorial-img {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .hero-monograph-img {
+      height: 100vh;
+      //min-height: 460px;
+	  
+    }
+
+
+.filt  {
+
+filter: brightness(0.65) contrast(1.05) grayscale(18%);
+
+
+}
+
+
+
+    .profile-feature-tall {
+      height: 640px;
+    }
+
+    .profile-plate-tall {
+      height: 105vh;
+      min-height: 480px;
+    }
+
+    .profile-closing-img {
+      height: 62vh;
+      min-height: 400px;
+    }
+
+    .monograph-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      padding: 4px 8px;
+      display: inline-block;
+    }
+
+    .monograph-rule {
+      width: 97%;
+      height: 1px;
+      background-color: rgba(33, 37, 41, 0.3);
+    }
+
+    .project-sticky-inner {
+      position: relative;
+    }
+
+    .project-tall-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .gsap-page-curtain {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #0f0f0f;
+      z-index: 99999;
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity 0.5s ease;
+    }
+
+    .gsap-page-curtain.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pureFadeLoop {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    @media (max-width: 991.98px) {
+      .hero-monograph-img { height: 60vh; min-height: 360px; }
+      .profile-feature-tall { height: 420px; }
+      .profile-plate-tall { height: 440px; min-height: 340px; }
+      .profile-closing-img { height: 420px; }
+    }
+
+    @media (max-width: 768px) {
+      .opacity-fade-block .editorial-img-wrapper {
+        height: 380px !important;
+      }
     }
 
     @media (max-width: 575.98px) {
@@ -37,117 +175,17 @@
         margin-left: 0 !important;
         margin-right: 0 !important;
       }
-    }
-
-    /* Prevent sticky header from obscuring anchor link targets */
-    section[id], div[id] {
-      scroll-margin-top: 100px;
-    }
-
-    /* =========================================================
-       GSAP SCROLL IMAGE REVEAL STYLES (WHITE MASK / KEEP SIZES)
-       ========================================================= */
-    .gsap-reveal-box {
-      position: relative;
-      overflow: hidden;
-      background-color: #FFFFFF !important;
-      background: #FFFFFF !important;
-    }
-
-    .gsap-reveal-img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      display: block;
-      will-change: clip-path, transform;
-      clip-path: inset(25% 10% 25% 10%);
-      transform: scale(1.15);
+      .hero-monograph-img { height: 50vh; min-height: 300px; }
+      .profile-feature-tall { height: 340px; }
+      .profile-plate-tall { height: 320px; min-height: 280px; }
+      .profile-closing-img { height: 300px; }
+      .monograph-main-title { letter-spacing: 1.5px; }
     }
   </style>
-  
-  
-  
-  
-  <style>
- .gsap-page-curtain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #0f0f0f; /* Deep luxury black */
-  z-index: 99999;
-  opacity: 1; /* Start fully black on page load */
-  pointer-events: none;
-} 
-  
-  
- </style> 
-  
-  
-  
-<style>
-
-
-  /* =========================================================
-       STICKY SERVICE NARRATIVE STYLES (MATCHING FEATURED PROJECTS)
-       ========================================================= */
-    .project-sticky-inner {
-      position: relative; /* Safe default for mobile */
-    }
-
-    .project-tall-img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .opacity-fade-block .gsap-reveal-box {
-        height: 400px;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .project-tall-img {
-        min-height: 110vh;
-        height: auto;
-      }
-    }
-
-
-
-
-
-
-
-</style>  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 </head>
 
-<body style="scroll-behavior: smooth;">
-
-<div class="gsap-page-curtain"></div>
-
-
+<body>
+  <div class="gsap-page-curtain"></div>
 
   <!-- =========================================================
        SECTION 1: GLOBAL NAVIGATION HEADER
@@ -168,20 +206,19 @@
           <!-- SERVICES DROPDOWN -->
           <li class="has-dropdown">
             <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
-            
+
             <a href="services3.html" class="dropdown-link">
               <label for="services-toggle" class="accordion-trigger">
                 Services <span class="angle-bracket"></span>
               </label>
             </a>
 
-            <!-- Dropdown Box -->
             <div class="dropdown-menu-box">
               <a href="services3.html#service-01" class="dropdown-item-row">
                 <img src="build58.jpg" class="dropdown-thumb" alt="Residential Interior">
                 <div class="dropdown-text py-2">
                   <span class="item-title">01. Residential Interior</span>
-                  <span class="item-sub">Bespoke Homes & Private Estates</span>
+                  <span class="item-sub">Bespoke Homes &amp; Private Estates</span>
                 </div>
               </a>
 
@@ -189,7 +226,7 @@
                 <img src="build28.jpg" class="dropdown-thumb" alt="Commercial Interior">
                 <div class="dropdown-text">
                   <span class="item-title">02. Commercial Interior</span>
-                  <span class="item-sub">Retail, Hospitality & Public Spaces</span>
+                  <span class="item-sub">Retail, Hospitality &amp; Public Spaces</span>
                 </div>
               </a>
 
@@ -197,7 +234,7 @@
                 <img src="build21.png" class="dropdown-thumb" alt="Corporate Interior">
                 <div class="dropdown-text">
                   <span class="item-title">03. Corporate Interior</span>
-                  <span class="item-sub">Corporate & Modern Workspaces</span>
+                  <span class="item-sub">Corporate &amp; Modern Workspaces</span>
                 </div>
               </a>
 
@@ -221,7 +258,7 @@
                 <img src="build32.jpg" class="dropdown-thumb" alt="Architectural Millwork">
                 <div class="dropdown-text">
                   <span class="item-title">06. Architectural Millwork</span>
-                  <span class="item-sub">Custom Cabinetry & Joinery</span>
+                  <span class="item-sub">Custom Cabinetry &amp; Joinery</span>
                 </div>
               </a>
 
@@ -236,16 +273,16 @@
               <a href="services3.html#service-08" class="dropdown-item-row">
                 <img src="build35.jpg" class="dropdown-thumb" alt="Spa & Bath Design">
                 <div class="dropdown-text">
-                  <span class="item-title">08. Spa & Bath Design</span>
-                  <span class="item-sub">Sanctuary Bathrooms & Wellness</span>
+                  <span class="item-title">08. Spa &amp; Bath Design</span>
+                  <span class="item-sub">Sanctuary Bathrooms &amp; Wellness</span>
                 </div>
               </a>
 
               <a href="services3.html#service-09" class="dropdown-item-row">
                 <img src="build24.png" class="dropdown-thumb" alt="Material & Texture Design">
                 <div class="dropdown-text">
-                  <span class="item-title">09. Material & Texture Design</span>
-                  <span class="item-sub">Fine Finishes & Textiles</span>
+                  <span class="item-title">09. Material &amp; Texture Design</span>
+                  <span class="item-sub">Fine Finishes &amp; Textiles</span>
                 </div>
               </a>
             </div>
@@ -289,245 +326,246 @@
         </ul>
 
       </div>
-    </div> 
+    </div>
   </div>
 
-   <!-- =========================================================
-       SECTION 2: HERO BANNER CAROUSEL
-       ========================================================= -->
-  <div class="position-relative overflow-hidden text-white" style="margin-top: 0px;">
   
+  
+  
+ <div class="position-relative overflow-hidden text-white pb-2 pb-sm-3" style="margin-top: 0px;">
+
   <!-- HERO CAROUSEL FRAME -->
-  <div class="hero-frame-height position-relative w-100">
+  <div class="editorial-img-wrapper hero-monograph-img position-relative w-100">
     <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
       <div class="carousel-inner w-100 h-100">
         <div class="carousel-item active w-100 h-100">
-          <img src="build106.png" class="service-static-img " alt="Shaw Interiors Design Services Banner 1">
+          <img src="build106.png" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 1" style="background: rgba(0,0,0,0.8)!important;">
         </div>
         <div class="carousel-item w-100 h-100">
-          <img src="build13.jpg" class="service-static-img " alt="Shaw Interiors Design Services Banner 2">
+          <img src="build13.jpg" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 2">
         </div>
         <div class="carousel-item w-100 h-100">
-          <img src="build118.png" class="service-static-img " alt="Shaw Interiors Design Services Banner 3">
+          <img src="build118.png" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 3">
         </div>
       </div>
     </div>
   </div>
 
-  <!-- OVERLAY COVERING FRAME -->
-  <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.3); z-index: 1;"></div>
+
 
   <!-- CENTERED TEXT CONTENT -->
-  <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3 " style="z-index: 2;">
+  <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3" style="z-index: 2;">
     <div class="row pt-4 justify-content-center">
       <div class="col-11 col-md-10 pt-5 col-lg-8">
-         <span class="badge bg-dark rounded-0 px-3 py-2 fs-6 fw-light mb-3 trigger1">Our Profile</span>
-        <h3 class="text-white mb-4 tracking-wider display-6">Profile & Philosophy</h3>
-        <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-3 text-center opacity-90">
-          “Design is the quiet framework.”
+       
+        <h3 class="text-white mb-4 tracking-wider display-6">Form follows stillness</h3>
+		        <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-1 text-center opacity-90">
+          &ldquo;Crafted to age with authority.&rdquo;
         </p>
       </div>
     </div>
   </div>
 
 </div>
-
- 
-   
-  <!-- =========================================================
-       SECTION 3: TALL FEATURE IMAGE LEFT & BIG QUOTE RIGHT
-       ========================================================= -->
-  <div class="container my-4 mb-3 py-3" style="margin-top: 40px !important;">
-    <div class="row align-items-center g-4 g-lg-5">
-      <!-- Left Tall Image (Stacks on Top in Mobile) -->
-      <div class="col-lg-6">
-        <!-- Added your tall frame height class here so it matches your desired tall proportions -->
-        <div class="gsap-reveal-box frame-height-600">
-          <img src="build62.jpg" class="w-100 shadow-sm tall-img-left gsap-reveal-img" alt="SHAW Interiors Philosophy Feature">
-        </div>
-      </div>
-
-      <!-- Right Big Quote & Intro -->
-      <div class="col-lg-6 ps-lg-5">
-        <span class="editorial-label2 badge bg-dark rounded-0 px-3 py-2 mb-4 trigger1 text-white">Our Philosophy</span>
-        <h1 class="editorial-quote mb-3 ">
-          We curate the subtle texture of human living through raw geometry.
-        </h1>
-        <div class="divider-line-dk mt-4 mb-4 trigger1"></div>
-        <p class="text-muted leading-relaxed mb-0 pt-2 text-justify trigger1 fs-5">
-          Operating across South Africa and international destinations, SHAW Interiors approaches spatial design as an immersive dialogue between structural proportion, light movement, and sensory warmth.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================
-       SECTION 4: THEMED STAT COUNTER BAND (ANIMATED)
-       ========================================================= -->
-   <hr class="border-1 opacity-25 mt-5 pt-4 trigger1">
   
- <div class="container-fluid " style="margin-top: -10px;">
-  <div class="container py-2 px-3" id="statsSection">
-    <div class="row g-4 g-lg-5 align-items-center">
-      
-      <!-- Left Column: Editorial Copy -->
-      <div class="col-lg-4 text-center text-lg-start">
-         <span class="badge bg-dark rounded-0 px-2 py-2 text-uppercase fs-8 mb-3 trigger1">2026 / Stats</span>
-        <h3 class="fw-bold text-dark text-uppercase mb-3">Our Statistics</h3>
-        <div class="divider-line-dk mb-3 mx-auto mx-lg-0 trigger1"></div>
-        <p class="text-muted small leading-relaxed fs-6 mb-0">
-          Here is our stats and figures highlighting our studio's global footprint and precision.
-        </p>
+  
+  
+  
+  
+
+    <div  class="container px-4 px-sm-3 pt-4 mt-4 mt-md-5 pb-2">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-semibold mb-2 d-block text-center trigger1">Architecture &bull; Cape Town &amp; Johannesburg</span>
+      <h1 class="fw-medium text-dark  mb-3 text-center trigger1">About Who We Are</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-4 mb-md-5 trigger1"></div>
+    </div>
+  
+  
+  
+
+
+
+
+
+  <hr class="gone border-1 opacity-25 my-4 trigger1">
+
+
+
+
+    <!-- 2. STICKY INTRODUCTION SECTION (01 / THE BRIEF) -->
+    <div class="container px-4 px-sm-3 py-3 py-md-5 mt-5">
+      <div class="row align-items-start opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium monograph-tag" style="background-color: #5a5a5a;">
+              01 / Philosophy
+            </span>
+            <span class = " gone-lg"> <div  class = "mt-3 ." style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.3);"></div> </span>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="text-uppercase mb-4 trigger1" style="font-weight: 300; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.35; letter-spacing: 0.04em;">
+            We curate the subtle texture of human living through raw geometry.
+          </h2>
+          <p class="text-secondary mb-0 trigger1" style="font-weight: 300; font-size: 1.05rem; line-height: 1.9; max-width: 65ch;">
+            Operating across South Africa and international destinations, SHAW Interiors approaches spatial design as an immersive dialogue between structural proportion, light movement, and sensory warmth.
+          </p>
+        </div>
       </div>
+    </div>
 
-      <!-- Right Column: 2x2 Grid of Stat Counters -->
-      <div class="col-lg-8">
-        <div class="row g-4 text-center">
-          <div class="col-6 col-sm-3 trigger1">
-            <div class="stat-number" data-target="12" data-suffix="+">0+</div>
-            <div class="divider-line-dk mx-auto mt-3 mb-1"></div>
-            <span class="editorial-label3 mt-3 d-block">Years</span>
+
+
+<!-- HORIZONTAL METRICS STRIP UNDER 01 / PHILOSOPHY -->
+
+<div class = "container-fluid border-top border-bottom border-dark border-opacity-25 trigger1">
+<div class = "container">
+      <div class="row g-4 py-5 trigger1" id="statsSection">
+        <div class="col-6 col-lg-3">
+          <div class="border-end border-dark border-opacity-10 pe-lg-3 h-100">
+            <span class="d-block text-uppercase fw-semibold text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Years in Practice</span>
+            <div class="stat-number text-dark fw-light mt-3 mb-2" data-target="12" data-suffix="+" style="font-size: 2rem; line-height: 1.1; letter-spacing: 0.04em;">12+</div>
+            <p class="text-secondary small mb-0" style="font-weight: 300; line-height: 1.7;">Sustained architectural and interior direction across residential, commercial, and corporate commissions.</p>
           </div>
+        </div>
 
-          <div class="col-6 col-sm-3 trigger1">
-            <div class="stat-number" data-target="85" data-suffix="K">0K</div>
-            <div class="divider-line-dk mx-auto mt-3 mb-1"></div>
-            <span class="editorial-label3 mt-3 d-block">Envisioned</span>
+        <div class="col-6 col-lg-3">
+          <div class="border-end border-dark border-opacity-10 pe-lg-3 h-100">
+            <span class="d-block text-uppercase fw-semibold text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Spatial Area Envisioned</span>
+            <div class="stat-number text-dark fw-light mt-3 mb-2" data-target="85" data-suffix="K" style="font-size: 2rem; line-height: 1.1; letter-spacing: 0.04em;">85K</div>
+            <p class="text-secondary small mb-0" style="font-weight: 300; line-height: 1.7;">Measured architectural volume shaped by natural daylight, calm sightlines, and tactile finishes.</p>
           </div>
+        </div>
 
-          <div class="col-6 col-sm-3 trigger1">
-            <div class="stat-number" data-target="9" data-prefix="0">00</div>
-            <div class="divider-line-dk mx-auto mt-3 mb-1"></div>
-            <span class="editorial-label3 mt-3 d-block">Disciplines</span>
+        <div class="col-6 col-lg-3">
+          <div class="border-end border-dark border-opacity-10 pe-lg-3 h-100">
+            <span class="d-block text-uppercase fw-semibold text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Core Disciplines</span>
+            <div class="stat-number text-dark fw-light mt-3 mb-2" data-target="9" data-prefix="0" style="font-size: 2rem; line-height: 1.1; letter-spacing: 0.04em;">09</div>
+            <p class="text-secondary small mb-0" style="font-weight: 300; line-height: 1.7;">Integrated interior architecture, custom millwork, lighting, kitchen, suite, and material specializations.</p>
           </div>
+        </div>
 
-          <div class="col-6 col-sm-3 trigger1">
-            <div class="stat-number" data-target="100" data-suffix="%">0%</div>
-            <div class="divider-line-dk mx-auto mt-3 mb-1"></div>
-            <span class="editorial-label3 mt-3 d-block">Turnkey</span>
+        <div class="col-6 col-lg-3">
+          <div class="h-100">
+            <span class="d-block text-uppercase fw-semibold text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Turnkey Delivery</span>
+            <div class="stat-number text-dark fw-light mt-3 mb-2" data-target="100" data-suffix="%" style="font-size: 2rem; line-height: 1.1; letter-spacing: 0.04em;">100%</div>
+            <p class="text-secondary small mb-0" style="font-weight: 300; line-height: 1.7;">End-to-end oversight from initial spatial study through bespoke fabrication and final handover.</p>
           </div>
         </div>
       </div>
+    </div>
+</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 3. ASYMMETRICAL PHILOSOPHY & STATISTICS (02 / METHODOLOGY) -->
+    <div class="container px-4 px-sm-3 py-3 py-md-5 mt-3 mt-md-5">
+      <div class="row align-items-start g-5 opacity-fade-block">
+        <div class="col-lg-7">
+          <div class="editorial-img-wrapper trigger1 profile-feature-tall">
+            <img src="build117.png" alt="SHAW Interiors Philosophy Feature" class="editorial-img w-100 h-100 project-tall-img trigger1">
+          </div>
+          <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
+            Plate 01 &mdash; Spatial Proportion &amp; Material Calm
+          </span>
+        </div>
+
+        <div class="col-lg-5 ps-lg-5 triger1" >
+          <div class="project-sticky-inner pt-2">
+        <span class="text-uppercase text-white  fw-medium monograph-tag" style="background-color: #6a6a6a;">Perspective</span>
+        <h4 class="text-uppercase mb-4  mt-4" style="font-weight: 300; font-size: 1.85rem; line-height: 1.3; letter-spacing: 0.06em;">Physical Narrative &amp;<br>Purposeful Flow</h4>
+        <p class="text-secondary mb-4 " style="font-weight: 300; font-size: 1.05rem; line-height: 1.9;">
+          Bridging Cape Town, Johannesburg, and international destinations, SHAW Interiors pairs architectural rigor with bespoke interior craft—carrying residential, commercial, and corporate spaces seamlessly from concept to completion[cite: 1, 2].From our Waterkant Street and Rosebank studios, our team directs all nine core disciplines—spanning besp[cite: 1]
+        </p>
+     
+        
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. SPATIAL DISCIPLINE & ATMOSPHERE (03 / SPATIAL) -->
+<div class="container px-4 px-sm-3 pt-5 pb-4 mt-4">
+  <div class="row g-5 align-items-start opacity-fade-block">
+    <!-- Left Column (Desktop) / Bottom (Mobile): Sticky Editorial Narrative -->
+    <div class="col-lg-6 pe-lg-5 order-2 order-lg-1">
+      <div class="project-sticky-inner pt-2">
+        <span class="text-uppercase text-white trigger1 fw-medium monograph-tag" style="background-color: #6a6a6a;">spatial</span>
+        <h4 class="text-uppercase mb-4 trigger1 mt-4" style="font-weight: 300; font-size: 1.85rem; line-height: 1.3; letter-spacing: 0.06em;">spatial design as a physical narrative</h4>
+        <p class="text-secondary mb-4 trigger1" style="font-weight: 300; font-size: 1.05rem; line-height: 1.9;">
+          Our practice views spatial design as a physical narrative. We strip away excess to reveal the essential geometry of a room, allowing natural materials and purposeful spatial flow to dictate the human experience within it.
+        </p>
+        <p class="text-secondary mb-4 trigger1" style="font-weight: 300; font-size: 1rem; line-height: 1.85;">
+          Rather than imposing temporary trends, our approach responds directly to site, orientation, and context. By balancing grand structural volumes with intimate, human-scaled niches, we create environments that evoke a sense of permanence and serene focus.
+        </p>
+        <p class="text-secondary mb-0 trigger1" style="font-weight: 300; font-size: 1rem; line-height: 1.85;">
+          Light becomes an active material in our work&mdash;tracing raw surfaces throughout the day and continuously transforming the character of each room.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Column (Desktop) / Top (Mobile): Tall Atmospheric Plate -->
+    <div class="col-lg-6 order-1 order-lg-2">
+      <div class="editorial-img-wrapper profile-plate-tall">
+        <img src="build91.png" alt="The Architecture of Atmosphere" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      </div>
+      <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1">
+        <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Plate 02</span>
+        <span class="text-uppercase text-dark" style="font-size: 0.68rem; letter-spacing: 0.15em;">Structural Volume &amp; Daylight</span>
+      </div>
     </div>
   </div>
 </div>
 
-   <hr class="border-1 opacity-25 mt-4 trigger1">
 
- <div class="container my-3 pt-0 px-3">
 
-    <!-- SERVICE 02: COMMERCIAL INTERIOR SPACES -->
-    <section id="service-02" class="py-5 services-section-wrap opacity-fade-block">
-      <div class="row g-4 g-md-5 align-items-start">
-        
-        <!-- Text Column: Appears second on mobile, but first on desktop (left side) -->
-        <div class="col-md-6 project-sticky-inner order-2 order-md-1">
-          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-4 trigger1">Creative Discipline</span>
-          <h3 class="fw-bold text-dark text-uppercase mb-4 ">The Architecture of <br>Atmosphere</h3>
-          
-         <p class="text-muted leading-relaxed mb-5 text-justify ">
-             Our practice views spatial design as a physical narrative. We strip away excess to reveal the essential geometry of a room, allowing natural materials and purposeful spatial flow to dictate the human experience within it.
 
-Rather than imposing temporary trends, our approach responds directly to site, orientation, and context. <br><br>By balancing grand structural 
-volumes with intimate, human-scaled niches, we create environments that evoke a sense of permanence and serene focus. Light becomes an active material in our work—tracing raw 
-surfaces throughout the day and continuously transforming the character of each room..
-          </p>
-        </div>
 
-        <!-- Image Column: Appears first on mobile (stacked on top), but second on desktop (right side) -->
-        <div class="col-md-6 order-1 order-md-2">
-          <div class="gsap-reveal-box">
-            <img src="build93.png" class="project-tall-img shadow-sm gsap-reveal-img" alt="The Architecture of Atmosphere">
-          </div>
-        </div>
 
+
+
+
+   <!-- 5. CURATION CRAFT & ARTISANAL PALETTE (04 / PALETTE) -->
+<div class="container px-4 px-sm-3 pt-3 pt-md-5 mt-5">
+  <div class="row align-items-start g-5 opacity-fade-block">
+    <!-- Left Column (Desktop) / Top (Mobile): Tall Image -->
+    <div class="col-lg-7">
+      <div class="editorial-img-wrapper profile-plate-tall">
+        <img src="build119.png" alt="A Dialogue of Form and Finish" class="editorial-img w-100 h-100 project-tall-img trigger1">
       </div>
-    </section>
-
-  </div>
-
-  <!-- =========================================================
-       SECTION 6: FIXED PARALLAX MIDDLE SECTION
-       ========================================================= -->
-  <div class="container-fluid px-0 my-5">
-    <div class="parallax-section-5 d-flex align-items-center justify-content-center text-center text-white position-relative">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.3);"></div>
-	  <div class="container-fluid position-relative px-1 py-4 " style="z-index:2; ">
-        <span class="editorial-label text-white d-block mb-3 badge trigger1">Immersive Environments</span>
-        <h2 class="text-white fw-light display-6 font-serif ">Space is the framework of emotion</h2>
-      </div>
+      <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 03 &mdash; Curation Craft &amp; Material Honesty</span>
     </div>
-  </div>
 
-  <!-- =========================================================
-       SECTION 3: CONTENT-RICH SERVICES SHOWCASE (01 TO 09)
-       ========================================================= -->
-  <div class="container my-4 pt-3 px-3">
-
-    <!-- SERVICE 01: RESIDENTIAL INTERIOR ARCHITECTURE -->
-    <section id="service-01" class="py-5 services-section-wrap opacity-fade-block">
-      <div class="row g-4 g-md-5 align-items-start">
-        <div class="col-md-6">
-          <div class="gsap-reveal-box ">
-            <img src="build119.png" class="project-tall-img shadow-sm gsap-reveal-img" alt="A Dialogue of Form and Finish">
-          </div>
-        </div>
-        <div class="col-md-6 project-sticky-inner">
-          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-4 trigger1">Curation Craft</span>
-          <h3 class="fw-bold text-dark text-uppercase mb-4 ">A Dialogue of Form <br>& Finish</h3>
-          
-          <p class="text-muted leading-relaxed mb-5 text-justify ">
-			Every element we introduce—from custom joinery to hand-trowelled plaster surfaces—is chosen for its weight, tactile honesty, and ability to ground a space. Our process bridges timeless architectural heritage with modern restraint.
-
-<br><br>
-We collaborate closely with master artisans, stone masons, and metalworkers to develop bespoke architectural features that carry an authentic hand-crafted quality. Each texture is intentionally layered to age gracefully, developing a rich patina that deepens over time.
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
- <hr class="border-1 opacity-25 my-2 ">
-
-<!-- =========================================================
-       SECTION: GEOGRAPHIC FOOTPRINT
-       ========================================================= -->
-  <div class="container py-4 px-3 ">
-    <div class="row g-5 align-items-center">
-      <!-- Left Column: Centered on Mobile, Left-Aligned on Desktop -->
-      <div class="col-lg-4 text-center text-lg-start">
-         <span class="badge bg-dark rounded-0 px-2 py-2 text-uppercase fs-8 mb-3 trigger1">2026 / Reach</span>
-        <h3 class="fw-bold text-dark text-uppercase mb-3">Global Footprint</h3>
-        <div class="divider-line-dk mb-4 mx-auto mx-lg-0 trigger1"></div>
-        <p class="text-muted small text-justify text-lg-start leading-relaxed mb-0">
-          From coastal African estates to European private residences, our spatial interventions respond directly.
+    <!-- Right Column (Desktop) / Bottom (Mobile): Sticky Text -->
+    <div class="col-lg-5 ps-lg-5">
+      <div class="project-sticky-inner">
+        <span class="text-uppercase text-white trigger1 fw-medium monograph-tag" style="background-color: #6a6a6a;">04 / Palette</span>
+        <h3 class="text-uppercase mb-4 trigger1 mt-3" style="font-weight: 300; font-size: 2rem; line-height: 1.3; letter-spacing: 0.04em;">A Dialogue of Form &amp; Finish</h3>
+        <p class="text-secondary mb-4 trigger1" style="font-weight: 300; font-size: 0.95rem; line-height: 1.85;">
+          Every element we introduce&mdash;from custom joinery to hand-trowelled plaster surfaces&mdash;is chosen for its weight, tactile honesty, and ability to ground a space. Our process bridges timeless architectural heritage with modern restraint.
         </p>
-      </div>
-
-      <!-- Right Column: Centered on Mobile, Left-Aligned from SM Up -->
-      <div class="col-lg-8">
-        <div class="row g-4 text-center text-sm-start">
-          <div class="col-sm-4">
-            <h2 class="fw-light display-6 mb-1 text-dark">33.92° S</h2>
-            <span class="text-uppercase fw-bold text-dark fs-8 tracking-wider d-block trigger1">Cape Town Studio</span>
-            <span class="text-muted small trigger1">Headquarters & Fabrication</span>
-          </div>
-          <div class="col-sm-4">
-            <h2 class="fw-light display-6 mb-1 text-dark">26.04° E</h2>
-            <span class="text-uppercase fw-bold text-dark fs-8 tracking-wider d-block trigger1">Johannesburg</span>
-            <span class="text-muted small trigger1">Commercial & Urban Architecture</span>
-          </div>
-          <div class="col-sm-4">
-            <h2 class="fw-light display-6 mb-1 text-dark">Global</h2>
-            <span class="text-uppercase fw-bold text-dark fs-8 tracking-wider d-block trigger1">Private Projects</span>
-            <span class="text-muted small trigger1">Select Turnkey Commissions</span>
-          </div>
+        <p class="text-secondary mb-4 trigger1" style="font-weight: 300; font-size: 0.95rem; line-height: 1.85;">
+          We collaborate closely with master artisans, stone masons, and metalworkers to develop bespoke architectural features that carry an authentic hand-crafted quality, layered to age gracefully over time.
+        </p>
+        <div class="border-top border-dark border-opacity-25 pt-3 trigger1">
+          <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">01. Bespoke Architectural Millwork</div>
+          <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">02. Hand-Trowelled Plaster Surfaces</div>
+          <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">03. Stone Masonry &amp; Natural Patina</div>
+          <div class="py-2 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">04. Custom Metalwork &amp; Joinery</div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 
 
@@ -544,27 +582,76 @@ We collaborate closely with master artisans, stone masons, and metalworkers to d
 
 
 
+    <!-- 6. CLOSING MONOGRAPH PLATE & GLOBAL FOOTPRINT (05 / OUTCOME) -->
+    <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10 mt-5" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="editorial-img-wrapper mb-3 opacity-fade-block profile-closing-img">
+        <img src="build13.jpg" alt="Space is the framework of emotion" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      </div>
+      <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 04 &mdash; Space Is The Framework of Emotion</span>
 
+      <div class="row pt-5 opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium monograph-tag" style="background-color: #5a5a5a;">
+              05 / Global Reach
+            </span>
+            <div class="mt-3 monograph-rule"></div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <h3 class="text-uppercase mb-3 trigger1" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">Global Footprint</h3>
+          <p class="text-secondary mb-4 trigger1" style="font-weight: 300; font-size: 1.05rem; line-height: 1.85; max-width: 65ch;">
+            From coastal African estates to international private residences, our spatial interventions respond directly to site, climate, and architectural context.
+          </p>
 
+          <div class="row g-4 pt-2  trigger1">
+            <div class="col-sm-4">
+              <div class="text-dark fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">33.92&deg; S</div>
+              <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.72rem; letter-spacing: 0.15em;">Cape Town Studio</span>
+              <span class="d-block text-muted small mt-1" style="font-weight: 300;">Headquarters &amp; Fabrication</span>
+            </div>
+            <div class="col-sm-4">
+              <div class="text-dark fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">26.04&deg; E</div>
+              <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.72rem; letter-spacing: 0.15em;">Johannesburg</span>
+              <span class="d-block text-muted small mt-1" style="font-weight: 300;">Commercial &amp; Urban Architecture</span>
+            </div>
+            <div class="col-sm-4">
+              <div class="text-dark fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">Global</div>
+              <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.72rem; letter-spacing: 0.15em;">Private Projects</span>
+              <span class="d-block text-muted small mt-1" style="font-weight: 300;">Select Turnkey Commissions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <hr class="border-1 opacity-25 mt-4 trigger1">
 
-
-
-
-
-
-
- <hr class="gone border-1 opacity-25 my-2 ">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   <!-- =========================================================
        SECTION 8: EXTENDED FOOTER & INQUIRY FORM
        ========================================================= -->
- <!-- SECTION 4: EXTENDED FOOTER & INQUIRY FORM -->
   <div id="contact" class="overflow-hidden">
     <footer class="arrcc-footer text-white py-5">
       <div class="container">
         <div class="row g-4 g-lg-5">
-          
+
           <div class="col-lg-6 pe-lg-5 text-center text-lg-start gone">
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
               <img src="logo-1.png" class="foot-logo" alt="Shaw Interiors Logo">
@@ -624,8 +711,8 @@ We collaborate closely with master artisans, stone masons, and metalworkers to d
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
               <div class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</div>
             </div>
-            
-            <div class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+
+            <div class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size: 0.93em;">
               Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back to discuss your spatial parameters.
             </div>
 
@@ -685,221 +772,124 @@ We collaborate closely with master artisans, stone masons, and metalworkers to d
   <script src="back to top.js"></script>
   <script src="desktop header peek.js"></script>
   <script src="stat calc.js"></script>
-  
-  
-  
 
-  
-  
-  
-  <!-- GSAP ScrollTrigger Initialization Script -->
+  <!-- GSAP Scroll & Text Reveal Animations -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const revealBoxes = document.querySelectorAll('.gsap-reveal-box');
-
-      revealBoxes.forEach((box) => {
-        const img = box.querySelector('.gsap-reveal-img');
-        if (!img) return;
-
-        gsap.to(img, {
-          clipPath: "inset(0% 0% 0% 0%)",
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: box,
-            start: "top 85%",
-            end: "top 25%",
-            scrub: 1
-          }
-        });
-      });
-    });
-
-    // Cross-page hash jump handler
-    window.addEventListener("load", () => {
-      if (window.location.hash) {
-        const targetElement = document.querySelector(window.location.hash);
-        if (targetElement) {
-          setTimeout(() => {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-          }, 150);
-        }
+      if (typeof gsap === "undefined") return;
+      if (typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
       }
+
+      document.querySelectorAll(".trigger1").forEach((el) => {
+        gsap.fromTo(el,
+          { opacity: 0, y: 35 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
     });
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Target titles, quotes, and badges with .fade-in or custom text classes
-    const animateTextElements = document.querySelectorAll('h1, h2, h3, h5,  p, .trigger1, .badge, divider-line-dk, .editorial-quote, .blockquote p');
-
-    animateTextElements.forEach((el) => {
-      // Create smooth upward fade-and-slide stagger
-      gsap.fromTo(el, 
-        { 
-          opacity: 0, 
-          y: 50 
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
-  });
-</script>  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-<!-- =========================================================
-       GSAP FADE-TO-BLACK PAGE TRANSITION CONTROLLER
-       ========================================================= -->
+  <!-- Lenis & Page Curtain Transition Controller -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (typeof gsap === 'undefined') return;
-
-      const curtain = document.querySelector('.gsap-page-curtain');
+    document.addEventListener("DOMContentLoaded", function () {
+      const curtain = document.querySelector(".gsap-page-curtain");
       if (!curtain) return;
 
-      // 1. PAGE LOAD ENTRANCE (Fade from black to clear)
-      gsap.set(curtain, { opacity: 1 });
-      gsap.to(curtain, {
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.inOut",
-        onComplete: () => {
-          gsap.set(curtain, { pointerEvents: "none" });
+      window.addEventListener("load", function () {
+        curtain.classList.add("fade-out");
+
+        const savedAnchor = sessionStorage.getItem("pendingAnchor");
+        const destinationHash = savedAnchor || window.location.hash;
+
+        if (destinationHash) {
+          sessionStorage.removeItem("pendingAnchor");
+          setTimeout(function () {
+            const target = document.querySelector(decodeURIComponent(destinationHash));
+            if (target) {
+              if (window.lenis) {
+                window.lenis.scrollTo(target, { duration: 1.2 });
+              } else {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }
+          }, 400);
         }
       });
 
-      // 2. LINK CLICK EXIT (Fade from clear to black before navigating)
-      document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function(e) {
-          let href = this.getAttribute('href');
+      document.addEventListener("click", function (e) {
+        const link = e.target.closest("a[href]");
+        if (!link) return;
 
-          if (
-            href && 
-            !href.startsWith('#') && 
-            !href.startsWith('http') && 
-            !href.startsWith('mailto:') && 
-            !href.startsWith('tel:') &&
-            this.target !== '_blank'
-          ) {
-            e.preventDefault();
+        if (link.target === "_blank" || link.hasAttribute("download")) return;
 
-            // Reactivate pointer events so clicks stop while fading
-            gsap.set(curtain, { pointerEvents: "auto" });
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== location.origin) return;
 
-            // Play fade-out animation
-            gsap.to(curtain, {
-              opacity: 1,
-              duration: 0.6,
-              ease: "power2.inOut",
-              onComplete: () => {
-                window.location.href = href;
-              }
-            });
-          }
-        });
+        if (url.pathname === location.pathname && url.search === location.search) {
+          return;
+        }
+
+        e.preventDefault();
+
+        if (url.hash) {
+          sessionStorage.setItem("pendingAnchor", url.hash);
+        } else {
+          sessionStorage.removeItem("pendingAnchor");
+        }
+
+        curtain.classList.remove("fade-out");
+
+        setTimeout(function () {
+          window.location.href = url.href;
+        }, 500);
       });
     });
-  </script>  
-  
-  
- 
-<script>
+  </script>
 
+  <!-- Sticky Narrative ScrollTrigger -->
+  <script>
+    let profileScrollMm = gsap.matchMedia();
 
-// =========================================
-    // 4. STICKY SERVICE NARRATIVE
-    // =========================================
+    profileScrollMm.add("(min-width: 991px)", () => {
+      const profileRows = document.querySelectorAll(".opacity-fade-block");
+      const triggers = [];
 
-    let serviceScrollMm = gsap.matchMedia();
+      profileRows.forEach((row) => {
+        const stickyInner = row.querySelector(".project-sticky-inner");
+        if (!stickyInner) return;
 
-    serviceScrollMm.add("(min-width: 769px)", () => {
-
-        const serviceRows = document.querySelectorAll(".opacity-fade-block");
-
-        const triggers = [];
-
-        serviceRows.forEach(row => {
-
-            const stickyInner = row.querySelector(".project-sticky-inner");
-
-            if (!stickyInner) return;
-
-            const tween = ScrollTrigger.create({
-                trigger: row,
-                start: "top top+=80px",
-                end: () => `+=${row.offsetHeight - stickyInner.offsetHeight - 80}`,
-                pin: stickyInner,
-                pinSpacing: false,
-                invalidateOnRefresh: true
-            });
-
-            triggers.push(tween);
-
+        const tween = ScrollTrigger.create({
+          trigger: row,
+          start: "top top+=200px",
+          end: () => `+=${Math.max(0, row.offsetHeight - stickyInner.offsetHeight - 50)}`,
+          pin: stickyInner,
+          pinSpacing: false,
+          invalidateOnRefresh: true
         });
 
-        return () => {
-            triggers.forEach(t => t.kill());
-        };
+        triggers.push(tween);
+      });
 
+      return () => {
+        triggers.forEach((t) => t.kill());
+      };
     });
+  </script>
 
-
-
-
-
-
-
-
-
-</script> 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  <!-- Lenis Library CDN -->
-<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-
-<!-- Global Lenis Initialization -->
-<script src="lenis-global.js"></script>
-
-
-
-
+  <!-- Lenis Library CDN & Global Initialization -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="lenis-global.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
