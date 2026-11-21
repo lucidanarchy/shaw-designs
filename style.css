@@ -204,12 +204,13 @@ padding:0.65em 0;
 
 /* Logo Sizes Across Viewports */
 .nav-logo {
-  width: 300px;
+  width: 200px;
   transition: width 0.3s ease;
   z-index: 1070;
+  padding: 5px 0;
 }
 
-@media screen and (max-width: 1199.98px) and (min-width: 769px) {
+//@media screen and (max-width: 1199.98px) and (min-width: 769px) {
   .nav-logo {
     width: 220px;
   }
@@ -217,7 +218,7 @@ padding:0.65em 0;
 
 @media (max-width: 767.98px) {
   .nav-logo {
-    width: 200px;
+    width: 150px;
     padding: 10px 0;
   }
 }
@@ -1557,14 +1558,14 @@ margin-bottom:20px;
 /* Default Logo Size (Desktop & Tablet) */
 .foot-logo {
   //height: 40px;
-  width: 300px;
+  width: 250px;
   transition: height 0.3s ease;
 }
 
 @media (max-width: 767.98px) {
   .foot-logo {
     //height: 30px;
-    width: 200px;
+    width: 150px;
     padding: 10px 0;
   }
 }
