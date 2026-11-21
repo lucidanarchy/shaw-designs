@@ -264,6 +264,74 @@
 
 
 
+<style>
+
+
+ .hero-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      background-color: #f4f4f4;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: grayscale(12%);
+      transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+ 
+
+    .hero-monograph-img {
+      height: 100vh;
+      //min-height: 460px;
+	  
+    }
+
+.filt  {
+
+filter: brightness(0.65) contrast(1.05) grayscale(13%);
+
+
+}
+
+
+
+@media (max-width: 991.98px) {
+      .hero-monograph-img { height: 60vh; min-height: 360px; }
+  
+    }
+
+  
+
+    @media (max-width: 575.98px) {
+    
+      .hero-monograph-img { height: 50vh; min-height: 300px; }
+    
+    }
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -417,37 +485,41 @@
   <!-- =========================================================
        SECTION 2: HERO BANNER CAROUSEL
        ========================================================= -->
-  <div class="position-relative overflow-hidden text-white" style="margin-top: 0px;">
-    <div class="hero-frame-height position-relative w-100">
-      <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
-        <div class="carousel-inner w-100 h-100">
-          <div class="carousel-item active w-100 h-100">
-            <img src="build57.jpg" class="service-static-img" alt="Shaw Interiors Portfolio Banner 1">
-          </div>
-          <div class="carousel-item w-100 h-100">
-            <img src="build41.jpg" class="service-static-img" alt="Shaw Interiors Portfolio Banner 2">
-          </div>
-          <div class="carousel-item w-100 h-100">
-            <img src="build36.jpg" class="service-static-img" alt="Shaw Interiors Portfolio Banner 3">
-          </div>
+ <div class="position-relative overflow-hidden text-white pb-2 pb-sm-3" style="margin-top: 0px;">
+
+  <!-- HERO CAROUSEL FRAME -->
+  <div class="hero-img-wrapper hero-monograph-img position-relative w-100">
+    <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner w-100 h-100">
+        <div class="carousel-item active w-100 h-100">
+          <img src="build137.png" class="hero-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 1" style="background: rgba(0,0,0,0.8)!important;">
         </div>
-      </div>
-    </div>
-
-    <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-
-    <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3" style="z-index: 2;">
-      <div class="row pt-4 justify-content-center">
-        <div class="col-11 col-md-10 pt-5 col-lg-8">
-          <span class="trigger1 badge bg-dark rounded-0 px-3 py-2 fs-6 fw-light mb-3">Spatial Archive</span>
-          <h3 class="text-white mb-2 tracking-wider display-6">Curated Portfolio</h3>
-          <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-4 text-center opacity-90">
-            "Twelve distinct spatial interventions exploring quiet luxury."
-          </p>
+        <div class="carousel-item w-100 h-100">
+          <img src="build13.jpg" class="hero-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 2">
+        </div>
+        <div class="carousel-item w-100 h-100">
+          <img src="build91.png" class="hero-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 3">
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <!-- CENTERED TEXT CONTENT -->
+  <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3" style="z-index: 2;">
+    <div class="row pt-4 justify-content-center">
+      <div class="col-11 col-md-10 pt-5 col-lg-8">
+       
+        <h3 class="text-white mb-4 tracking-wider display-6">Form follows stillness</h3>
+		        <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-1 text-center opacity-90">
+          &ldquo;Crafted to age with authority.&rdquo;
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
 
   <!-- =========================================================
        SECTION 3: INTRO HEADER
@@ -455,7 +527,7 @@
   <div class="container my-4 pb-2 pt-3">
     <div class="text-center mb-4">
       <span class="trigger1 text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Architectural Monograph</span>
-      <h1 class="fw-bold text-dark text-uppercase mb-3">OUR ATMOSPHERIC GALLERY</h1>
+      <h1 class="fw-medium text-dark text-uppercase mb-3">OUR ATMOSPHERIC GALLERY</h1>
       <div class="trigger1 divider-line-dk mx-auto mt-3 mb-4"></div>
     </div>
   </div>

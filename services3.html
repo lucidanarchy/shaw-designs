@@ -101,7 +101,63 @@
 	
   </style>
   
+ 
+<style>
+
+
+ .editorial-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      background-color: #f4f4f4;
+    }
+
+    .editorial-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: grayscale(12%);
+      transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    //.editorial-img-wrapper:hover .editorial-img {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .hero-monograph-img {
+      height: 100vh;
+      //min-height: 460px;
+	  
+    }
+
+.filt  {
+
+filter: brightness(0.65) contrast(1.05) grayscale(13%);
+
+
+}
+
+
+
+@media (max-width: 991.98px) {
+      .hero-monograph-img { height: 60vh; min-height: 360px; }
   
+    }
+
+  
+
+    @media (max-width: 575.98px) {
+    
+      .hero-monograph-img { height: 50vh; min-height: 300px; }
+    
+    }
+
+
+
+
+</style>
+ 
   
   
   
@@ -267,54 +323,109 @@
   <!-- =========================================================
        SECTION 2: HERO BANNER CAROUSEL
        ========================================================= -->
-  <div class="position-relative overflow-hidden text-white" style="margin-top: 0px;">
-    <!-- HERO CAROUSEL FRAME -->
-    <div class="hero-frame-height position-relative w-100">
-      <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
-        <div class="carousel-inner w-100 h-100">
-          <div class="carousel-item active w-100 h-100">
-            <img src="build126.png" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 1">
-          </div>
-          <div class="carousel-item w-100 h-100">
-            <img src="build113.png" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 2">
-          </div>
-          <div class="carousel-item w-100 h-100">
-            <img src="build122.png" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 3">
-          </div>
+ <div class="position-relative overflow-hidden text-white pb-2 pb-sm-3" style="margin-top: 0px;">
+
+  <!-- HERO CAROUSEL FRAME -->
+  <div class="editorial-img-wrapper hero-monograph-img position-relative w-100">
+    <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner w-100 h-100">
+        <div class="carousel-item active w-100 h-100">
+          <img src="build137.png" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 1" style="background: rgba(0,0,0,0.8)!important;">
         </div>
-      </div>
-    </div>
-
-    <!-- OVERLAY COVERING FRAME -->
-    <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45); z-index: 1;"></div>
-
-    <!-- CENTERED TEXT CONTENT -->
-    <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3 trigger1" style="z-index: 2;">
-      <div class="row pt-4 justify-content-center">
-        <div class="col-11 col-md-10 pt-5 col-lg-8">
-           <span class="badge bg-dark rounded-0 px-3 py-2 fs-6 fw-light mb-3">Our Disciplines</span>
-          <h3 class="text-white mb-4 tracking-wider display-6">Articulating Vision</h3>
-          <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-3 text-center opacity-90">
-            "A home should be an autobiography."
-          </p>
+        <div class="carousel-item w-100 h-100">
+          <img src="build13.jpg" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 2">
+        </div>
+        <div class="carousel-item w-100 h-100">
+          <img src="build91.png" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 3">
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <!-- CENTERED TEXT CONTENT -->
+  <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3" style="z-index: 2;">
+    <div class="row pt-4 justify-content-center">
+      <div class="col-11 col-md-10 pt-5 col-lg-8">
+       
+        <h3 class="text-white mb-4 tracking-wider display-6">Form follows stillness</h3>
+		        <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-1 text-center opacity-90">
+          &ldquo;Crafted to age with authority.&rdquo;
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
 
   <!-- =========================================================
        TEXT INTRODUCTION & QUICK LINKS
        ========================================================= -->
-  <div class="container pb-1 pt-4 my-3"> 
+  <div class="container pb-4 pt-4 my-3"> 
     <div class="pt-2 my-3">
       <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block text-center trigger1">Interior Design Specialist</span>
-      <h1 class="fw-medium text-dark text-uppercase mb-3 text-center trigger1">Full Design Services</h1>
+      <h1 class="fw-medium text-dark text-uppercase mb-3 text-center trigger1">Design Services</h1>
       <div class="divider-line-dk mx-auto mt-3 mb-2 trigger1"></div>
     </div>
   </div>
+  
+  
+  
+  <hr class="gone border-1 opacity-25 my-2">
+  
+  
+  
+  
+  
+<!-- 2. STICKY INTRODUCTION SECTION -->
+    <div class="container px-4 px-sm-3 py-3 py-md-5 mt-5 " style="">
+      <div class="row align-items-start opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner  ">
+            <span class="text-uppercase text-white  fw-medium " style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a; ">
+              00 / our service
+            </span>
+			<span class = " gone-lg"> <div  class = "mt-3 ." style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div> </span>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="text-uppercase  mb-4 trigger1" style="font-weight: 300; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.35; letter-spacing: 0.04em;">
+            Equilibrium of spatial proportion and tactile interior architecture.
+          </h2>
+          <p class=" mb-0 trigger1 " style="font-weight: 300; font-size: 1.1rem; line-height: 1.9; max-width: 65ch;">
+            Our practice approaches each commission as a study in architectural calm, material honesty, and human scale. Across nine integrated disciplines—spanning bespoke residential and commercial interiors, custom culinary environments, handcrafted millwork, and atmospheric lighting—every surface, shadow gap, and threshold is resolved to weather quietly and endure across generations.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <hr class="gone border-1 opacity-25 my-4">
+  
 
   <!-- QUICK LINKS -->
-  <div class="gone pb-1 pt-3 mt-1 trigger1">
+  <div class="gone py-1 trigger1">
     <div class="d-flex justify-content-center gap-3 flex-wrap py-2">
       <a href="#service-01" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">01 Residential</a>
       <a href="#service-02" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">02 Commercial</a>
@@ -335,7 +446,7 @@
        ========================================================= -->
 
   <!-- SERVICE 01 (Image Left, Sticky Text Right) -->
-  <div id="service-01" class="container my-3 pt-5">
+  <div id="service-01" class="container my-3 pt-5 px-4 px-sm-0">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Image Column -->
@@ -357,11 +468,14 @@
             We begin by listening deeply—to your must-haves, your always-wanteds, and the quiet details of how you actually live. This comprehensive, white-glove experience covers every layer from foundation to finish: strategic spatial zoning, custom furniture and nuanced magazine-ready styling.
           </p>
           
-		  <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <<li class="mb-2"><strong class="text-dark">01.</strong> Brand Ethos</li>
-			<li class="mb-2"><strong class="text-dark">02.</strong> High-Traffic Circulation Flow</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Retail &amp; Hospitality Experience</li>
-         
+		 <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
+          </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
                 </div>
       </div>
 
@@ -371,7 +485,7 @@
   <hr class="gone border-1 opacity-25 my-2">
 
   <!-- SERVICE 02 (Sticky Text Left, Image Right) -->
-  <div id="service-02" class="container my-3 pt-5">
+  <div id="service-02" class="container my-3 pt-5 px-4 px-sm-0">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Sticky Text Column -->
@@ -386,12 +500,12 @@
             We treat commercial architecture as a physical manifestation of brand identity. Every circulation path, touchpoint, and focal material is engineered to foster engagement, customer loyalty, and long-lasting commercial memorability.
           </p>
           <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <strong class="text-dark"><li class="mb-2">01. Brand Ethos Integration</li></strong>
-            <li class="mb-2"><strong class="text-dark">02.</strong> High-Traffic Circulation Flow</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Retail &amp; Hospitality Experience</li>
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
           <div>
-            <a href="#contact" class="custom-btn trigger1">Inquire Service</a>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
           </div>
         </div>
       </div>
@@ -406,10 +520,10 @@
     </div>
   </div>
 
-  <hr class="gone border-1 opacity-25 my-2">
+  <hr class="gone border-1 opacity-25 my-2 ">
 
   <!-- SERVICE 03 (Image Left, Sticky Text Right) -->
-  <div id="service-03" class="container my-3 pt-5">
+  <div id="service-03" class="container my-3 pt-5 px-4 px-sm-0">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Image Column -->
@@ -430,11 +544,14 @@
           <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
             We design dynamic headquarters that seamlessly integrate executive boardrooms, agile open-plan collaboration zones, and advanced acoustic treatments to elevate employee wellness and corporate culture.
           </p>
-          <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <li class="mb-2"><strong class="text-dark">01.</strong> Collaborative Open-Plan Design</li>
-            <li class="mb-2"><strong class="text-dark">02.</strong> Executive Boardroom Suites</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Acoustic &amp; Privacy Integration</li>
+           <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
           
         </div>
       </div>
@@ -454,7 +571,7 @@
   </div>
 
   <!-- SERVICE 04 (Sticky Text Left, Image Right) -->
-  <div id="service-04" class="container my-3 pt-5">
+  <div id="service-04" class="container my-3 pt-5 px-4 px-sm-0">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Sticky Text Column -->
@@ -469,10 +586,13 @@
             We specialize in designing culinary environments energized by rigorous operational planning. From monolithic stone islands and concealed prep pantries to bespoke cabinetry profiles, we create spaces that invite connection.
           </p>
           <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <li class="mb-2"><strong class="text-dark">01.</strong> Ergonomic Culinary Workflow</li>
-            <li class="mb-2"><strong class="text-dark">02.</strong> Monolithic Stone Islands</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Concealed Storage &amp; Pantries</li>
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
           
         </div>
       </div>
@@ -490,7 +610,7 @@
   <hr class="gone border-1 opacity-25 my-2">
 
   <!-- SERVICE 05 (Image Left, Sticky Text Right) -->
-  <div id="service-05" class="container my-3 pt-5">
+  <div id="service-05" class="container my-3 pt-5 px-4 px-sm-0">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Image Column -->
@@ -512,10 +632,13 @@
             We focus on the delicate interplay of acoustic soft furnishings, custom upholstered wall paneling, and indirect illumination to curate an environment engineered around your evening relaxation rituals.
           </p>
           <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <li class="mb-2"><strong class="text-dark">01.</strong> Restorative Acoustic Calm</li>
-            <li class="mb-2"><strong class="text-dark">02.</strong> Bespoke Walk-In Dressing Joinery</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Indirect Mood Illumination</li>
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
          
         </div>
       </div>
@@ -526,7 +649,7 @@
   <hr class="gone border-1 opacity-25 my-2">
 
   <!-- SERVICE 06 (Sticky Text Left, Image Right) -->
-  <div id="service-06" class="container my-3 pt-5">
+  <div id="service-06" class="container my-3 pt-5 px-4 px-sm-0">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Sticky Text Column -->
@@ -540,11 +663,14 @@
           <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
             Partnering with master cabinetmakers, we produce fluted wall paneling, library shelving systems, and hidden storage portals that inject tactile warmth and organic character.
           </p>
-          <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <li class="mb-2"><strong class="text-dark">01.</strong> Custom Fluted Wall Paneling</li>
-            <li class="mb-2"><strong class="text-dark">02.</strong> Integrated Library Shelving</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Concealed Portal Joinery</li>
+           <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
       
         </div>
       </div>
@@ -571,7 +697,7 @@
   </div>
 
   <!-- SERVICE 07 (Image Left, Sticky Text Right) -->
-  <div id="service-07" class="container my-3 pt-5">
+  <div id="service-07" class="container my-3 pt-5 px-4 px-sm-0">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Image Column -->
@@ -592,11 +718,14 @@
           <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
             We curate layered illumination strategies that accentuate raw stone textures, manipulate room volume, and establish seamless emotional transitions from bright day to intimate night.
           </p>
-          <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <li class="mb-2"><strong class="text-dark">01.</strong> Concealed Linear Cove Architecture</li>
-            <li class="mb-2"><strong class="text-dark">02.</strong> Smart Scene Automation</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Textural Accent Spotlighting</li>
+           <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
        
         </div>
       </div>
@@ -607,7 +736,7 @@
   <hr class="gone border-1 opacity-25 my-2">
 
   <!-- SERVICE 08 (Sticky Text Left, Image Right) -->
-  <div id="service-08" class="container my-3 pt-5">
+  <div id="service-08" class="container px-4 px-sm-0 my-3 pt-5">
     <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
       
       <!-- Sticky Text Column -->
@@ -621,11 +750,14 @@
           <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
             We design home sanctuaries utilizing tactile natural travertine, micro-cement finishes, and monolithic stone soaking tubs paired with therapeutic steam enclosures.
           </p>
-          <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <li class="mb-2"><strong class="text-dark">01.</strong> Natural Travertine &amp; Micro-Cement</li>
-            <li class="mb-2"><strong class="text-dark">02.</strong> Monolithic Stone Soaking Tubs</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Therapeutic Steam Enclosures</li>
+           <ul class="list-unstyled text-muted small mb-4 trigger1">
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
         
         </div>
       </div>
@@ -643,8 +775,8 @@
   <hr class="gone border-1 opacity-25 my-2">
 
   <!-- SERVICE 09 (Image Left, Sticky Text Right) -->
-  <div id="service-09" class="container my-3 pt-5">
-    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-5 opacity-fade-block">
+  <div id="service-09" class="container my-3 px-4 px-sm-0  pt-5">
+    <div class="row align-items-start justify-content-center g-0 g-md-4 g-lg-5 mb-5 pb-sm-5  opacity-fade-block">
       
       <!-- Image Column -->
       <div class="col-lg-7 col-md-7 mb-3 mb-md-0">
@@ -654,7 +786,7 @@
       </div>
 
       <!-- Sticky Text Column -->
-      <div class="col-lg-5 col-md-5">
+      <div class="col-lg-5 col-md-5 ">
         <div class="project-sticky-inner pt-3 pt-md-0 px-2 px-md-0">
            <span class="text-uppercase text-white  trigger1 fw-medium " style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">09 Materials</span>
           <h3 class="fw-light text-dark text-uppercase mb-4 mt-4 trigger1">Material &amp; Texture Curation</h3>
@@ -665,10 +797,13 @@
             Through meticulous material sourcing—from Venetian lime-wash plasters and raw linens to patinated bronze and hand-knotted wool rugs—we curate enduring tactile palettes.
           </p>
           <ul class="list-unstyled text-muted small mb-4 trigger1">
-            <li class="mb-2"><strong class="text-dark">01.</strong> Venetian Lime-Wash Plasters</li>
-            <li class="mb-2"><strong class="text-dark">02.</strong> Patinated Bronze &amp; Metalwork</li>
-            <li class="mb-2"><strong class="text-dark">03.</strong> Hand-Knotted Textiles &amp; Rugs</li>
+            <li class="mb-2"><strong class="text-dark" >01.</strong> &nbsp; Brand Ethos Integration</li>
+            <li class="mb-2"><strong class="text-dark">02.</strong> &nbsp; High-Traffic Circulation Flow</li>
+            <li class="mb-2"><strong class="text-dark">03.</strong> &nbsp; Retail &amp; Hospitality Experience</li>
           </ul>
+          <div>
+            <a href="contact.html" class="custom-btn trigger1">Inquire Service</a>
+          </div>
          
         </div>
       </div>
@@ -676,8 +811,14 @@
     </div>
   </div>
 
+
+
+  <hr class="gone border-1 opacity-25 my-4  trigger1">
+
+
+
   <!-- QUICK LINKS -->
-  <div class="gone pb-3 pt-0 trigger1">
+  <div class="gone pv-1 trigger1">
     <div class="d-flex justify-content-center gap-3 flex-wrap py-2">
       <a href="#service-01" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">01 Residential</a>
       <a href="#service-02" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">02 Commercial</a>
@@ -693,45 +834,68 @@
 
   <hr class="gone border-1 opacity-25 my-4 trigger1">
 
-  <div class="text-center py-5">
-    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block trigger1">Our Best Approach</span>
-    <h1 class="fw-medium text-dark text-uppercase mb-3 trigger1">Executing Excellence</h1>
-    <div class="divider-line-dk mx-auto mt-3 trigger1"></div>
-  </div>
+ 
 
-  <hr class="gone border-1 opacity-25 my-4 trigger1">
 
-  <!-- SECTION 5: THE SHAW INTERIORS PROCESS -->
-  <div class="container my-3 pt-3 pb-5 mb-4 trigger1">
-    <div class="row g-4 text-center">
-      <div class="col-md-4">
-        <div class="p-4 h-100">
-          <span class="fs-2 fw-light text-muted d-block mb-2 trigger1">01</span>
-          <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3 trigger1">Discovery &amp; Zoning</h5>
-          <p class="text-muted text-justify fs-6 small mb-0 trigger1">Uncovering unique lifestyle narratives, spatial flow requirements, and structural architectural parameters. We analyze natural light shifts across the floor plan managing.</p>
-        </div>
-        <div class="divider-line-dk mx-auto mt-0 trigger1"></div>
+
+ <!-- =========================================================
+     SECTION 5: THE SHAW INTERIORS PROCESS (MONOGRAPH STYLE)
+     ========================================================= -->
+<div class="container px-4 px-sm-3 py-5 mb-5 mt-1 mt-sm-5" >
+  <div class="row opacity-fade-block">
+    <div class="col-lg-3 mb-3 mb-lg-0">
+      <div class="project-sticky-inner">
+        <span class="text-uppercase text-white  fw-medium " style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a; ">
+              10 / The process
+            </span>
+			<span class = " gone-lg"> <div  class = "mt-3 ." style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div> </span>
       </div>
+    </div>
 
-      <div class="col-md-4">
-        <div class="p-4 h-100">
-          <span class="fs-2 fw-light text-muted d-block mb-2 trigger1">02</span>
-          <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3 trigger1">Materialization</h5>
-          <p class="text-muted text-justify fs-6 small mb-0 trigger1">Crafting custom joinery specifications, tactile material palettes, and architectural illumination plans. Every stone slab, timber grain, and bespoke fixture is hand-selected</p>
-        </div>
-        <div class="divider-line-dk mx-auto mt-0 trigger1"></div>
-      </div>
+    <div class="col-lg-9">
+      <h3 class="text-uppercase mb-3 trigger1" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">The Shaw Interiors Process</h3>
+      <p class=" mb-4 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.85; max-width: 65ch;">
+        Every commission moves through a disciplined progression from architectural briefing to final spatial execution, ensuring clarity at every threshold.
+      </p>
 
-      <div class="col-md-4">
-        <div class="p-4 h-100">
-          <span class="fs-2 fw-light text-muted d-block mb-2 trigger1">03</span>
-          <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3 trigger1">Turnkey Installation</h5>
-          <p class="text-muted text-justify fs-6 small mb-0 trigger1">Managing full-scale site delivery, white-glove furniture installation, and magazine-ready interior styling. From coordinating artisan tradespeople and managing custom</p>
+      <div class="row g-4 pt-2 d-flex justify-content-between trigger1">
+        <div class="col-sm-4 px-3">
+          <div class="text-dark text-justify fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">01</div>
+          <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.8rem; letter-spacing: 0.15em;">Discovery &amp; Zoning</span>
+          <p class="mt-2 mb-0" style="font-weight: 300; line-height: 1.75;">
+            Uncovering unique lifestyle narratives, spatial flow , and structural  parameters .
+          </p>
+		  <div class="divider-line-dk  mt-4 mb-2 "></div>
         </div>
-        <div class="divider-line-dk mx-auto mt-0 trigger1"></div>
+
+        <div class="col-sm-4 px-3">
+          <div class="text-dark text-justify fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">02</div>
+          <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.8rem; letter-spacing: 0.15em;">Materialization</span>
+          <p class=" mt-2 mb-0" style="font-weight: 300; line-height: 1.75;">
+            Crafting custom joinery specifications and tactile material palettes. 
+          </p>
+		   <div class="divider-line-dk  mt-4 mb-2 "></div>
+        </div>
+
+        <div class="col-sm-4 px-3">
+          <div class="text-dark text-justify fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">03</div>
+          <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.8rem; letter-spacing: 0.15em;">Turnkey Installation</span>
+          <p class="mt-2 mb-0" style="font-weight: 300; line-height: 1.75;">
+            Managing full-scale site delivery, white-glove furniture installation, and interior styling.
+          </p>
+		   <div class="divider-line-dk  mt-4 mb-2 "></div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+
+
+
+
+
+
 
   <!-- SECTION 4: EXTENDED FOOTER & INQUIRY FORM -->
   <div id="contact" class="overflow-hidden">
@@ -1022,8 +1186,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const tween = ScrollTrigger.create({
                 trigger: row,
-                start: "top top+=80px",
-                end: () => `+=${row.offsetHeight - stickyInner.offsetHeight - 80}`,
+                start: "top top+=200px",
+                end: () => `+=${row.offsetHeight - stickyInner.offsetHeight - 50}`,
                 pin: stickyInner,
                 pinSpacing: false,
                 invalidateOnRefresh: true

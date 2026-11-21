@@ -533,8 +533,8 @@ font-size:1.2em ;
 /* Desktop Only (>= 992px): Tall runway & tracking container */
 @media (min-width: 992px) {
   .story-tall-img {
-    min-height: 80vh; /* Gives enough scroll length */
-    height: auto;
+    height: 95vh; /* Gives enough scroll length */
+    
   }
   
   .font-editorial {
@@ -597,7 +597,8 @@ font-size:1.8em ;
 
 .slide-t-size {
 
-color:#808080;
+//color:#808080;
+color:#c7c7c7;
 font-size:0.8em ;
 text-transform:uppercase;
 
@@ -894,7 +895,7 @@ text-transform:uppercase;
   <section class="hero-lift-section" id="heroLiftSection">
     <div class="text-center">
       <h1 class="hero-giant-title" id="giantTitle">SHAW</h1>
-      <p class="hero-subtitle">Architectural interior design &mdash; 2026</p>
+      <p class="hero-subtitle px-3">Architectural interior design &mdash; 2026</p>
     </div>
 	
     <!-- Animated Scroll Indicator & Downward Bracket -->
@@ -1052,7 +1053,7 @@ text-transform:uppercase;
 <!-- =========================================================
      DARK ARCHITECTURAL DIVIDER STRIP
      ========================================================= -->
-<div class="container-fluid py-3  py-md-5 text-center position-relative " style="z-index: 10; background-color:#1a1a1a;">
+<div class="container-fluid py-3  py-md-4 text-center position-relative " style="z-index: 10; background-color:#1a1a1a;">
   <div class="container d-flex align-items-center justify-content-center gap-4">
     <div style="height: 1px; width: 60px; background: rgba(255,255,255,0.2);"></div>
     <span class="slide-t-size" style="letter-spacing: 0.3em; ">shaw design 2026 &mdash; Architectural interior</span>
@@ -1079,7 +1080,7 @@ text-transform:uppercase;
           <h2 class="text-uppercase  mb-4 trigger1" style="font-weight: 300; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.35; letter-spacing: 0.04em;">
             Equilibrium of monolithic form and lived interior architecture.
           </h2>
-          <p class="text-secondary mb-0 trigger1 " style="font-weight: 300; font-size: 1.05rem; line-height: 1.9; max-width: 65ch;">
+          <p class=" mb-0 trigger1 " style="font-weight: 300; font-size: 1.1rem; line-height: 1.9; max-width: 65ch;">
             From private residences to commercial landmarks, we design enduring environments grounded in honest materials, measured light, and architectural calm. Across our nine core disciplines—spanning interior architecture, custom millwork, lighting, and surface curation—every detail is resolved to age with quiet authority.
           </p>
         </div>
@@ -1109,7 +1110,7 @@ text-transform:uppercase;
       <!-- Left Column: Longer Image -->
       <div class="col-lg-6 col-md-6 story-img-col">
         <div class="gsap-reveal-box" style="height: 100%;">
-          <img src="build112.png" class="gsap-reveal-img story-tall-img" alt="Parallax Interior Showcase"> 
+          <img src="build135.png" class="gsap-reveal-img story-tall-img" alt="Parallax Interior Showcase"> 
         </div>
       </div>
 
@@ -1117,10 +1118,10 @@ text-transform:uppercase;
       <div class="col-lg-5 col-md-5 story-text-col ">
         <div class="story-sticky-inner">
           <blockquote class="blockquote mb-0 bquote-border">
-            <p class="pullquote-large-text2 mb-0">
+            <p class="pullquote-large-text2 mb-0 px-3">
               &ldquo; We are bespoke interior architects, we curate the subtle texture of human living.&rdquo;
             </p>
-            <footer class="text-uppercase tracking-wider mb-0 mt-3 pt-2">
+            <footer class="text-uppercase tracking-wider mb-0 mt-3 pt-2 px-3">
               <strong class="text-dark fs-8 pl-2">Shaw Interiors</strong> &mdash; <span class="text-muted fs-8">Design Manifesto</span>
             </footer>
           </blockquote>
@@ -1147,7 +1148,7 @@ text-transform:uppercase;
 <!-- =========================================================
      AUTO-SLIDING ARCHITECTURAL BANNER STRIP (CONFLICT-FREE)
      ========================================================= -->
-<div class="container-fluid py-2 py-md-5 my-2 my-md-5 text-center position-relative overflow-hidden trigger1" style="z-index: 10; background-color:#1a1a1a;">
+<div class="container-fluid py-3 py-md-4 my-2 my-md-5 text-center position-relative overflow-hidden trigger1" style="z-index: 10; background-color:#1a1a1a;">
   <div class="shaw-text-slider-wrap">
     <div class="shaw-text-slider-track">
       
@@ -1450,14 +1451,7 @@ text-transform:uppercase;
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
+
   
   
   @media (max-width: 575.98px) {
@@ -2001,7 +1995,7 @@ text-transform:uppercase;
 <!-- =========================================================
      AUTO-SLIDING ARCHITECTURAL BANNER STRIP (CONFLICT-FREE)
      ========================================================= -->
-<div class="container-fluid py-2 py-md-5 my-2 my-md-5 text-center position-relative overflow-hidden trigger1" style="z-index: 10; background-color:#1a1a1a;">
+<div class="container-fluid py-2 py-md-4 my-2 my-md-5 text-center position-relative overflow-hidden trigger1" style="z-index: 10; background-color:#1a1a1a;">
   <div class="shaw-text-slider-wrap">
     <div class="shaw-text-slider-track">
       
@@ -3124,8 +3118,8 @@ text-transform:uppercase;
       storyMm.add("(min-width: 992px)", () => {
         let storyTween = ScrollTrigger.create({
           trigger: "#storySection",
-          start: "top top+=380px",
-          end: () => `+=${document.querySelector("#storySection").offsetHeight - document.querySelector(".story-sticky-inner").offsetHeight - 110}`,
+          start: "top top+=5px",
+          end: () => `+=${document.querySelector("#storySection").offsetHeight - document.querySelector(".story-sticky-inner").offsetHeight - 100}`,
           pin: ".story-sticky-inner",
           pinSpacing: false,
           invalidateOnRefresh: true
@@ -3412,8 +3406,8 @@ text-transform:uppercase;
 
        let tween = ScrollTrigger.create({
           trigger: row,
-          start: "top top+=110px",
-          end: () => `+=${row.offsetHeight - stickyInner.offsetHeight - 110}`,
+          start: "top top+=200px",
+                end: () => `+=${row.offsetHeight - stickyInner.offsetHeight - 50}`,
           pin: stickyInner,
           pinSpacing: false,
           invalidateOnRefresh: true
