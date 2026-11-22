@@ -242,15 +242,9 @@
       transform-origin: left;
     }
 
-    .design-principle-item {
-      border-left: 2px solid #111111;
-      padding-left: 1.5rem;
-      margin-bottom: 2rem;
-    }
+  
 
-    .design-principle-item:last-child {
-      margin-bottom: 0;
-    }
+  
 
     .gsap-page-curtain {
       position: fixed;
@@ -298,12 +292,7 @@
         letter-spacing: 1.5px;
       }
 
-      .design-principle-item {
-        padding-left: 1.15rem;
-        margin-bottom: 1.5rem;
-      }
-    }
-	
+
 	
 	
 	
@@ -332,56 +321,125 @@
 
   .project-tall-img {
     width: 100%;
-    height: 460px;
+    height: 300px;
     object-fit: cover;
     display: block;
   }
 
-  @media (max-width: 768px) {
-    .opacity-fade-block .editorial-img-wrapper {
-      height: 400px !important;
-    }
+
+.project-tall-img1 {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+
+.project-tall-img2 {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.project-tall-img3 {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  display: block;
+}
+
+
+.project-tall-img4 {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+@media (min-width: 992px) {
+ 
+ .project-tall-img1 {
+height: 105vh;
+  
+  }
+  
+  
+   .project-tall-img2 {
+    height: 640px;
+   
+  }
+  
+  
+  
+     .project-tall-img3 {
+    height: 340px;
+ 
   }
 
-  @media (min-width: 769px) {
-    .project-tall-img {
-      min-height: 110vh;
-      height: auto;
-    }
+
+
+
+    .project-tall-img4 {
+    height: 420px;
+ 
   }
+
+
+
+
+
+  
+  
+}
+
+
+
+
+
 </style>
   
   
   
   
 
-  
-  
-  
-  
-  
-  
-  
 <style>
-@keyframes pureFadeLoop {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+
+
+    /* =========================================================
+   revoving a right side border Architecture and Interior
+   ========================================================= */
+
+
+@media (max-width: 767.98px) {
+  .border-end.mobile-no-border {
+    border-right: none !important;
+    border-right-width: 0 !important;
+  }
 }
 </style>
+
+
+
+
+
+
+
+
+
+
+
   
   
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
   
   
@@ -398,7 +456,7 @@
     <div class="container-md">
       <div class="nv-containe">
 
-        <a href="index.html"><img src="logo-1.png" class="nav-logo" alt="Shaw Interiors Logo"></a>
+        <a href="index.html"><img src="logo-4.png" class="nav-logo" alt="Shaw Interiors Logo"></a>
 
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="hamburger">☰</label>
@@ -566,34 +624,39 @@
 
 <div class="container-fluid border-top border-bottom border-dark border-opacity-25 py-3 mt-4 pt-4 my-2 trigger1">
   <div class="container">
-    <!-- Back to col-md-3 so it spans full width, with justify-content-between -->
     <div class="row g-0 justify-content-between">
-      
-      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25">
-        <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
-        <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Atlantic Seaboard, CT</span>
+
+      <!-- 1. Location: mobile left (border in middle) -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 d-flex justify-content-center justify-content-md-start">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Atlantic Seaboard, CT</span>
+        </div>
       </div>
-<div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
-  <!-- Inner wrapper sizes to the text width and sits centered in the column -->
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Architecture &amp; Interior</span>
-  </div>
-</div>
 
+      <!-- 2. Scope: mobile right (border on right) -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mobile-no-border mt-2 mt-md-0 d-flex justify-content-center">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Architecture &amp; Interior</span>
+        </div>
+      </div>
+
+      <!-- 3. Floor Area: mobile left (border in middle) -->
       <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">4,200 m&sup2;</span>
-  </div>
-</div>
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">4,200 m&sup2;</span>
+        </div>
+      </div>
 
-      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-end">
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
-  </div>
-</div>
+      <!-- 4. Status: mobile right -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-center justify-content-md-end">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -645,8 +708,8 @@
     <div class="container px-4 px-sm-3  py-3 py-md-5 mt-3 mt-md-5 " style="">
       <div class="row align-items-start g-5 opacity-fade-block">
         <div class="col-lg-7">
-          <div class="gsap-reveal-box trigger1" style="height: 105vh;">
-            <img src="build101.png" alt="The Design Approach" class="gsap-reveal-img w-100 h-100 project-tall-img trigger1">
+          <div class="gsap-reveal-box trigger1" >
+            <img src="build101.png" alt="The Design Approach" class="gsap-reveal-img  project-tall-img1 trigger1">
           </div>
           <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
             Plate 01 &mdash; Western Facade Elevation
@@ -705,8 +768,8 @@
         <!-- Left Column: Fig 01 (Tall Image) -->
         <div class="col-lg-5">
           <div class="project-sticky-inner">
-            <div class="editorial-img-wrapper" style="height: 640px;">
-              <img src="build154.png" alt="Residential Detail 1" class="editorial-img w-100 h-100 project-tall-img trigger1">
+            <div class="gsap-reveal-box" >
+              <img src="build154.png" alt="Residential Detail 1" class="gsap-reveal-img  project-tall-img2 trigger1">
             </div>
             <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1">
               <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 01</span>
@@ -717,8 +780,8 @@
 
         <!-- Right Column: Fig 02 (Top) & Fig 03 Full-Width Text (Bottom) -->
         <div class="col-lg-7 ps-lg-5">
-          <div class="editorial-img-wrapper" style="height: 340px;">
-            <img src="build155.png" alt="Residential Detail 2" class="editorial-img w-100 h-100 trigger1">
+          <div class="gsap-reveal-box" >
+            <img src="build155.png" alt="Residential Detail 2" class="gsap-reveal-img project-tall-img3 trigger1">
           </div>
           <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 mb-3 trigger1">
             <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 02</span>
@@ -755,8 +818,8 @@
           </div>
         </div>
         <div class="col-lg-7 order-1 order-lg-2">
-          <div class="editorial-img-wrapper" style="height: 100vh;">
-            <img src="build156.png" alt="Material Close Up" class="editorial-img w-100 h-100 project-tall-img trigger1">
+          <div class="gsap-reveal-box" >
+            <img src="build156.png" alt="Material Close Up" class="gsap-reveal-img  project-tall-img1 trigger1">
           </div>
           <span class="d-block text-uppercase text-muted mt-3 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
         </div>
@@ -765,8 +828,8 @@
 
     <!-- 6. CONCLUSION -->
     <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10" style="padding-top: 5rem; padding-bottom: 5rem;">
-      <div class="editorial-img-wrapper mb-3 opacity-fade-block" style="height: 68vh; min-height: 420px;">
-        <img src="build157.png" alt="Final Monograph View" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      <div class="gsap-reveal-box mb-3 opacity-fade-block" >
+        <img src="build157.png" alt="Final Monograph View" class="gsap-reveal-img  project-tall-img4 trigger1">
 		
       </div>
 	  <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
@@ -826,41 +889,43 @@
 
 <div class="container-fluid border-top border-bottom border-dark border-opacity-25 py-3 mt-4 pt-4 my-2 trigger1">
   <div class="container">
-    <!-- Back to col-md-3 so it spans full width, with justify-content-between -->
     <div class="row g-0 justify-content-between">
-      
-      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25">
-        <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
-        <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Clifton Seaboard, CT</span>
+
+      <!-- 1. Location: mobile left (border in middle) -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 d-flex justify-content-center justify-content-md-start">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Clifton Seaboard, CT</span>
+        </div>
       </div>
-<div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
-  <!-- Inner wrapper sizes to the text width and sits centered in the column -->
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Private Residential Estate</span>
-  </div>
-</div>
 
+      <!-- 2. Scope: mobile right (border on right) -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mobile-no-border mt-2 mt-md-0 d-flex justify-content-center">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Private Residential Estate</span>
+        </div>
+      </div>
+
+      <!-- 3. Floor Area: mobile left (border in middle) -->
       <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">1,650 m²</span>
-  </div>
-</div>
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">1,650 m²</span>
+        </div>
+      </div>
 
-      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-end">
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2026</span>
-  </div>
-</div>
+      <!-- 4. Status: mobile right -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-center justify-content-md-end">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
-
-
-
 
 
 
@@ -892,8 +957,8 @@
     <div class="container px-4 px-sm-3  py-5 mt-5 " style="">
       <div class="row align-items-start g-5 opacity-fade-block">
         <div class="col-lg-7">
-          <div class="editorial-img-wrapper trigger1" style="height: 105vh;">
-            <img src="build106.png" alt="The Design Approach" class="editorial-img w-100 h-100 project-tall-img trigger1">
+          <div class="gsap-reveal-box trigger1" >
+            <img src="build106.png" alt="The Design Approach" class="gsap-reveal-img project-tall-img1 trigger1">
           </div>
           <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
             Plate 01 &mdash; Western Facade Elevation
@@ -952,8 +1017,8 @@
         <!-- Left Column: Fig 01 (Tall Image) -->
         <div class="col-lg-5">
           <div class="project-sticky-inner">
-            <div class="editorial-img-wrapper" style="height: 640px;">
-              <img src="build143.jpg" alt="Residential Detail 1" class="editorial-img w-100 h-100 project-tall-img trigger1">
+            <div class="gsap-reveal-box" >
+              <img src="build143.jpg" alt="Residential Detail 1" class="gsap-reveal-img  project-tall-img2 trigger1">
             </div>
             <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1">
               <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 01</span>
@@ -964,8 +1029,8 @@
 
         <!-- Right Column: Fig 02 (Top) & Fig 03 Full-Width Text (Bottom) -->
         <div class="col-lg-7 ps-lg-5">
-          <div class="editorial-img-wrapper" style="height: 340px;">
-            <img src="build142.jpg" alt="Residential Detail 2" class="editorial-img w-100 h-100 trigger1">
+          <div class="gsap-reveal-box" >
+            <img src="build142.jpg" alt="Residential Detail 2" class="gsap-reveal-img  project-tall-img3 trigger1">
           </div>
           <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 mb-3 trigger1">
             <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 02</span>
@@ -1002,8 +1067,8 @@
           </div>
         </div>
         <div class="col-lg-7 order-1 order-lg-2">
-          <div class="editorial-img-wrapper" style="height: 100vh;">
-            <img src="build141.jpg" alt="Material Close Up" class="editorial-img w-100 h-100 project-tall-img trigger1">
+          <div class="gsap-reveal-box" >
+            <img src="build141.jpg" alt="Material Close Up" class="gsap-reveal-img project-tall-img1 trigger1">
           </div>
           <span class="d-block text-uppercase text-muted mt-3 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
         </div>
@@ -1012,8 +1077,8 @@
 
     <!-- 6. CONCLUSION -->
     <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10" style="padding-top: 5rem; padding-bottom: 5rem;">
-      <div class="editorial-img-wrapper mb-3 opacity-fade-block" style="height: 68vh; min-height: 420px;">
-        <img src="build106.png" alt="Final Monograph View" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      <div class="gsap-reveal-box mb-3 opacity-fade-block" >
+        <img src="build106.png" alt="Final Monograph View" class="gsap-reveal-img  project-tall-img4 trigger1">
 		
       </div>
 	  <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
@@ -1071,34 +1136,39 @@
 
 <div class="container-fluid border-top border-bottom border-dark border-opacity-25 py-3 mt-4 pt-4 my-2 trigger1">
   <div class="container">
-    <!-- Back to col-md-3 so it spans full width, with justify-content-between -->
     <div class="row g-0 justify-content-between">
-      
-      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25">
-        <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
-        <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Atlantic Seaboard, CT</span>
+
+      <!-- 1. Location: mobile left (border in middle) -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 d-flex justify-content-center justify-content-md-start">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Atlantic Seaboard, CT</span>
+        </div>
       </div>
-<div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
-  <!-- Inner wrapper sizes to the text width and sits centered in the column -->
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Architecture &amp; Interior</span>
-  </div>
-</div>
 
+      <!-- 2. Scope: mobile right (border on right) -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mobile-no-border mt-2 mt-md-0 d-flex justify-content-center">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Architecture &amp; Interior</span>
+        </div>
+      </div>
+
+      <!-- 3. Floor Area: mobile left (border in middle) -->
       <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">4,200 m&sup2;</span>
-  </div>
-</div>
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">4,200 m&sup2;</span>
+        </div>
+      </div>
 
-      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-end">
-  <div style="width: fit-content;">
-    <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
-    <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
-  </div>
-</div>
+      <!-- 4. Status: mobile right -->
+      <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-center justify-content-md-end">
+        <div style="width: fit-content;">
+          <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
+          <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -1137,8 +1207,8 @@
     <div class="container px-4 px-sm-3  py-5 mt-5 " style="">
       <div class="row align-items-start g-5 opacity-fade-block">
         <div class="col-lg-7">
-          <div class="editorial-img-wrapper trigger1" style="height: 105vh;">
-            <img src="build151.png" alt="The Design Approach" class="editorial-img w-100 h-100 project-tall-img trigger1">
+          <div class="gsap-reveal-box trigger1" >
+            <img src="build151.png" alt="The Design Approach" class="gsap-reveal-img project-tall-img1 trigger1">
           </div>
           <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
             Plate 01 &mdash; Western Facade Elevation
@@ -1197,8 +1267,8 @@
         <!-- Left Column: Fig 01 (Tall Image) -->
         <div class="col-lg-5">
           <div class="project-sticky-inner">
-            <div class="editorial-img-wrapper" style="height: 640px;">
-              <img src="build150.png" alt="Residential Detail 1" class="editorial-img w-100 h-100 project-tall-img trigger1">
+            <div class="gsap-reveal-box" >
+              <img src="build150.png" alt="Residential Detail 1" class="gsap-reveal-img  project-tall-img2 trigger1">
             </div>
             <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1 ">
               <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 01</span>
@@ -1209,8 +1279,8 @@
 
         <!-- Right Column: Fig 02 (Top) & Fig 03 Full-Width Text (Bottom) -->
         <div class="col-lg-7 ps-lg-5">
-          <div class="editorial-img-wrapper" style="height: 340px;">
-            <img src="build148.png" alt="Residential Detail 2" class="editorial-img w-100 h-100 trigger1">
+          <div class="gsap-reveal-box" >
+            <img src="build148.png" alt="Residential Detail 2" class="gsap-reveal-img project-tall-img3 trigger1">
           </div>
           <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 mb-3 trigger1">
             <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 02</span>
@@ -1247,8 +1317,8 @@
           </div>
         </div>
         <div class="col-lg-7 order-1 order-lg-2">
-          <div class="editorial-img-wrapper" style="height: 100vh;">
-            <img src="build152.png" alt="Material Close Up" class="editorial-img w-100 h-100 project-tall-img trigger1">
+          <div class="gsap-reveal-box" >
+            <img src="build152.png" alt="Material Close Up" class="gsap-reveal-img project-tall-img1 trigger1">
           </div>
           <span class="d-block text-uppercase text-muted mt-3 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
         </div>
@@ -1257,8 +1327,8 @@
 
     <!-- 6. CONCLUSION -->
     <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10" style="padding-top: 5rem; padding-bottom: 5rem;">
-      <div class="editorial-img-wrapper mb-3 opacity-fade-block" style="height: 68vh; min-height: 420px;">
-        <img src="build149.png" alt="Final Monograph View" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      <div class="gsap-reveal-box mb-3 opacity-fade-block" >
+        <img src="build149.png" alt="Final Monograph View" class="gsap-reveal-img project-tall-img4 trigger1">
 		
       </div>
 	  <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
@@ -1407,7 +1477,7 @@
           
           <div class="col-lg-6 pe-lg-5 text-center text-lg-start gone">
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
-              <img src="logo-1.png" class="foot-logo" alt="Shaw Interiors Logo">
+              <img src="logo-4.png" class="foot-logo" alt="Shaw Interiors Logo">
             </div>
 
             <div class="row g-4 my-2 pt-3">
