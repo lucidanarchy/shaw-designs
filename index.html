@@ -1054,7 +1054,7 @@ text-transform:uppercase;
 <!-- =========================================================
      DARK ARCHITECTURAL DIVIDER STRIP
      ========================================================= -->
-<div class="container-fluid py-3  py-md-4 text-center position-relative " style="z-index: 10; background-color:#1a1a1a;">
+<div id="after-intro" class="container-fluid py-3  py-md-4 text-center position-relative " style="z-index: 10; background-color:#1a1a1a;">
   <div class="container d-flex align-items-center justify-content-center gap-4">
     <div style="height: 1px; width: 60px; background: rgba(255,255,255,0.4);"></div>
     <span class="slide-t-size" style="letter-spacing: 0.3em; ">shaw design 2026 &mdash; Architectural interior</span>
@@ -3511,22 +3511,39 @@ text-transform:uppercase;
   
   
   
-  <script>
+
   
+
+<script>
+  window.addEventListener("load", () => {
+    const target = document.getElementById("after-intro");
+    if (!target) return;
+
+    const cameFromOtherPage =
+      document.referrer &&
+      new URL(document.referrer).origin === window.location.origin &&
+      !document.referrer.endsWith("/") &&
+      !document.referrer.toLowerCase().includes("index");
+
+    const hasAnchorHash = window.location.hash === "#after-intro";
+
+    if (cameFromOtherPage || hasAnchorHash) {
+      setTimeout(() => {
+        if (window.lenis) {
+          window.lenis.scrollTo(target, { immediate: true });
+        } else {
+          target.scrollIntoView({ behavior: "instant" });
+        }
+      }, 100);
+    }
+  });
+</script>
 
 
 
 
-  
- </script> 
-  
-  
-  
-  
-  
-  
-  
-  
+
+
   
   
   
