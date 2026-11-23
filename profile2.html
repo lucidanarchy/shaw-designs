@@ -182,6 +182,60 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
       .monograph-main-title { letter-spacing: 1.5px; }
     }
   </style>
+  
+  
+  
+  <style>
+  
+  
+  
+ /* =========================================================
+   GSAP SCROLL IMAGE REVEAL STYLES (ENFORCED WHITE BACKING)
+   ========================================================= */
+.gsap-reveal-box {
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF !important; /* Forces pure white background mask */
+  background: #FFFFFF !important;
+}
+
+.gsap-reveal-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: clip-path, transform;
+  clip-path: inset(15% 12% 15% 12%);
+  transform: scale(1.12);
+}
+
+  
+  
+  
+  
+  
+  
+  </style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </head>
 
 <body>
@@ -339,7 +393,7 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
     <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
       <div class="carousel-inner w-100 h-100">
         <div class="carousel-item active w-100 h-100">
-          <img src="build106.png" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 1" style="background: rgba(0,0,0,0.8)!important;">
+          <img src="build106.png" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 1" >
         </div>
         <div class="carousel-item w-100 h-100">
           <img src="build13.jpg" class="editorial-img w-100 h-100 filt" alt="Shaw Interiors Design Services Banner 2">
@@ -358,8 +412,8 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
     <div class="row pt-4 justify-content-center">
       <div class="col-11 col-md-10 pt-5 col-lg-8">
        
-        <h3 class="text-white mb-3 tracking-wider display-6">Form follows stillness</h3>
-		        <p class="text-white text-uppercase leading-relaxed mb-0 fst-italic fs-5 mt-1 text-center opacity-90">
+        <h3 class="text-white mb-4 tracking-wider display-6">Form follows stillness</h3>
+		        <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-1 text-center opacity-90">
           &ldquo;Crafted to age with authority.&rdquo;
         </p>
       </div>
@@ -471,8 +525,8 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
     <div class="container px-4 px-sm-3 py-3 py-md-5 mt-3 mt-md-5">
       <div class="row align-items-start g-5 opacity-fade-block">
         <div class="col-lg-7">
-          <div class="editorial-img-wrapper trigger1 profile-feature-tall">
-            <img src="build117.png" alt="SHAW Interiors Philosophy Feature" class="editorial-img w-100 h-100 project-tall-img trigger1">
+          <div class="gsap-reveal-box  profile-feature-tall">
+            <img src="build117.png" alt="SHAW Interiors Philosophy Feature" class="gsap-reveal-img ">
           </div>
           <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
             Plate 01 &mdash; Spatial Proportion &amp; Material Calm
@@ -515,8 +569,8 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
 
     <!-- Right Column (Desktop) / Top (Mobile): Tall Atmospheric Plate -->
     <div class="col-lg-6 order-1 order-lg-2">
-      <div class="editorial-img-wrapper profile-plate-tall">
-        <img src="build91.png" alt="The Architecture of Atmosphere" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      <div class="gsap-reveal-box profile-plate-tall">
+        <img src="build91.png" alt="The Architecture of Atmosphere" class="gsap-reveal-img ">
       </div>
       <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1">
         <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Plate 02</span>
@@ -539,8 +593,8 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
   <div class="row align-items-start g-5 opacity-fade-block">
     <!-- Left Column (Desktop) / Top (Mobile): Tall Image -->
     <div class="col-lg-7">
-      <div class="editorial-img-wrapper profile-plate-tall">
-        <img src="build119.png" alt="A Dialogue of Form and Finish" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      <div class="gsap-reveal-box profile-plate-tall">
+        <img src="build119.png" alt="A Dialogue of Form and Finish" class="gsap-reveal-img">
       </div>
       <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 03 &mdash; Curation Craft &amp; Material Honesty</span>
     </div>
@@ -584,8 +638,8 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
 
     <!-- 6. CLOSING MONOGRAPH PLATE & GLOBAL FOOTPRINT (05 / OUTCOME) -->
     <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10 mt-5" style="padding-top: 5rem; padding-bottom: 5rem;">
-      <div class="editorial-img-wrapper mb-3 opacity-fade-block profile-closing-img">
-        <img src="build13.jpg" alt="Space is the framework of emotion" class="editorial-img w-100 h-100 project-tall-img trigger1">
+      <div class="gsap-reveal-box mb-3 opacity-fade-block profile-closing-img">
+        <img src="build13.jpg" alt="Space is the framework of emotion" class="gsap-reveal-img">
       </div>
       <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 04 &mdash; Space Is The Framework of Emotion</span>
 
@@ -886,6 +940,44 @@ filter: brightness(0.65) contrast(1.05) grayscale(18%);
       };
     });
   </script>
+
+
+
+ <!-- GSAP ScrollTrigger Initialization Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const revealBoxes = document.querySelectorAll('.gsap-reveal-box');
+
+      revealBoxes.forEach((box) => {
+        const img = box.querySelector('.gsap-reveal-img');
+        if (!img) return;
+
+        gsap.to(img, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: box,
+            start: "top 85%",
+            end: "top 25%",
+            scrub: 1
+          }
+        });
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
 
   <!-- Lenis Library CDN & Global Initialization -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
