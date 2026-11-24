@@ -1270,7 +1270,47 @@ window.addEventListener("load", () => {
   
   
   
-  
+ <script>
+window.addEventListener("load", function () {
+
+  if (!window.location.hash) return;
+
+  const hash = decodeURIComponent(
+    window.location.hash.substring(1)
+  );
+
+  const target = document.getElementById(hash);
+
+  if (!target) return;
+
+  // Wait for GSAP and page layout
+  setTimeout(function () {
+
+    if (window.ScrollTrigger) {
+      ScrollTrigger.refresh();
+    }
+
+    // Perform the actual anchor jump
+    requestAnimationFrame(function () {
+
+      if (window.lenis) {
+        window.lenis.scrollTo(target, {
+          immediate: true,
+          force: true
+        });
+      } else {
+        target.scrollIntoView({
+          behavior: "instant",
+          block: "start"
+        });
+      }
+
+    });
+
+  }, 800);
+
+});
+</script> 
   
 
   
