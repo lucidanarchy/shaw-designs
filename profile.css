@@ -112,39 +112,39 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 400px;
+      height: 68vh;
       width: 100%;
     }
 
     .parallax-section-3 {
-      background-image: url('build138.png');
+      background-image: url('build138.webp');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 400px;
+      height: 68vh;
       width: 100%;
     }
 
     .parallax-section-4 {
-      background-image: url('build89.jpg');
+      background-image: url('build89.webp');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 400px;
+      height: 68vh;
       width: 100%;
     }
 	
 	
 	 .parallax-section-5 {
       //background-image: url('build111.png');
-	   background-image: url('build130.png');
+	   background-image: url('build130.webp');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 70vh;
+      height: 68vh;
 	  
 	  
       width: 100%;
