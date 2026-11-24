@@ -260,7 +260,7 @@
    ========================================================= */
 .hero-lift-section {
   position: relative;
-  height: 120vh; /* Replaced fixed 768px with full viewport height */
+  height: 100vh; /* Replaced fixed 768px with full viewport height */
   min-height: 800px; /* Optional safety floor for ultra-wide screens */
   width: 100%;
   display: flex;
@@ -268,7 +268,7 @@
   justify-content: center;
   align-items: center;
   background: #1a1a1a;
-  //border-bottom: 2px solid #424242;
+  border-bottom: 1px solid #424242;
   z-index: 10;
   overflow: hidden;
 }
@@ -369,7 +369,9 @@
   background-color: #1a1a1a;
   //background-color: #ffffff;
   overflow: hidden;
-  border: solid 1px #1a1a1a;
+  //border-bottom: 10px solid #424242;
+  //border-bottom: 10px solid rgba(255, 255, 255, 0.08);
+   border-bottom: 30px solid #1a1a1a;
  //border: solid 1px #ffffff;
   z-index: 15;
 }
@@ -388,6 +390,7 @@
   height: 100%;
   overflow: hidden;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
+  //border-right: 1px solid #424242;
 }
 
 .seq-col:last-child {
@@ -404,11 +407,13 @@
 
 .seq-cover {
   position: absolute;
-  inset: 0;
-  background-color: #1a1a1a;
+  inset: -1px; /* Slight bleed prevents 1px edge gaps */
+  background-color: #1a1a1a !important;
    // background-color: #ffffff;
-  z-index: 5;
+  z-index: 10; /* Above .seq-img (1), gradient (2), and caption (4) */
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   display: flex;
   align-items: flex-end;
   padding: 2.5rem;
@@ -422,6 +427,8 @@
 }
 
 .seq-img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -443,6 +450,25 @@
   pointer-events: none;
 }
 
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    BUTTERY SMOOTH 3-COLUMN CAPTION & BUTTON HOVER STYLES
    ========================================================= */
@@ -457,6 +483,7 @@
   transform: translate3d(0, 20px, 0); /* Uses 3D transform for hardware acceleration */
   text-align: center !important;
   will-change: transform, opacity;
+  
 }
 
 .seq-caption span,
@@ -491,14 +518,36 @@
   //border: 1px solid #ffffff;
 }
 
-@media (max-width: 576px) {
+
+.seq-txt {
+
+
+font-size: clamp(0.8em, 1.2vw + 0.55rem, 1.8em);
+
+}
+
+
+
+@media (max-width: 767px) {
   .seq-btn-proj {
-    font-size: 0.70rem;
+    font-size: 0.65rem;
     letter-spacing: 1px;
-    padding: 9px 12px;
+    padding: 7px 10px;
     text-decoration: none;
     text-transform: uppercase;
   }
+  
+  
+  .seq-txt {
+
+
+//font-size:1em ;
+
+}
+  
+  
+  
+  
 }
 
 
@@ -555,6 +604,15 @@ font-size:1.8em ;
   .story-scroll-section .row {
     align-items: center !important; /* Vertically centers the text column relative to the image on mobile/tablet */
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 } 
   
   
@@ -693,16 +751,36 @@ text-transform:uppercase;
 }
 
 
-
-
-
-
-
-
-
 </style> 
   
   
+<style>
+
+.divider-strip { 
+
+
+//border-bottom: 3px solid rgba(255, 255, 255, 0.09);
+
+border-bottom: 20px solid #1a1a1a;
+
+//border-top: 1px solid white;
+
+
+ }
+
+
+
+@media (max-width: 576px) {
+  .divider-strip { border-bottom: none;  }
+    
+}
+
+
+
+</style>
+
+
+
   
   
   
@@ -989,7 +1067,7 @@ text-transform:uppercase;
         <div class="seq-gradient-overlay"></div>
         <div class="seq-caption seq-cap-1">
            <span class="text-uppercase small   px-1 py-1" style="letter-spacing: 0.25em; font-size: 0.7rem; color:#f9f9f9; background-color:#5a5a5a;">01 / Residential</span>
-          <h3 class="font-editorial text-white fw-light  mb-3 pt-3 lh-base">RAW GEOMETRY & <br>FINISHES</h3>
+          <h3 class="seq-txt text-white fw-light  mb-3 pt-3 lh-base">RAW GEOMETRY & <br>FINISHES</h3>
           <div class="mt-3">
             <a href="services3.html#service-01" class="seq-btn-proj mt-2 ">Explore Project &rarr;</a>
           </div>
@@ -1007,7 +1085,7 @@ text-transform:uppercase;
         <div class="seq-gradient-overlay"></div>
         <div class="seq-caption seq-cap-2">
           <span class="text-uppercase small   px-1 py-1" style="letter-spacing: 0.25em; font-size: 0.7rem; color:#f1f1f1; background-color:#5a5a5a;">02 / Sanctuary</span>
-          <h3 class="font-editorial text-white fw-light  mb-3 pt-3 lh-base">Tactile Stone &amp;<br> Silence</h3>
+          <h3 class="seq-txt text-white fw-light  mb-3 pt-3 lh-base">Tactile Stone &amp;<br> Silence</h3>
           <div class="mt-3">
             <a href="services3.html#service-07" class="seq-btn-proj mt-2">Explore Project &rarr;</a>
           </div>
@@ -1018,22 +1096,37 @@ text-transform:uppercase;
     <!-- COLUMN 3 -->
     <div class="seq-col">
       <div class="seq-col-link">
-        <div class="seq-cover seq-cover-3">
-          <span class="seq-cover-num fs-8 px-2 py-1"style="color:#9a9a9a;">03 / Monograph</span>
+        <div class="seq-cover seq-cover-2">
+          <span class="seq-cover-num fs-8 px-2 py-1"style="color:#9a9a9a;">02 / Sanctuary</span>
         </div>
         <img src="build91.png" class="seq-img seq-img-3" alt="Bespoke Living">
         <div class="seq-gradient-overlay"></div>
-        <div class="seq-caption seq-cap-3">
-          <span class="text-uppercase small   px-1 py-1" style="letter-spacing: 0.25em; font-size: 0.7rem; color:#f1f1f1; background-color:#5a5a5a;">03 / Monograph</span>
-          <h3 class="font-editorial text-white fw-light  mb-3 pt-3 lh-base">Designed For Generations</h3>
+        <div class="seq-caption seq-cap-2">
+          <span class="text-uppercase small   px-1 py-1" style="letter-spacing: 0.25em; font-size: 0.7rem; color:#f1f1f1; background-color:#5a5a5a;">03 / Monograp</span>
+          <h3 class="seq-txt text-white fw-light  mb-3 pt-3 lh-base">Designed For &amp;<br> Generations</h3>
           <div class="mt-3">
-            <a href="services3.html#service-05" class="seq-btn-proj mt-2">Explore Project &rarr;</a>
+            <a href="services3.html#service-07" class="seq-btn-proj mt-2">Explore Project &rarr;</a>
           </div>
         </div>
       </div>
     </div>
+		
+		 
+  
+	
+		
+		
+		
+      </div>
+    </div>
 
   </div>
+  
+ 
+  
+  
+  
+  
 </section>
  
  
@@ -1053,14 +1146,14 @@ text-transform:uppercase;
 
 <!-- =========================================================
      DARK ARCHITECTURAL DIVIDER STRIP
-     ========================================================= -->
-<div id="after-intro" class="container-fluid py-3  py-md-4 text-center position-relative " style="z-index: 10; background-color:#1a1a1a;">
-  <div class="container d-flex align-items-center justify-content-center gap-4">
+     ========================================================= 
+<div id="after-intro" class="container-fluid py-3  py-md-3 text-center position-relative divider-strip " style="z-index: 10; background-color:#1a1a1a;">
+  <div class="container d-flex align-items-center justify-content-center gap-4 ">
     <div style="height: 1px; width: 60px; background: rgba(255,255,255,0.4);"></div>
     <span class="slide-t-size" style="letter-spacing: 0.3em; ">shaw design 2026 &mdash; Architectural interior</span>
     <div style="height: 1px; width: 60px; background: rgba(255,255,255,0.4);"></div>
   </div>
-</div>
+</div>-->
 
 
 
