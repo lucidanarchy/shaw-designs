@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — SHAW Interiors</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="lenis-global.css">
+
+<!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger CDNs -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script defer src="lenis-global.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Local Controllers -->
+  <script defer src="fade in scroll.js"></script>
+  <script defer src="back to top.js"></script>
+  <script defer src="desktop header peek.js"></script>
+
+  <style>
+    html, body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #ffffff;
+      color: #111111;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 300 !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .font-serif {
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+
+    .bg-dark-pillar { background-color: #35322F; }
+    .bg-dark-pillar-right { background-color: #45403B; }
+
+    .top-right-dark-panel {
+      background: linear-gradient(160deg, #383431 0%, #2e2a27 60%, #433932 100%);
+      position: relative;
+    }
+
+    .btn-view-project {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-view-project:hover {
+      background-color: #1D1D1D !important;
+      color: #FFFFFF !important;
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .tracking-widest { letter-spacing: 0.25em; }
+    .tracking-wider { letter-spacing: 0.1em; }
+    .fs-8 { font-size: 0.78rem; }
+
+    section[id] {
+      scroll-margin-top: 75px;
+    }
+
+    .editorial-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .editorial-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(12%);
+      transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      object-position: center center;
+    }
+
+    .editorial-img-wrapper:hover .editorial-img {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .hero-monograph-img { height: 110vh; min-height: 500px; }
+
+    .gsap-reveal-box {
+      position: relative;
+      overflow: hidden;
+      background-color: #FFFFFF !important;
+    }
+
+    .gsap-reveal-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      will-change: clip-path, transform;
+      clip-path: inset(12% 10% 12% 10%);
+      transform: scale(1.08);
+    }
+
+    .gsap-page-curtain {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #0f0f0f;
+      z-index: 99999;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .gsap-page-curtain.fade-out {
+      opacity: 0;
+    }
+
+    .project-sticky-inner {
+      position: relative;
+    }
+
+    .project-tall-img1 {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-tall-img2 {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-tall-img3 {
+      width: 100%;
+      height: 40vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-tall-img4 {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      .project-tall-img1 { height: 105vh; }
+      .project-tall-img2 { height: 640px; }
+      .project-tall-img3 { height: 340px; }
+      .project-tall-img4 { height: 420px; }
+    }
+
+    @media (max-width: 991.98px) {
+      .hero-monograph-img { height: 60vh; min-height: 360px; }
+    }
+
+    @media (max-width: 767.98px) {
+      .border-end.mobile-no-border {
+        border-right: none !important;
+        border-right-width: 0 !important;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .hero-monograph-img { height: 50vh; min-height: 300px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gsap-page-curtain"></div>
+
+  <!-- =========================================================
+       SECTION 1: GLOBAL NAVIGATION HEADER
+       ========================================================= -->
+  <div class="bg">
+    <div class="container-md">
+      <div class="nv-containe">
+
+        <a href="index.html#after-intro">
+          <img src="logo-4.png" class="nav-logo" alt="Shaw Interiors Logo">
+        </a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <ul class="menu">
+          <li><a href="index.html#after-intro">Home</a></li>
+          <li><a href="profile2.html">About</a></li>
+
+          <!-- SERVICES DROPDOWN / ACCORDION -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
+            <a href="services3.html" class="dropdown-link">
+              <label for="services-toggle" class="accordion-trigger">
+                Services <span class="angle-bracket"></span>
+              </label>
+            </a>
+
+            <div class="dropdown-menu-box">
+              <a href="services3.html#service-01" class="dropdown-item-row">
+                <img src="build58.jpg" loading="lazy" class="dropdown-thumb" alt="Residential Interior">
+                <div class="dropdown-text py-2">
+                  <span class="item-title">01. Residential Interior</span>
+                  <span class="item-sub">Bespoke Homes &amp; Private Estates</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-02" class="dropdown-item-row">
+                <img src="build28.jpg" loading="lazy" class="dropdown-thumb" alt="Commercial Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">02. Commercial Interior</span>
+                  <span class="item-sub">Retail, Hospitality &amp; Public Spaces</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-03" class="dropdown-item-row">
+                <img src="build21.png" loading="lazy" class="dropdown-thumb" alt="Corporate Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">03. Corporate Interior</span>
+                  <span class="item-sub">Corporate &amp; Modern Workspaces</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-04" class="dropdown-item-row">
+                <img src="build26.png" loading="lazy" class="dropdown-thumb" alt="Custom Kitchen Design">
+                <div class="dropdown-text">
+                  <span class="item-title">04. Custom Kitchen Design</span>
+                  <span class="item-sub">High-End Culinary Environments</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-05" class="dropdown-item-row">
+                <img src="build27.jpg" loading="lazy" class="dropdown-thumb" alt="Master Suite Design">
+                <div class="dropdown-text">
+                  <span class="item-title">05. Master Suite Design</span>
+                  <span class="item-sub">Private Bedroom Retreats</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-06" class="dropdown-item-row">
+                <img src="build32.jpg" loading="lazy" class="dropdown-thumb" alt="Architectural Millwork">
+                <div class="dropdown-text">
+                  <span class="item-title">06. Architectural Millwork</span>
+                  <span class="item-sub">Custom Cabinetry &amp; Joinery</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-07" class="dropdown-item-row">
+                <img src="build32.jpg" loading="lazy" class="dropdown-thumb" alt="Atmospheric Lighting">
+                <div class="dropdown-text">
+                  <span class="item-title">07. Atmospheric Lighting</span>
+                  <span class="item-sub">Architectural Illumination Plans</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-08" class="dropdown-item-row">
+                <img src="build35.jpg" loading="lazy" class="dropdown-thumb" alt="Spa & Bath Design">
+                <div class="dropdown-text">
+                  <span class="item-title">08. Spa &amp; Bath Design</span>
+                  <span class="item-sub">Sanctuary Bathrooms &amp; Wellness</span>
+                </div>
+              </a>
+
+              <a href="services3.html#service-09" class="dropdown-item-row">
+                <img src="build24.png" loading="lazy" class="dropdown-thumb" alt="Material & Texture Design">
+                <div class="dropdown-text">
+                  <span class="item-title">09. Material &amp; Texture Design</span>
+                  <span class="item-sub">Fine Finishes &amp; Textiles</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- PROJECTS DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="projects-toggle" class="dropdown-checkbox">
+            <a href="projects6.html" class="dropdown-link">
+              <label for="projects-toggle" class="accordion-trigger">
+                Projects <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="projects5.html#project-01" class="dropdown-item-row">
+                <img src="build101.png" loading="lazy" class="dropdown-thumb" alt="Residential Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Residential Works</span>
+                  <span class="item-sub">Residential Estates</span>
+                </div>
+              </a>
+              <a href="projects5.html#project-02" class="dropdown-item-row">
+                <img src="build141.jpg" loading="lazy" class="dropdown-thumb" alt="Commercial Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Commercial Works</span>
+                  <span class="item-sub">Commercial Metros</span>
+                </div>
+              </a>
+              <a href="projects5.html#project-03" class="dropdown-item-row">
+                <img src="build151.png" loading="lazy" class="dropdown-thumb" alt="Completed Projects">
+                <div class="dropdown-text">
+                  <span class="item-title">Corporate Works</span>
+                  <span class="item-sub">Corporate Offices</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="gallerry3.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CASE STUDY 1: COMMERCIAL — THE CONCRETE MONOLITH
+       ========================================================================= -->
+  <section id="commercial-01" class="bg-white text-dark">
+    <div class="container-fluid px-0">
+      <div class="editorial-img-wrapper">
+        <img src="build101.png" alt="The Concrete Monolith Hero" class="editorial-img hero-monograph-img">
+      </div>
+    </div>
+
+    <div id="project-01" class="container px-4 px-sm-3 pt-4 mt-4 mt-md-5 pb-2">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-semibold mb-2 d-block text-center trigger1">Commercial Architecture &bull; Cape Town</span>
+      <h1 class="fw-medium text-dark text-uppercase mb-3 text-center trigger1">The Concrete Monolith</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-4 mb-md-5 trigger1"></div>
+    </div>
+
+    <div class="container-fluid border-top border-bottom border-dark border-opacity-25 py-3 mt-4 pt-4 my-2 trigger1">
+      <div class="container">
+        <div class="row g-0 justify-content-between">
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 d-flex justify-content-center justify-content-md-start">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Atlantic Seaboard, CT</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mobile-no-border mt-2 mt-md-0 d-flex justify-content-center">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Architecture &amp; Interior</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">4,200 m&sup2;</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-center justify-content-md-end">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. STICKY INTRODUCTION SECTION -->
+    <div class="container px-4 px-sm-3 py-3 py-md-5 mt-5">
+      <div class="row align-items-start opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a;">
+              01 / The Brief
+            </span>
+            <span class="gone-lg d-block"><div class="mt-3" style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div></span>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="text-uppercase mb-4 trigger1" style="font-weight: 300; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.35; letter-spacing: 0.04em;">
+            Equilibrium of monolithic form and coastal urban topography.
+          </h2>
+          <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.9; max-width: 65ch;">
+            The Concrete Monolith explores the relationship between contemporary commercial architecture and its surrounding urban environment. The design language emphasises strong geometric forms, carefully considered proportions, and a restrained material palette designed to weather quietly alongside the Atlantic seaboard.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. DESIGN CONCEPT -->
+    <div class="container px-4 px-sm-3 py-3 py-md-5 mt-3 mt-md-5">
+      <div class="row align-items-start g-5 opacity-fade-block">
+        <div class="col-lg-7">
+          <div class="gsap-reveal-box trigger1">
+            <img src="build101.png" loading="lazy" alt="The Design Approach" class="gsap-reveal-img project-tall-img1 trigger1">
+          </div>
+          <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
+            Plate 01 &mdash; Western Facade Elevation
+          </span>
+        </div>
+
+        <div class="col-lg-5 ps-lg-5">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">
+              02 / Methodology
+            </span>
+            <h3 class="text-uppercase trigger1 mb-5 pt-4" style="font-weight: 300; font-size: 2em; line-height: 1.3; letter-spacing: 0.04em;">
+              Three Core Principles
+            </h3>
+            <div class="pt-2 mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 fw-semibold trigger1" style="font-size: 1rem; letter-spacing: 0.15em; color:#5a5a5a">Materiality</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">01</span>
+              </div>
+              <p class="small trigger1 mb-0" style="line-height: 1.75; font-weight: 300;">Exposed board-marked concrete and structural low-iron glass establish a distinctive, tactile architectural language.</p>
+            </div>
+            <div class="border-top border-dark border-opacity-25 pt-3 mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 trigger1 fw-semibold" style="font-size: 0.9em; letter-spacing: 0.15em; color:#5a5a5a">Composition</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">02</span>
+              </div>
+              <p class="trigger1 small mb-0" style="line-height: 1.75; font-weight: 300;">Strong horizontal slabs and vertical shading louvres create rigorous visual structure and dynamic shadow play.</p>
+            </div>
+            <div class="border-top border-dark border-opacity-25 pt-3">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 trigger1 fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em; color:#5a5a5a">Context</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">03</span>
+              </div>
+              <p class="trigger1 small mb-0" style="line-height: 1.75; font-weight: 300;">The building directly responds to its surrounding urban fabric, balancing monolithic weight with open pedestrian thresholds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ARCHITECTURAL DETAILS -->
+    <div class="container px-4 px-sm-3 pt-5 pb-4">
+      <div class="row align-items-end mb-5 opacity-fade-block">
+        <div class="col-lg-6">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">03 / Spatial</span>
+            <h3 class="text-uppercase mb-0 trigger1 pb-4 mt-3" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">Sanctuary Detail Studies</h3>
+          </div>
+        </div>
+        <div class="col-lg-6 text-lg-end mt-lg-0">
+          <span class="text-uppercase text-muted trigger1" style="font-size: 0.7rem; letter-spacing: 0.2em;">Fig. 01 &mdash; 02 &bull; Coastal Sanctuary Series</span>
+        </div>
+      </div>
+
+      <div class="row g-5 align-items-start opacity-fade-block">
+        <div class="col-lg-5">
+          <div class="project-sticky-inner">
+            <div class="gsap-reveal-box">
+              <img src="build154.png" loading="lazy" alt="Residential Detail 1" class="gsap-reveal-img project-tall-img2 trigger1">
+            </div>
+            <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1">
+              <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 01</span>
+              <span class="text-uppercase text-dark" style="font-size: 0.68rem; letter-spacing: 0.15em;">Master Suite Ocean Frontage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 ps-lg-5">
+          <div class="gsap-reveal-box">
+            <img src="build155.png" loading="lazy" alt="Residential Detail 2" class="gsap-reveal-img project-tall-img3 trigger1">
+          </div>
+          <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 mb-3 trigger1">
+            <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 02</span>
+            <span class="text-uppercase text-dark" style="font-size: 0.68rem; letter-spacing: 0.15em;">Spa &amp; Wellness Bathroom</span>
+          </div>
+
+          <div class="pt-3">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">Perspective</span>
+            <h5 class="text-uppercase mb-3 trigger1 mt-4" style="font-weight: 400; font-size: 2rem; letter-spacing: 0.12em;">Custom Culinary <br>Kitchen</h5>
+            <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.85;">Conceived as an integrated social core, the monolithic marble island pairs with hidden prep zones to maintain pristine architectural lines against coastal horizons.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. MATERIALS -->
+    <div class="container px-4 px-sm-3 pt-3 pt-md-5 mt-5">
+      <div class="row align-items-start g-5 opacity-fade-block">
+        <div class="col-lg-5 order-2 order-lg-1 pe-lg-5">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">04 / Palette</span>
+            <h3 class="text-uppercase mb-4 trigger1 mt-3" style="font-weight: 300; font-size: 2rem; line-height: 1.3; letter-spacing: 0.04em;">Raw Stone &amp; Patinated Bronze</h3>
+            <p class="mb-4 trigger1" style="font-weight: 300; font-size: 0.95rem; line-height: 1.85;">Our material selection rejects superficial finishes in favor of components that age with integrity. Raw cast concrete surfaces capture changing atmospheric conditions throughout the day.</p>
+            <div class="border-top border-dark border-opacity-25 pt-3 trigger1">
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">01. Board-Marked Cast Concrete</div>
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">02. Burnished Bronze Mullions</div>
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">03. Unpolished Travertine Thresholds</div>
+              <div class="py-2 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">04. Structural Low-Iron Glazing</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2">
+          <div class="gsap-reveal-box">
+            <img src="build156.png" loading="lazy" alt="Material Close Up" class="gsap-reveal-img project-tall-img1 trigger1">
+          </div>
+          <span class="d-block text-uppercase text-muted mt-3 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. CONCLUSION -->
+    <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="gsap-reveal-box mb-3 opacity-fade-block">
+        <img src="build157.png" loading="lazy" alt="Final Monograph View" class="gsap-reveal-img project-tall-img4 trigger1">
+      </div>
+      <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
+
+      <div class="row pt-5 opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a;">
+              05 / Outcome
+            </span>
+            <div class="mt-3" style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h3 class="text-uppercase mb-3 trigger1" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">Permanent Urban Presence</h3>
+          <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.05rem; line-height: 1.85;">A contemporary commercial development that successfully balances monumental architectural presence with stringent functional requirements and human-scale spatial comfort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gone border-1 opacity-25 my-2 pb-4">
+
+  <!-- =========================================================================
+       CASE STUDY 2: RESIDENTIAL — THE ATLANTIC SANCTUARY
+       ========================================================================= -->
+  <section id="commercial-02" class="bg-white text-dark">
+    <div class="container-fluid px-0">
+      <div class="editorial-img-wrapper">
+        <img src="build141.jpg" loading="lazy" alt="The Atlantic Sanctuary Hero" class="editorial-img hero-monograph-img">
+      </div>
+    </div>
+
+    <div id="project-02" class="container px-4 px-sm-3 pt-4 mt-4 mt-md-5 pb-2">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-semibold mb-2 d-block text-center trigger1">Commercial Architecture &bull; Cape Town</span>
+      <h1 class="fw-medium text-dark text-uppercase mb-3 text-center trigger1">The Atlantic Sanctuary</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-4 mb-md-5 trigger1"></div>
+    </div>
+
+    <div class="container-fluid border-top border-bottom border-dark border-opacity-25 py-3 mt-4 pt-4 my-2 trigger1">
+      <div class="container">
+        <div class="row g-0 justify-content-between">
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 d-flex justify-content-center justify-content-md-start">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Clifton Seaboard, CT</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mobile-no-border mt-2 mt-md-0 d-flex justify-content-center">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Private Residential Estate</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">1,650 m&sup2;</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-center justify-content-md-end">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 py-3 py-md-5 mt-5">
+      <div class="row align-items-start opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a;">
+              01 / The Brief
+            </span>
+            <div class="mt-3" style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="text-uppercase mb-4 trigger1" style="font-weight: 300; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.35; letter-spacing: 0.04em;">
+            Bespoke coastal living rooted in natural calm and ocean horizons.
+          </h2>
+          <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.9; max-width: 65ch;">
+            Perched directly above the crashing Atlantic surf, The Atlantic Sanctuary merges raw natural stone with expansive glazing. Every bedroom retreat and master suite is meticulously tailored to evoke absolute peace and seclusion.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 py-5 mt-5">
+      <div class="row align-items-start g-5 opacity-fade-block">
+        <div class="col-lg-7">
+          <div class="gsap-reveal-box trigger1">
+            <img src="build106.png" loading="lazy" alt="The Design Approach" class="gsap-reveal-img project-tall-img1 trigger1">
+          </div>
+          <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
+            Plate 01 &mdash; Western Facade Elevation
+          </span>
+        </div>
+
+        <div class="col-lg-5 ps-lg-5">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">
+              02 / Methodology
+            </span>
+            <h3 class="text-uppercase trigger1 mb-5 pt-4" style="font-weight: 300; font-size: 2em; line-height: 1.3; letter-spacing: 0.04em;">
+              Residential Living Tenets
+            </h3>
+            <div class="pt-2 mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 fw-semibold trigger1" style="font-size: 1rem; letter-spacing: 0.15em; color:#5a5a5a">Transparency</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">01</span>
+              </div>
+              <p class="small trigger1 mb-0" style="line-height: 1.75; font-weight: 300;">Frameless glass systems dissolve boundaries, inviting ocean views directly into intimate domestic spaces.</p>
+            </div>
+            <div class="border-top border-dark border-opacity-25 pt-3 mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 trigger1 fw-semibold" style="font-size: 0.9em; letter-spacing: 0.15em; color:#5a5a5a">Texture</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">02</span>
+              </div>
+              <p class="trigger1 small mb-0" style="line-height: 1.75; font-weight: 300;">Unpolished travertine floors and hand-rubbed timber finishes create rich tactile warmth underfoot.</p>
+            </div>
+            <div class="border-top border-dark border-opacity-25 pt-3">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 trigger1 fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em; color:#5a5a5a">Sanctuary</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">03</span>
+              </div>
+              <p class="trigger1 small mb-0" style="line-height: 1.75; font-weight: 300;">Private spa bathrooms and custom walk-in dressing areas provide a restorative domestic retreat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 pt-5 pb-4">
+      <div class="row align-items-end mb-5 opacity-fade-block">
+        <div class="col-lg-6">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">03 / Spatial</span>
+            <h3 class="text-uppercase mb-0 trigger1 pb-4 mt-3" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">Sanctuary Detail Studies</h3>
+          </div>
+        </div>
+        <div class="col-lg-6 text-lg-end mt-lg-0">
+          <span class="text-uppercase text-muted trigger1" style="font-size: 0.7rem; letter-spacing: 0.2em;">Fig. 01 &mdash; 02 &bull; Coastal Sanctuary Series</span>
+        </div>
+      </div>
+
+      <div class="row g-5 align-items-start opacity-fade-block">
+        <div class="col-lg-5">
+          <div class="project-sticky-inner">
+            <div class="gsap-reveal-box">
+              <img src="build143.jpg" loading="lazy" alt="Residential Detail 1" class="gsap-reveal-img project-tall-img2 trigger1">
+            </div>
+            <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1">
+              <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 01</span>
+              <span class="text-uppercase text-dark" style="font-size: 0.68rem; letter-spacing: 0.15em;">Master Suite Ocean Frontage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 ps-lg-5">
+          <div class="gsap-reveal-box">
+            <img src="build142.jpg" loading="lazy" alt="Residential Detail 2" class="gsap-reveal-img project-tall-img3 trigger1">
+          </div>
+          <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 mb-3 trigger1">
+            <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 02</span>
+            <span class="text-uppercase text-dark" style="font-size: 0.68rem; letter-spacing: 0.15em;">Spa &amp; Wellness Bathroom</span>
+          </div>
+
+          <div class="pt-3">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">Perspective</span>
+            <h5 class="text-uppercase mb-3 trigger1 mt-4" style="font-weight: 400; font-size: 2rem; letter-spacing: 0.12em;">Custom Culinary <br>Kitchen</h5>
+            <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.85;">Conceived as an integrated social core, the monolithic marble island pairs with hidden prep zones to maintain pristine architectural lines against coastal horizons.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 pt-3 pt-md-5 mt-5">
+      <div class="row align-items-start g-5 opacity-fade-block">
+        <div class="col-lg-5 order-2 order-lg-1 pe-lg-5">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">04 / Palette</span>
+            <h3 class="text-uppercase mb-4 trigger1 mt-3" style="font-weight: 300; font-size: 2rem; line-height: 1.3; letter-spacing: 0.04em;">Travertine Stone &amp; Untreated Timber</h3>
+            <p class="mb-4 trigger1" style="font-weight: 300; font-size: 0.95rem; line-height: 1.85;">Our palette prioritizes natural, organic elements that patinate gracefully with ocean air, creating deep tactile resonance throughout private family living areas.</p>
+            <div class="border-top border-dark border-opacity-25 pt-3 trigger1">
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">01. Unpolished French Travertine</div>
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">02. Hand-Rubbed American Oak Joinery</div>
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">03. Oxidized Copper Wall Accents</div>
+              <div class="py-2 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">04. Structural Low-Iron Glazing</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2">
+          <div class="gsap-reveal-box">
+            <img src="build141.jpg" loading="lazy" alt="Material Close Up" class="gsap-reveal-img project-tall-img1 trigger1">
+          </div>
+          <span class="d-block text-uppercase text-muted mt-3 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="gsap-reveal-box mb-3 opacity-fade-block">
+        <img src="build106.png" loading="lazy" alt="Final Monograph View" class="gsap-reveal-img project-tall-img4 trigger1">
+      </div>
+      <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
+
+      <div class="row pt-5 opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a;">
+              05 / Outcome
+            </span>
+            <div class="mt-3" style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h3 class="text-uppercase mb-3 trigger1" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">A Timeless Coastal Haven</h3>
+          <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.05rem; line-height: 1.85;">A premier coastal residence that effortlessly harmonizes dramatic ocean vistas with absolute privacy, comfort, and sophisticated material integrity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gone border-1 opacity-25 my-2 pb-4">
+
+  <!-- =========================================================================
+       CASE STUDY 3: CORPORATE — THE GLASS PAVILION
+       ========================================================================= -->
+  <section id="commercial-03" class="bg-white text-dark">
+    <div class="container-fluid px-0">
+      <div class="editorial-img-wrapper">
+        <img src="build151.png" loading="lazy" alt="The Glass Pavilion Hero" class="editorial-img hero-monograph-img">
+      </div>
+    </div>
+
+    <div id="project-03" class="container px-4 px-sm-3 pt-4 mt-4 mt-md-5">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-semibold mb-2 d-block text-center trigger1">Commercial Architecture &bull; Cape Town</span>
+      <h1 class="fw-medium text-dark text-uppercase mb-3 text-center trigger1">The Glass Pavilion</h1>
+      <div class="divider-line-dk mx-auto mt-3 mb-4 mb-md-5 trigger1"></div>
+    </div>
+
+    <div class="container-fluid border-top border-bottom border-dark border-opacity-25 py-3 mt-4 pt-4 my-2 trigger1">
+      <div class="container">
+        <div class="row g-0 justify-content-between">
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 d-flex justify-content-center justify-content-md-start">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Location</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Atlantic Seaboard, CT</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mobile-no-border mt-2 mt-md-0 d-flex justify-content-center">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Scope</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Architecture &amp; Interior</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 border-end border-dark border-opacity-25 mt-2 mt-md-0 d-flex justify-content-center">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Floor Area</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">4,200 m&sup2;</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 py-2 px-2 px-lg-4 ps-md-4 mt-2 mt-md-0 d-flex justify-content-center justify-content-md-end">
+            <div style="width: fit-content;">
+              <span class="d-block text-uppercase text-muted text-start" style="font-size: 0.7rem; letter-spacing: 0.2em;">Status</span>
+              <span class="d-block text-uppercase text-muted fw-semibold mt-1 text-start" style="font-size: 0.75rem; letter-spacing: 0.08em;">Completed 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 py-3 py-md-5 mt-5">
+      <div class="row align-items-start opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a;">
+              01 / The Brief
+            </span>
+            <div class="mt-3" style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="text-uppercase mb-4 trigger1" style="font-weight: 300; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.35; letter-spacing: 0.04em;">
+            Equilibrium of monolithic form and coastal urban topography.
+          </h2>
+          <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.9; max-width: 65ch;">
+            The Concrete Monolith explores the relationship between contemporary commercial architecture and its surrounding urban environment. The design language emphasises strong geometric forms, carefully considered proportions, and a restrained material palette designed to weather quietly alongside the Atlantic seaboard.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 py-5 mt-5">
+      <div class="row align-items-start g-5 opacity-fade-block">
+        <div class="col-lg-7">
+          <div class="gsap-reveal-box trigger1">
+            <img src="build151.png" loading="lazy" alt="The Design Approach" class="gsap-reveal-img project-tall-img1 trigger1">
+          </div>
+          <span class="d-block text-uppercase text-muted mt-3 trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">
+            Plate 01 &mdash; Western Facade Elevation
+          </span>
+        </div>
+
+        <div class="col-lg-5 ps-lg-5">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">
+              02 / Methodology
+            </span>
+            <h3 class="text-uppercase trigger1 mb-5 pt-4" style="font-weight: 300; font-size: 2em; line-height: 1.3; letter-spacing: 0.04em;">
+              Three Core Principles
+            </h3>
+            <div class="pt-2 mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 fw-semibold trigger1" style="font-size: 1rem; letter-spacing: 0.15em; color:#5a5a5a">Materiality</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">01</span>
+              </div>
+              <p class="small trigger1 mb-0" style="line-height: 1.75; font-weight: 300;">Exposed board-marked concrete and structural low-iron glass establish a distinctive, tactile architectural language.</p>
+            </div>
+            <div class="border-top border-dark border-opacity-25 pt-3 mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 trigger1 fw-semibold" style="font-size: 0.9em; letter-spacing: 0.15em; color:#5a5a5a">Composition</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">02</span>
+              </div>
+              <p class="trigger1 small mb-0" style="line-height: 1.75; font-weight: 300;">Strong horizontal slabs and vertical shading louvres create rigorous visual structure and dynamic shadow play.</p>
+            </div>
+            <div class="border-top border-dark border-opacity-25 pt-3">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <h5 class="text-uppercase mb-0 trigger1 fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em; color:#5a5a5a">Context</h5>
+                <span class="fw-semibold" style="font-size: 0.9rem; letter-spacing: 0.15em;">03</span>
+              </div>
+              <p class="trigger1 small mb-0" style="line-height: 1.75; font-weight: 300;">The building directly responds to its surrounding urban fabric, balancing monolithic weight with open pedestrian thresholds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 pt-5 pb-4">
+      <div class="row align-items-end mb-5 opacity-fade-block">
+        <div class="col-lg-6">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">03 / Spatial</span>
+            <h3 class="text-uppercase mb-0 trigger1 pb-4 mt-3" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">Sanctuary Detail Studies</h3>
+          </div>
+        </div>
+        <div class="col-lg-6 text-lg-end mt-lg-0">
+          <span class="text-uppercase text-muted trigger1" style="font-size: 0.7rem; letter-spacing: 0.2em;">Fig. 01 &mdash; 02 &bull; Coastal Sanctuary Series</span>
+        </div>
+      </div>
+
+      <div class="row g-5 align-items-start opacity-fade-block">
+        <div class="col-lg-5">
+          <div class="project-sticky-inner">
+            <div class="gsap-reveal-box">
+              <img src="build150.png" loading="lazy" alt="Residential Detail 1" class="gsap-reveal-img project-tall-img2 trigger1">
+            </div>
+            <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 trigger1">
+              <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 01</span>
+              <span class="text-uppercase text-dark" style="font-size: 0.68rem; letter-spacing: 0.15em;">Master Suite Ocean Frontage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 ps-lg-5">
+          <div class="gsap-reveal-box">
+            <img src="build148.png" loading="lazy" alt="Residential Detail 2" class="gsap-reveal-img project-tall-img3 trigger1">
+          </div>
+          <div class="d-flex justify-content-between border-top border-dark border-opacity-25 pt-2 mt-3 mb-3 trigger1">
+            <span class="text-uppercase text-muted" style="font-size: 0.68rem; letter-spacing: 0.18em;">Fig. 02</span>
+            <span class="text-uppercase text-dark" style="font-size: 0.68rem; letter-spacing: 0.15em;">Spa &amp; Wellness Bathroom</span>
+          </div>
+
+          <div class="pt-3">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">Perspective</span>
+            <h5 class="text-uppercase mb-3 trigger1 mt-4" style="font-weight: 400; font-size: 2rem; letter-spacing: 0.12em;">Custom Culinary <br>Kitchen</h5>
+            <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.85;">Conceived as an integrated social core, the monolithic marble island pairs with hidden prep zones to maintain pristine architectural lines against coastal horizons.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 pt-3 pt-md-5 mt-5">
+      <div class="row align-items-start g-5 opacity-fade-block">
+        <div class="col-lg-5 order-2 order-lg-1 pe-lg-5">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white trigger1 fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#6a6a6a;">04 / Palette</span>
+            <h3 class="text-uppercase mb-4 trigger1 mt-3" style="font-weight: 300; font-size: 2rem; line-height: 1.3; letter-spacing: 0.04em;">Raw Stone &amp; Patinated Bronze</h3>
+            <p class="mb-4 trigger1" style="font-weight: 300; font-size: 0.95rem; line-height: 1.85;">Our material selection rejects superficial finishes in favor of components that age with integrity. Raw cast concrete surfaces capture changing atmospheric conditions throughout the day.</p>
+            <div class="border-top border-dark border-opacity-25 pt-3 trigger1">
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">01. Board-Marked Cast Concrete</div>
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">02. Burnished Bronze Mullions</div>
+              <div class="py-2 border-bottom border-dark border-opacity-10 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">03. Unpolished Travertine Thresholds</div>
+              <div class="py-2 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.15em;">04. Structural Low-Iron Glazing</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2">
+          <div class="gsap-reveal-box">
+            <img src="build152.png" loading="lazy" alt="Material Close Up" class="gsap-reveal-img project-tall-img1 trigger1">
+          </div>
+          <span class="d-block text-uppercase text-muted mt-3 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 px-sm-3 border-top border-dark border-opacity-10" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="gsap-reveal-box mb-3 opacity-fade-block">
+        <img src="build149.png" loading="lazy" alt="Final Monograph View" class="gsap-reveal-img project-tall-img4 trigger1">
+      </div>
+      <span class="d-block text-uppercase text-muted mt-1 text-end trigger1" style="font-size: 0.68rem; letter-spacing: 0.2em;">Plate 02 &mdash; Surface Patina &amp; Joinery Detail</span>
+
+      <div class="row pt-5 opacity-fade-block">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div class="project-sticky-inner">
+            <span class="text-uppercase text-white fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a;">
+              05 / Outcome
+            </span>
+            <div class="mt-3" style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h3 class="text-uppercase mb-3 trigger1" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">Permanent Urban Presence</h3>
+          <p class="mb-0 trigger1" style="font-weight: 300; font-size: 1.05rem; line-height: 1.85;">A contemporary commercial development that successfully balances monumental architectural presence with stringent functional requirements and human-scale spatial comfort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX DIVIDER 1 -->
+  <div class="container-fluid px-0 my-5">
+    <div class="parallax-section-3 d-flex align-items-center justify-content-center text-center text-white position-relative">
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.25);"></div>
+      <div class="container-fluid position-relative px-1 py-4" style="z-index:2;">
+        <span class="editorial-label text-white d-block mb-3 badge trigger1">Architectural Flow</span>
+        <h2 class="text-white fw-light display-6 font-serif trigger1">Form following light and shadow</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       CURATED CAPABILITIES NEXT-STEPS BAND
+       ========================================================= -->
+  <div class="container px-4 px-sm-3 py-5 mb-5 mt-1 mt-sm-4">
+    <div class="row opacity-fade-block">
+      <div class="col-lg-3 mb-3 mb-lg-0">
+        <div class="project-sticky-inner">
+          <span class="text-uppercase text-white fw-medium" style="font-size: 0.7rem; letter-spacing: 0.25em; padding:4px 8px; background-color:#5a5a5a;">
+            11 / Practice &amp; Access
+          </span>
+          <span class="gone-lg d-block"><div class="mt-3" style="width: 97%; height: 1px; background-color: rgba(33, 37, 41, 0.50);"></div></span>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <h3 class="text-uppercase mb-4 trigger1" style="font-weight: 300; font-size: 2.2rem; letter-spacing: 0.04em;">Practice, Disciplines &amp; Studio Access</h3>
+        <p class="mb-4 trigger1" style="font-weight: 300; font-size: 1.1rem; line-height: 1.85; max-width: 65ch;">
+          Navigate our practice profile, full spectrum of architectural interior disciplines, and direct studio channels across Cape Town and Johannesburg.
+        </p>
+
+        <hr class="border-1 opacity-25 mt-4 trigger1">
+
+        <div class="row g-4 pt-3 d-flex justify-content-between trigger1">
+          <div class="col-sm-4 px-3">
+            <div class="text-dark fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">01</div>
+            <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.8rem; letter-spacing: 0.15em;">Our Profile</span>
+            <p class="mt-2 mb-0" style="font-weight: 300; line-height: 1.75;">
+              Explore our design ethos and global studio standards.
+            </p>
+            <div class="mt-3">
+              <a href="contact.html" class="fs-8 fw-semibold text-uppercase text-link tracking-wider">Discover Profile &rarr;</a>
+            </div>
+          </div>
+
+          <div class="col-sm-4 px-3">
+            <div class="text-dark fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">02</div>
+            <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.8rem; letter-spacing: 0.15em;">Full Spectrum Services</span>
+            <p class="mt-2 mb-0" style="font-weight: 300; line-height: 1.75;">
+              From residential architecture to custom joinery.
+            </p>
+            <div class="mt-3">
+              <a href="contact.html" class="fs-8 fw-semibold text-uppercase text-link tracking-wider">Explore Services &rarr;</a>
+            </div>
+          </div>
+
+          <div class="col-sm-4 px-3">
+            <div class="text-dark fw-light" style="font-size: 1.75rem; letter-spacing: 0.06em;">03</div>
+            <span class="d-block text-uppercase text-dark fw-semibold mt-1" style="font-size: 0.8rem; letter-spacing: 0.15em;">Direct Collaboration</span>
+            <p class="mt-2 mb-0" style="font-weight: 300; line-height: 1.75;">
+              Connect with our Cape Town or Johannesburg studios.
+            </p>
+            <div class="mt-3">
+              <a href="contact.html" class="fs-8 fw-semibold text-uppercase text-link tracking-wider">Inquire Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: EXTENDED FOOTER & INQUIRY FORM -->
+  <div id="contact" class="overflow-hidden">
+    <footer class="arrcc-footer text-white py-5">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+
+          <div class="col-lg-6 pe-lg-5 text-center text-lg-start gone">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <img src="logo-4.png" loading="lazy" class="foot-logo" alt="Shaw Interiors Logo">
+            </div>
+
+            <div class="row g-4 my-2 pt-3">
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Cape Town Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  12 Waterkant Street, Studio 401<br>
+                  Cape Town, 8001, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.ct@shawint.co.za</div>
+              </div>
+
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Johannesburg Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  45 Rosebank Road, Suite 12<br>
+                  Rosebank, 2196, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.jb@shawint.co.za</div>
+              </div>
+            </div>
+
+            <div class="my-4 pt-2">
+              <h6 class="text-white text-uppercase fw-bold mb-3 mt-2 fs-8 tracking-wider">Quick Navigational Links</h6>
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-1 gap-md-4 small">
+                <a href="index.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Home</a>
+                <a href="profile2.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">About</a>
+                <a href="services3.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Services</a>
+                <a href="projects5.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Projects</a>
+                <a href="gallerry3.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Gallery</a>
+                <a href="contact.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Contact</a>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <h6 class="text-white fs-8 text-uppercase fw-bold mb-3 tracking-wider mt-4">Connect with us</h6>
+              <div class="social-icons-wrapper d-flex justify-content-center justify-content-lg-start gap-2">
+                <a href="#" class="square-social-icon" aria-label="Instagram">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a3.81 3.81 0 1 0 0 7.619 3.81 3.81 0 0 0 0-7.619zm0 1.441a2.368 2.368 0 1 1 0 4.736 2.368 2.368 0 0 1 0-4.736z"/></svg>
+                </a>
+                <a href="#" class="square-social-icon" aria-label="LinkedIn">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+                </a>
+                <a href="#" class="square-social-icon" aria-label="Facebook">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <div class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</div>
+            </div>
+
+            <div class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+              Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back to discuss your spatial parameters.
+            </div>
+
+            <div class="w-100">
+              <form>
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerName" class="form-label text-uppercase text-white fs-8 fw-bold mb-1 tracking-wider d-block">Your Name *</label>
+                    <input type="text" class="form-control arrcc-input text-center text-lg-start" id="footerName" placeholder="e.g. John Doe" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerPhone" class="form-label text-uppercase text-white fs-8 mb-1 fw-bold tracking-wider d-block">Phone Number *</label>
+                    <input type="tel" class="form-control arrcc-input text-center text-lg-start" id="footerPhone" placeholder="+27 00 000 0000" required>
+                  </div>
+                </div>
+
+                <div class="mb-4 text-center mt-2 text-lg-start">
+                  <label for="footerMessage" class="form-label text-uppercase text-white fs-8 mb-1 tracking-wider fw-bold d-block">Project Details / Message *</label>
+                  <textarea class="form-control arrcc-input text-center text-lg-start" id="footerMessage" rows="4" placeholder="Tell us about location, project type, and timeline..." required></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                  <button type="submit" class="btn btn-arrcc-submit text-uppercase rounded-0">
+                    Submit Inquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bottom Legal Bar -->
+    <div class="ft-bg py-3">
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center text-white-50 fs-8 text-center text-sm-start">
+          <div class="mb-2 fs-8 mb-sm-0">&copy; 2026 Shaw Interiors. All Rights Reserved.</div>
+          <div class="d-flex gap-4">
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Privacy Policy</a>
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="backToTopBtn" aria-label="Back to Top" class="btn btn-dark square-btn position-fixed shadow">
+    &uarr;
+  </button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const curtain = document.querySelector(".gsap-page-curtain");
+
+      const revealCurtainAndScroll = () => {
+        if (curtain) {
+          curtain.classList.add("fade-out");
+        }
+
+        const savedAnchor = sessionStorage.getItem("pendingAnchor");
+        const destinationHash = savedAnchor || window.location.hash;
+
+        if (destinationHash) {
+          sessionStorage.removeItem("pendingAnchor");
+          const target = document.querySelector(decodeURIComponent(destinationHash));
+          if (target) {
+            if (window.lenis) {
+              window.lenis.scrollTo(target, { duration: 0.9 });
+            } else {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        }
+      };
+
+      if (document.readyState === "complete") {
+        revealCurtainAndScroll();
+      } else {
+        window.addEventListener("load", revealCurtainAndScroll, { once: true });
+      }
+
+      document.addEventListener("click", (e) => {
+        const link = e.target.closest("a[href]");
+        if (!link) return;
+        if (link.target === "_blank" || link.hasAttribute("download")) return;
+
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== location.origin) return;
+        if (url.pathname === location.pathname && url.search === location.search) return;
+
+        e.preventDefault();
+        if (url.hash) {
+          sessionStorage.setItem("pendingAnchor", url.hash);
+        } else {
+          sessionStorage.removeItem("pendingAnchor");
+        }
+
+        if (curtain) {
+          curtain.classList.remove("fade-out");
+        }
+
+        setTimeout(() => {
+          window.location.href = url.href;
+        }, 250);
+      });
+
+      if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+
+        if (window.lenis && typeof window.lenis.on === "function") {
+          window.lenis.on("scroll", ScrollTrigger.update);
+        }
+
+        document.querySelectorAll(".gsap-reveal-box").forEach((box) => {
+          const img = box.querySelector(".gsap-reveal-img");
+          if (!img) return;
+
+          gsap.to(img, {
+            clipPath: "inset(0% 0% 0% 0%)",
+            scale: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: box,
+              start: "top 88%",
+              end: "top 30%",
+              scrub: 0.6
+            }
+          });
+        });
+
+        ScrollTrigger.batch(".trigger1", {
+          start: "top 90%",
+          once: true,
+          onEnter: (batch) => {
+            gsap.fromTo(
+              batch,
+              { opacity: 0, y: 24 },
+              { opacity: 1, y: 0, duration: 0.75, stagger: 0.06, ease: "power2.out" }
+            );
+          }
+        });
+
+        const mm = gsap.matchMedia();
+        mm.add("(min-width: 992px)", () => {
+          const triggers = [];
+          document.querySelectorAll(".opacity-fade-block").forEach((row) => {
+            const stickyInner = row.querySelector(".project-sticky-inner");
+            if (!stickyInner || row.offsetHeight <= stickyInner.offsetHeight + 50) return;
+
+            triggers.push(
+              ScrollTrigger.create({
+                trigger: row,
+                start: "top top+=180px",
+                end: () => `+=${Math.max(0, row.offsetHeight - stickyInner.offsetHeight - 50)}`,
+                pin: stickyInner,
+                pinSpacing: false,
+                invalidateOnRefresh: true
+              })
+            );
+          });
+
+          return () => triggers.forEach((t) => t.kill());
+        });
+      }
+    });
+  </script>
+</body>
+</html>
