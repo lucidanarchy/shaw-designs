@@ -735,26 +735,7 @@ text-transform:uppercase;
   
   
   
- <style>
-
-
- .feat-img {
-      width: 100%;
-      height: 95vh;;
-      object-fit: cover;
-      //filter: grayscale(12%);
-      //transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-	  object-position: center center;
-    }
-
-
- @media (max-width: 991.98px) {
-      .feat-img { height: 60vh;  }
-    
-}
-
-
-</style> 
+ 
   
   
 <style>
@@ -784,16 +765,6 @@ border-bottom: 20px solid #1a1a1a;
 
 
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -839,92 +810,161 @@ border-bottom: 20px solid #1a1a1a;
           <li><a href="index.html">Home</a></li>
           <li><a href="profile2.html">About</a></li>
 
-          <!-- SERVICES DROPDOWN -->
+
+
+
+         <!-- SERVICES DROPDOWN -->
           <li class="has-dropdown">
             <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
-            
             <a href="services3.html" class="dropdown-link">
               <label for="services-toggle" class="accordion-trigger">
                 Services <span class="angle-bracket"></span>
               </label>
             </a>
 
-            <div class="dropdown-menu-box">
-              <a href="services3.html#service-01" class="dropdown-item-row">
-                <img src="build58.jpg" class="dropdown-thumb" alt="Residential Architecture">
-                <div class="dropdown-text py-2">
-                  <span class="item-title">01. Residential Interior</span>
-                  <span class="item-sub">Bespoke Homes & Private Estates</span>
-                </div>
-              </a>
+            <div class="dropdown-menu-box mega-dropdown-box" data-preview-img-id="megaServicesImg" data-preview-tag-id="megaServicesTag" data-preview-desc-id="megaServicesDesc">
+              <div class="mega-grid-layout">
+                <div class="mega-projects-stack">
+                  <div class="mega-links-grid">
+                    <a href="services3.html#service-01" class="mega-item is-active" data-preview-img="build121.png" data-preview-title="01 / Residential Interior" data-preview-sub="Bespoke Homes &amp; Private Estates">
+                      <span class="mega-num">01</span>
+                      <div>
+                        <span class="item-title">Residential Design</span>
+                        <span class="item-sub">Bespoke Homes &amp; Private Estates</span>
+                      </div>
+                    </a>
 
-              <a href="services3.html#service-02" class="dropdown-item-row">
-                <img src="build28.jpg" class="dropdown-thumb" alt="Commercial Development">
-                <div class="dropdown-text">
-                  <span class="item-title">02. Commercial Interior</span>
-                  <span class="item-sub">Retail, Hospitality & Public Spaces</span>
-                </div>
-              </a>
+                    <a href="services3.html#service-02" class="mega-item" data-preview-img="build120.png" data-preview-title="02 / Commercial Interior" data-preview-sub="Retail, Hospitality &amp; Public Spaces">
+                      <span class="mega-num">02</span>
+                      <div>
+                        <span class="item-title">Commercial Design</span>
+                        <span class="item-sub">Retail, Hospitality &amp; Public Spaces</span>
+                      </div>
+                    </a>
 
-              <a href="services3.html#service-03" class="dropdown-item-row">
-                <img src="build21.png" class="dropdown-thumb" alt="Spatial Flow Planning">
-                <div class="dropdown-text">
-                  <span class="item-title">03. Corporate Interior</span>
-                  <span class="item-sub">Corporate & Modern Workspaces</span>
-                </div>
-              </a>
+                    <a href="services3.html#service-03" class="mega-item" data-preview-img="build128.png" data-preview-title="03 / Corporate Interior" data-preview-sub="Corporate &amp; Modern Workspaces">
+                      <span class="mega-num">03</span>
+                      <div>
+                        <span class="item-title">Corporate Design</span>
+                        <span class="item-sub">Corporate &amp; Modern Workspaces</span>
+                      </div>
+                    </a>
 
-              <a href="services3.html#service-04" class="dropdown-item-row">
-                <img src="build26.png" class="dropdown-thumb" alt="Custom Lighting Plans">
-                <div class="dropdown-text">
-                  <span class="item-title">04. Custom Kitchen Design</span>
-                  <span class="item-sub">High-End Culinary Environments</span>
-                </div>
-              </a>
+                    <a href="services3.html#service-04" class="mega-item" data-preview-img="build129.png" data-preview-title="04 / Custom Kitchen Design" data-preview-sub="High-End Culinary Environments">
+                      <span class="mega-num">04</span>
+                      <div>
+                        <span class="item-title">Custom Kitchen Design</span>
+                        <span class="item-sub">High-End Culinary Environments</span>
+                      </div>
+                    </a>
 
-              <a href="services3.html#service-05" class="dropdown-item-row">
-                <img src="build27.jpg" class="dropdown-thumb" alt="Heritage Restoration">
-                <div class="dropdown-text">
-                  <span class="item-title">05. Master Suite Design</span>
-                  <span class="item-sub">Private Bedroom Retreats</span>
-                </div>
-              </a>
+                    <a href="services3.html#service-05" class="mega-item" data-preview-img="build41.jpg" data-preview-title="05 / Master Suite Design" data-preview-sub="Private Bedroom Retreats">
+                      <span class="mega-num">05</span>
+                      <div>
+                        <span class="item-title">Master Suite Design</span>
+                        <span class="item-sub">Private Bedroom Retreats</span>
+                      </div>
+                    </a>
 
-              <a href="services3.html#service-06" class="dropdown-item-row">
-                <img src="build32.jpg" class="dropdown-thumb" alt="Commercial Development">
-                <div class="dropdown-text">
-                  <span class="item-title">06. Architectural Millwork</span>
-                  <span class="item-sub">Custom Cabinetry & Joinery</span>
-                </div>
-              </a>
-			  
-			        <a href="services3.html#service-07" class="dropdown-item-row">
-                <img src="build32.jpg" class="dropdown-thumb" alt="Commercial Development">
-                <div class="dropdown-text">
-                  <span class="item-title">07. Atmospheric Lighting</span>
-                  <span class="item-sub">Architectural Illumination Plans</span>
-                </div>
-              </a>
-    
-              <a href="services3.html#service-08" class="dropdown-item-row">
-                <img src="build35.jpg" class="dropdown-thumb" alt="Custom Lighting Plans">
-                <div class="dropdown-text">
-                  <span class="item-title">08. Spa & Bath Design</span>
-                  <span class="item-sub">Sanctuary Bathrooms & Wellness</span>
-                </div>
-              </a>
+                    <a href="services3.html#service-06" class="mega-item" data-preview-img="build101.png" data-preview-title="06 / Architectural Millwork" data-preview-sub="Custom Cabinetry &amp; Joinery">
+                      <span class="mega-num">06</span>
+                      <div>
+                        <span class="item-title">Architectural Millwork</span>
+                        <span class="item-sub">Custom Cabinetry &amp; Joinery</span>
+                      </div>
+                    </a>
 
-              <a href="services3.html#service-09" class="dropdown-item-row">
-                <img src="build24.png" class="dropdown-thumb" alt="Heritage Restoration">
-                <div class="dropdown-text">
-                  <span class="item-title">09. Material & Texture Design</span>
-                  <span class="item-sub">Fine Finishes & Textiles</span>
+                    <a href="services3.html#service-07" class="mega-item" data-preview-img="build62.jpg" data-preview-title="07 / Atmospheric Lighting" data-preview-sub="Architectural Illumination Plans">
+                      <span class="mega-num">07</span>
+                      <div>
+                        <span class="item-title">Atmospheric Lighting</span>
+                        <span class="item-sub">Architectural Illumination Plans</span>
+                      </div>
+                    </a>
+
+                    <a href="services3.html#service-08" class="mega-item" data-preview-img="build54.jpg" data-preview-title="08 / Spa & Bath Design" data-preview-sub="Sanctuary Bathrooms &amp; Wellness">
+                      <span class="mega-num">08</span>
+                      <div>
+                        <span class="item-title">Spa &amp; Bath Design</span>
+                        <span class="item-sub">Sanctuary Bathrooms </span>
+                      </div>
+                    </a>
+
+                    <a href="services3.html#service-09" class="mega-item" data-preview-img="build103.png" data-preview-title="09 / Material & Texture Design" data-preview-sub="Fine Finishes &amp; Textiles">
+                      <span class="mega-num">09</span>
+                      <div>
+                        <span class="item-title">Material Texture Design</span>
+                        <span class="item-sub">Fine Finishes &amp; Textiles</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="mega-journal-feature">
+                    <div class="mega-journal-head">
+                      <span class="mega-journal-kicker mb-2 mt-2">Featured Journal &mdash; Vol. 01 &ndash; 03</span>
+                      <a href="journal.html" class="mega-menu-link">All Entries &rarr;</a>
+                    </div>
+
+                    <div class="mega-journal-row">
+                      <a href="journal.html#vol-1"
+                         class="mega-journal-card"
+                         data-preview-img="jnl1.jpg"
+                         data-preview-title="Vol. 01 / Projects"
+                         data-preview-sub="Monolithic Travertine Residence Set to Anchor Cape Town Coastline">
+                        <div class="mega-journal-thumb">
+                          <img src="jnl1.jpg" alt="Vol. 01 Thumbnail">
+                        </div>
+                        <div class="mega-journal-copy">
+                          <span class="mega-journal-vol">Vol. 01</span>
+                          <span class="mega-journal-title">Monolithic Travertine Residence Set to Anchor Cape Town Coastline</span>
+                        </div>
+                      </a>
+
+                      <a href="journal.html#vol-2"
+                         class="mega-journal-card"
+                         data-preview-img="art2.jpg"
+                         data-preview-title="Vol. 02 / Studio"
+                         data-preview-sub="Shaping Timeless Spaces Across Southern Africa and Beyond">
+                        <div class="mega-journal-thumb">
+                          <img src="art2.jpg" alt="Vol. 02 Thumbnail">
+                        </div>
+                        <div class="mega-journal-copy">
+                          <span class="mega-journal-vol">Vol. 02</span>
+                          <span class="mega-journal-title">Shaping Timeless Spaces Across Southern Africa and Beyond</span>
+                        </div>
+                      </a>
+
+                      <a href="journal.html#vol-3"
+                         class="mega-journal-card"
+                         data-preview-img="jnl4.png"
+                         data-preview-title="Vol. 03 / Insights"
+                         data-preview-sub="Tactile Honesty and Hand-Trowelled Finishes in Modern Interiors">
+                        <div class="mega-journal-thumb">
+                          <img src="jnl4.png" alt="Vol. 03 Thumbnail">
+                        </div>
+                        <div class="mega-journal-copy">
+                          <span class="mega-journal-vol">Vol. 03</span>
+                          <span class="mega-journal-title">Tactile Honesty and Hand-Trowelled Finishes in Modern Interiors</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </a>
+
+                <div class="mega-preview-pane d-none d-lg-flex">
+                  <div class="mega-preview-img-wrap">
+                    <img id="megaServicesImg" src="build121.png" alt="Service Preview">
+                  </div>
+                  <div class="mega-preview-caption">
+                    <span id="megaServicesTag" class="mega-preview-tag">01 / Residential Interior</span>
+                    <p id="megaServicesDesc" class="mega-preview-desc mb-0">Bespoke Homes &amp; Private Estates</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </li>
 
-           <!-- PROJECTS DROPDOWN -->
+<!-- PROJECTS DROPDOWN -->
           <li class="has-dropdown">
             <input type="checkbox" id="projects-toggle" class="dropdown-checkbox">
             <a href="projects5.html" class="dropdown-link">
@@ -932,28 +972,98 @@ border-bottom: 20px solid #1a1a1a;
                 Projects <span class="angle-bracket"></span>
               </label>
             </a>
-            <div class="dropdown-menu-box">
-              <a href="projects5.html#project-01" class="dropdown-item-row">
-                <img src="build62.jpg" class="dropdown-thumb" alt="Residential Works">
-                <div class="dropdown-text">
-                  <span class="item-title">Residential Works</span>
-                  <span class="item-sub">Residential Estates</span>
+
+            <div class="dropdown-menu-box mega-dropdown-box" data-preview-img-id="megaProjectsImg" data-preview-tag-id="megaProjectsTag" data-preview-desc-id="megaProjectsDesc">
+              <div class="mega-grid-layout">
+                <div class="mega-projects-stack">
+                  <div class="mega-links-grid">
+                    <a href="projects5.html#project-01" class="mega-item is-active" data-preview-img="build101.webp" data-preview-title="01 / Residential Works" data-preview-sub="Residential Estates">
+                      <span class="mega-num">01</span>
+                      <div>
+                        <span class="item-title">Residential Works</span>
+                        <span class="item-sub">Residential Estates</span>
+                      </div>
+                    </a>
+
+                    <a href="projects5.html#project-02" class="mega-item" data-preview-img="build141.jpg" data-preview-title="02 / Commercial Works" data-preview-sub="Commercial Metros">
+                      <span class="mega-num">02</span>
+                      <div>
+                        <span class="item-title">Commercial Works</span>
+                        <span class="item-sub">Commercial Metros</span>
+                      </div>
+                    </a>
+
+                    <a href="projects5.html#project-03" class="mega-item" data-preview-img="build151.webp" data-preview-title="03 / Corporate Works" data-preview-sub="Corporate Offices">
+                      <span class="mega-num">03</span>
+                      <div>
+                        <span class="item-title">Corporate Works</span>
+                        <span class="item-sub">Corporate Offices</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="mega-journal-feature">
+                    <div class="mega-journal-head">
+                      <span class="mega-journal-kicker mb-2 mt-2">Featured Journal &mdash; Vol. 01 &ndash; 03</span>
+                      <a href="journal.html" class="mega-menu-link">All Entries &rarr;</a>
+                    </div>
+
+                    <div class="mega-journal-row">
+                      <a href="journal.html#vol-1"
+                         class="mega-journal-card"
+                         data-preview-img="jnl1.jpg"
+                         data-preview-title="Vol. 01 / Projects"
+                         data-preview-sub="Monolithic Travertine Residence Set to Anchor Cape Town Coastline">
+                        <div class="mega-journal-thumb">
+                          <img src="jnl1.jpg" alt="Vol. 01 Thumbnail">
+                        </div>
+                        <div class="mega-journal-copy">
+                          <span class="mega-journal-vol">Vol. 01</span>
+                          <span class="mega-journal-title">Monolithic Travertine Residence Set to Anchor Cape Town Coastline</span>
+                        </div>
+                      </a>
+
+                      <a href="journal.html#vol-2"
+                         class="mega-journal-card"
+                         data-preview-img="art2.jpg"
+                         data-preview-title="Vol. 02 / Studio"
+                         data-preview-sub="Shaping Timeless Spaces Across Southern Africa and Beyond">
+                        <div class="mega-journal-thumb">
+                          <img src="art2.jpg" alt="Vol. 02 Thumbnail">
+                        </div>
+                        <div class="mega-journal-copy">
+                          <span class="mega-journal-vol">Vol. 02</span>
+                          <span class="mega-journal-title">Shaping Timeless Spaces Across Southern Africa and Beyond</span>
+                        </div>
+                      </a>
+
+                      <a href="journal.html#vol-3"
+                         class="mega-journal-card"
+                         data-preview-img="jnl4.png"
+                         data-preview-title="Vol. 03 / Insights"
+                         data-preview-sub="Tactile Honesty and Hand-Trowelled Finishes in Modern Interiors">
+                        <div class="mega-journal-thumb">
+                          <img src="jnl4.png" alt="Vol. 03 Thumbnail">
+                        </div>
+                        <div class="mega-journal-copy">
+                          <span class="mega-journal-vol">Vol. 03</span>
+                          <span class="mega-journal-title">Tactile Honesty and Hand-Trowelled Finishes in Modern Interiors</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </a>
-              <a href="projects5.html#project-02" class="dropdown-item-row">
-                <img src="build58.jpg" class="dropdown-thumb" alt="Commercial Works">
-                <div class="dropdown-text">
-                  <span class="item-title">Commercial Works</span>
-                  <span class="item-sub">Commercial Metros</span>
+
+                <div class="mega-preview-pane d-none d-lg-flex">
+                  <div class="mega-preview-img-wrap">
+                    <img id="megaProjectsImg" src="build101.webp" alt="Project Preview">
+                  </div>
+                  <div class="mega-preview-caption">
+                    <span id="megaProjectsTag" class="mega-preview-tag">01 / Residential Works</span>
+                    <p id="megaProjectsDesc" class="mega-preview-desc mb-0">Residential Estates</p>
+                  </div>
                 </div>
-              </a>
-              <a href="projects5.html#project-03" class="dropdown-item-row">
-                <img src="build74.jpg" class="dropdown-thumb" alt="Completed Projects">
-                <div class="dropdown-text">
-                  <span class="item-title">Coporate Works</span>
-                  <span class="item-sub">Coporate Offices</span>
-                </div>
-              </a>
+              </div>
             </div>
           </li>
 
@@ -977,7 +1087,7 @@ border-bottom: 20px solid #1a1a1a;
   <section class="hero-lift-section" id="heroLiftSection">
     <div class="text-center">
       <h1 class="hero-giant-title" id="giantTitle">SHAW</h1>
-      <p class="hero-subtitle px-3">Architectural interior design &mdash; 2026</p>
+      <p class="hero-subtitle px-3">Architectural interior design</p>
     </div>
 	
     <!-- Animated Scroll Indicator & Downward Bracket -->
@@ -1106,7 +1216,7 @@ border-bottom: 20px solid #1a1a1a;
         <div class="seq-gradient-overlay"></div>
         <div class="seq-caption seq-cap-2">
           <span class="text-uppercase small   px-1 py-1" style="letter-spacing: 0.25em; font-size: 0.7rem; color:#f1f1f1; background-color:#5a5a5a;">03 / Monograp</span>
-          <h3 class="seq-txt text-white fw-light  mb-3 pt-3 lh-base">Designed For &amp;<br> Generations</h3>
+          <h3 class="seq-txt text-white fw-light  mb-3 pt-3 lh-base">Designed For<br> Generations</h3>
           <div class="mt-3">
             <a href="services3.html#service-07" class="seq-btn-proj mt-2">Explore Project &rarr;</a>
           </div>
@@ -3342,7 +3452,124 @@ border-bottom: 20px solid #1a1a1a;
 </script>
   
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  document.querySelectorAll(".mega-dropdown-box").forEach(box => {
+
+    const currentImg = document.getElementById(box.dataset.previewImgId);
+    const tag = document.getElementById(box.dataset.previewTagId);
+    const desc = document.getElementById(box.dataset.previewDescId);
+
+    if (!currentImg) return;
+
+    const wrap = currentImg.parentElement;
+
+    let requestId = 0;
+    let displayedSrc = currentImg.getAttribute("src");
+    let lastTarget = null;
+
+    box.addEventListener("mouseover", e => {
+
+      const target = e.target.closest(".mega-item, .mega-journal-card");
+
+      if (!target || !box.contains(target) || target === lastTarget) return;
+
+      lastTarget = target;
+
+      // Update active navigation item
+      box.querySelectorAll(".mega-item, .mega-journal-card").forEach(el => {
+        el.classList.toggle("is-active", el === target);
+      });
+
+      const nextSrc = target.dataset.previewImg;
+      const thisRequest = ++requestId;
+
+      if (nextSrc && nextSrc !== displayedSrc) {
+
+        const preload = new Image();
+
+        preload.onload = () => {
+
+          // Ignore outdated image requests
+          if (thisRequest !== requestId) return;
+
+          const nextImg = document.createElement("img");
+
+          nextImg.alt = currentImg.alt || "Preview";
+          nextImg.src = preload.src;
+          nextImg.style.opacity = "0";
+
+          wrap.appendChild(nextImg);
+
+          // Start crossfade
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+
+              if (thisRequest !== requestId) {
+                nextImg.remove();
+                return;
+              }
+
+              nextImg.style.opacity = "1";
+
+            });
+          });
+
+          // Remove previous images after transition
+          const cleanUp = () => {
+
+            if (thisRequest !== requestId) return;
+
+            wrap.querySelectorAll("img").forEach(img => {
+              if (img !== nextImg) img.remove();
+            });
+
+            displayedSrc = nextSrc;
+          };
+
+          nextImg.addEventListener("transitionend", event => {
+            if (event.propertyName === "opacity") cleanUp();
+          }, { once: true });
+
+          // Fallback cleanup
+          setTimeout(cleanUp, 420);
+
+        };
+
+        preload.src = nextSrc;
+      }
+
+      // Update caption
+      if (tag && target.dataset.previewTitle) {
+        tag.textContent = target.dataset.previewTitle;
+      }
+
+      if (desc && target.dataset.previewSub) {
+        desc.textContent = target.dataset.previewSub;
+      }
+
+    });
+
+    // Cancel pending requests when leaving menu
+    box.addEventListener("mouseleave", () => {
+      lastTarget = null;
+      requestId++;
+    });
+
+  });
+
+});
+</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 
